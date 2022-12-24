@@ -14,6 +14,20 @@ protocol MainTableViewScrollDelegate: AnyObject {
 class MainTableView: UITableView {
     
     weak var scrollDelegate: MainTableViewScrollDelegate?
+    
+    let data = [
+        "This is a good day for quiet contemplation, Scorpio. You may have worried about finances lately, but there's no longer any need to concern yourself.",
+        
+        "All signs indicate that your financial fortunes are about to change.",
+        
+        "You've been working hard and should reap some rewards. Today's aspects suggest that you will. Enjoy your newfound peace of mind, but don't go out and use the credit cards in celebration!\nGet to your authentic self with the guidance of a psychic advisor. Click here to get the 1st 3 minutes of your reading free!",
+        
+        "The Magician Tarot card represents someone at the beginning of their journey. The path is new, but they have no fear. They have all the tools they need.",
+        
+        "The Magician Tarot card represents someone at the beginning of their journey. The path is new, but they have no fear. They have all the tools they need.",
+        
+        "The Magician holds..."
+    ]
 
     init() {
         super.init(frame: .zero, style: .plain)
@@ -25,6 +39,8 @@ class MainTableView: UITableView {
         delegate = self
         dataSource = self
         
+        separatorColor = .clear
+        
         rowHeight = UITableView.automaticDimension
         estimatedRowHeight = UITableView.automaticDimension
 
@@ -32,6 +48,10 @@ class MainTableView: UITableView {
         let identifier = String(describing: cellClass)
         register(cellClass, forCellReuseIdentifier: identifier)
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.setNeedsDisplay()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -55,7 +75,7 @@ class MainTableView: UITableView {
 extension MainTableView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +85,7 @@ extension MainTableView: UITableViewDelegate, UITableViewDataSource {
             return MainTableViewCell()
         }
         
-        cell.setup(index: indexPath.row)
+        cell.setup(text: data[indexPath.row])
         
         return cell
     }

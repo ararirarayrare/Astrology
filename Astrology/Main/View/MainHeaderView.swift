@@ -16,8 +16,9 @@ class MainHeaderView: UIView {
         label.textColor = .white
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 2
         
-        label.text = "Saturday, 24 December"
+        label.text = "24 December,\nSaturday"
         
         return label
     }()

@@ -9,21 +9,23 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
-    func setup(index: Int) {
-        
-        backgroundColor = .clear
-        
+    private let label: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
         label.numberOfLines = 0
         label.textColor = .black
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 16)
-        label.text = (index % 2 == 0) ? "low height row" : "high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht rowhigh hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row high hegiht row"
         label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setup(text: String) {
         
+        backgroundColor = .clear
+
+        label.text = text
         addSubview(label)
-        
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor,
                                           constant: 20),

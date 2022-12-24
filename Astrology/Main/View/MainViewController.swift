@@ -18,7 +18,6 @@ class MainViewController: ViewController {
     private let infoView: MainInfoView = {
         let infoView = MainInfoView()
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        
         return infoView
     }()
     
@@ -37,12 +36,13 @@ class MainViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        view.backgroundColor = .blue.withAlphaComponent(0.1)
-        
-        
-        tableView.scrollDelegate = self
-
+        setup()
         layout()
+    }
+    
+    private func setup() {
+        view.backgroundColor = .blue.withAlphaComponent(0.1)
+        tableView.scrollDelegate = self
     }
     
     private func layout() {
@@ -58,7 +58,7 @@ class MainViewController: ViewController {
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 120),
+            headerView.heightAnchor.constraint(equalToConstant: 140),
             
             
             infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -94,15 +94,14 @@ extension MainViewController: MainTableViewScrollDelegate {
 
         let neededConstant = shouldSnap ? -(infoView.bounds.height - headerView.bounds.height) : 0
         let neededAlpha = shouldSnap ? 0.75 : 0
-
-        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.25,
-                                                       delay: 0,
-                                                       options: .curveLinear) {
-            self.infoView.topConstraint?.constant = neededConstant
-            self.infoView.blurEffectView.alpha = neededAlpha
-            self.view.layoutIfNeeded()
-        } completion: { _ in
-            self.infoView.isAnimating = false
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.infoView.topConstraint?.constant = neededConstant
+            self?.infoView.blurEffectView.alpha = neededAlpha
+            self?.view.layoutIfNeeded()
+        } completion: { [weak self] _ in
+            self?.infoView.isAnimating = false
         }
+        
     }
 }

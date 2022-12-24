@@ -67,21 +67,22 @@ extension MainTableViewHeaderCollectionView: UICollectionViewDelegate, UICollect
 
 class MainTableViewHeaderCollectionViewCell: UICollectionViewCell {
     
-    func setup(title: String) {
-        
-        backgroundColor = .systemBlue.withAlphaComponent(0.25)
-        
-        layer.cornerRadius = 20
-        
+    let label: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 0, width: 100, height: 40)
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
-        label.text = title
-        
         label.textAlignment = .center
+        return label
+    }()
+    
+    func setup(title: String) {
         
+        backgroundColor = .systemBlue.withAlphaComponent(0.25)
+        layer.cornerRadius = 20
+        
+        label.text = title
         addSubview(label)
     }
     
