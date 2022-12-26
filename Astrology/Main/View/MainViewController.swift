@@ -20,72 +20,75 @@ class MainViewController: ViewController {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         return infoView
     }()
-    
-    private let tableViewHeader: MainTableViewHeader = {
-        let tableViewHeader = MainTableViewHeader()
-        tableViewHeader.translatesAutoresizingMaskIntoConstraints = false
-        return tableViewHeader
+
+    private let contentView: MainContentView = {
+        let contentView = MainContentView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        return contentView
     }()
     
-    private let tableView: MainTableView = {
-        let tableView = MainTableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.delegate = self
+        return scrollView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        setup()
+        view.backgroundColor = .blue.withAlphaComponent(0.1)
+        
         layout()
     }
-    
-    private func setup() {
-        view.backgroundColor = .blue.withAlphaComponent(0.1)
-        tableView.scrollDelegate = self
-    }
-    
+
     private func layout() {
         view.addSubview(headerView)
         view.insertSubview(infoView, belowSubview: headerView)
-        view.insertSubview(tableView, belowSubview: headerView)
-        view.insertSubview(tableViewHeader, belowSubview: headerView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         
         let infoViewTopConstraint = infoView.topAnchor.constraint(equalTo: view.topAnchor)
         infoView.topConstraint = infoViewTopConstraint
+        
+        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        contentViewCenterY.priority = .defaultLow
+
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+        
+        let contentGuide = scrollView.contentLayoutGuide
         
         NSLayoutConstraint.activate([
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 140),
             
             
             infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             infoView.heightAnchor.constraint(equalToConstant: 400),
             infoViewTopConstraint,
+
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: infoView.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             
-            tableViewHeader.leadingAnchor.constraint(equalTo: tableView.leadingAnchor),
-            tableViewHeader.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
-            tableViewHeader.topAnchor.constraint(equalTo: infoView.bottomAnchor,
-                                                 constant: 8),
-            tableViewHeader.heightAnchor.constraint(equalToConstant: 40),
+            contentView.leadingAnchor.constraint(equalTo: contentGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: contentGuide.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: contentGuide.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: contentGuide.bottomAnchor),
             
             
-            tableView.topAnchor.constraint(equalTo: tableViewHeader.bottomAnchor,
-                                          constant: 8),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentViewCenterY,
+            contentViewHeight
         ])
     }
-}
-
-extension MainViewController: MainTableViewScrollDelegate {
-    func tableView(_ tableView: MainTableView, shouldSnap: Bool) {
-        
+    
+    private func infoView(shouldSnap: Bool) {
         guard !infoView.isAnimating else {
             return
         }
@@ -93,15 +96,30 @@ extension MainViewController: MainTableViewScrollDelegate {
         infoView.isAnimating = true
 
         let neededConstant = shouldSnap ? -(infoView.bounds.height - headerView.bounds.height) : 0
-        let neededAlpha = shouldSnap ? 0.75 : 0
+//        let neededAlpha = shouldSnap ? 0.75 : 0
         
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.4) { [weak self] in
             self?.infoView.topConstraint?.constant = neededConstant
-            self?.infoView.blurEffectView.alpha = neededAlpha
+            self?.infoView.alpha = shouldSnap ? 0.3 : 1.0
+//            self?.infoView.blurEffectView.alpha = neededAlpha
             self?.view.layoutIfNeeded()
         } completion: { [weak self] _ in
             self?.infoView.isAnimating = false
         }
+    }
+    
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
         
+        if y >= 15 {
+            infoView(shouldSnap: true)
+        }
+        
+        if y <= -50 {
+            infoView(shouldSnap: false)
+        }
     }
 }

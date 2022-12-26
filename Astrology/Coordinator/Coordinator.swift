@@ -13,7 +13,7 @@ protocol Coordinator {
     
     var navigationController: NavigationController? { get }
     
-    var childred: [Coordinator]? { get set }
+    var childred: [Coordinator]? { get }
         
     func start()
     

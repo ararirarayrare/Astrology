@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let dec30 = Calendar.current.date(byAdding: .day, value: 8, to: Date()) {
+            print(MoonModel.Phase.forDate(dec30))
+        }
+        
+        
         return true
     }
 

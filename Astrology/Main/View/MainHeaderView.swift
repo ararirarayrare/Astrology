@@ -35,7 +35,9 @@ class MainHeaderView: UIView {
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
                                             constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                 constant: -8)
+                                                 constant: -8),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
+                                               constant: -8)
         ])
     }
     
