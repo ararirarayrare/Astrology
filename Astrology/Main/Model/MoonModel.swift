@@ -104,10 +104,29 @@ struct MoonModel {
         }
     }
     
+    static func withNextPhase(fromDate date: Date) -> MoonModel {
+        
+        let phaseFrom = Phase.forDate(date)
+        
+        var addingDays = 1
+        var nextDay = Calendar.current.date(byAdding: .day, value: addingDays, to: date)
+        var nextPhase = Phase.forDate(nextDay ?? date)
+        
+        while nextPhase == phaseFrom {
+            addingDays += 1
+            nextDay = Calendar.current.date(byAdding: .day, value: addingDays, to: date)
+            nextPhase = Phase.forDate(nextDay ?? date)
+        }
+        
+        let moonModel = MoonModel(date: nextDay ?? date, phase: nextPhase)
+        
+        return moonModel
+    }
+    
 //    static func withNextPhase(fromDate date: Date) -> MoonModel {
 //
 //        let currentPhase = Phase.forDate(date)
-        
+//
 //        var addingDays = 1 {
 //            didSet {
 //                nextDay = Calendar.current.date(byAdding: .day, value: addingDays, to: date)
@@ -123,7 +142,7 @@ struct MoonModel {
 //                }
 //            }
 //        }
-        
+//
 //    }
     
 }

@@ -38,13 +38,19 @@ class MainContentView: UIView {
     
     private let lunarCalendarView: MainContentViewLunarCalendar = {
         let today = Date()
+        
         let currentPhase = MoonModel(date: today, phase: .forDate(today))
         
+        let nextPhase1 = MoonModel.withNextPhase(fromDate: today)
+        let nextPhase2 = MoonModel.withNextPhase(fromDate: nextPhase1.date)
+        let nextPhase3 = MoonModel.withNextPhase(fromDate: nextPhase2.date)
+        let nextPhase4 = MoonModel.withNextPhase(fromDate: nextPhase3.date)
+        
         let nextPhases = [
-            MoonModel(date: Date(), phase: .firstQuater),
-            MoonModel(date: Date(), phase: .fullMoon),
-            MoonModel(date: Date(), phase: .waningGibbous),
-            MoonModel(date: Date(), phase: .lastQuater),
+            nextPhase1,
+            nextPhase2,
+            nextPhase3,
+            nextPhase4
         ]
         
         let view = MainContentViewLunarCalendar(currentPhase: currentPhase,

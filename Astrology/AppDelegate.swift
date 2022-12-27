@@ -15,10 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let dec30 = Calendar.current.date(byAdding: .day, value: 8, to: Date()) {
-            print(MoonModel.Phase.forDate(dec30))
-        }
+//        if let dec30 = Calendar.current.date(byAdding: .day, value: 8, to: Date()) {
+//            print(MoonModel.Phase.forDate(dec30))
+//        }
         
+        let today = Date()
+        
+        let moonModel = MoonModel.withNextPhase(fromDate: today)
+        
+        print("Today :", MoonModel.Phase.forDate(today))
+        
+        print("Next phase :", moonModel.phase, moonModel.date)
         
         return true
     }

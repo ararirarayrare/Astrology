@@ -42,6 +42,7 @@ class MainContentViewLunarCalendar: UIView {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .left
         label.textColor = .white
+        label.numberOfLines = 2
         
         return label
     }()
@@ -62,7 +63,35 @@ class MainContentViewLunarCalendar: UIView {
         backgroundColor = .clear
         
         currentMoonImageView.image = currentPhase.image
-        currentMoonLabel.text = currentPhase.phase.string
+        
+        var attributedString = NSMutableAttributedString()
+        
+        attributedString.append(
+            NSAttributedString(
+                string: currentPhase.phase.string + "\n",
+                attributes: [
+                    .font : UIFont.boldSystemFont(ofSize: 20),
+                    .foregroundColor : UIColor.white
+                ]
+            )
+        )
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let dateString = dateFormatter.string(from: currentPhase.date)
+        
+        attributedString.append(
+            NSAttributedString(
+                string: dateString,
+                attributes: [
+                    .font : UIFont.systemFont(ofSize: 18),
+                    .foregroundColor : UIColor.white
+                ]
+            )
+        )
+        
+        currentMoonLabel.attributedText = attributedString
+        
         
         for phase in nextPhases {
             let view = createPhaseView(phase: phase)
@@ -142,8 +171,13 @@ class MainContentViewLunarCalendar: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.text = phase.phase.string
         
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let dateString = dateFormatter.string(from: phase.date)
+        
+        label.text = dateString
         
         view.addSubview(imageView)
         view.addSubview(label)
