@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentViewPredictionToday: UIView {
+class MainContentViewPrediction: MainContentViewItem {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -15,7 +15,7 @@ class MainContentViewPredictionToday: UIView {
         label.font = .boldSystemFont(ofSize: 22)
         label.textColor = .white
         label.textAlignment = .left
-        label.text = "Prediction for today: "
+    
         return label
     }()
     
@@ -29,20 +29,22 @@ class MainContentViewPredictionToday: UIView {
         return label
     }()
     
-    init(prediction: String) {
-        super.init(frame: .zero)
+    init(title: String, prediction: String) {
+        super.init()
         
         backgroundColor = .clear
-        predictionLabel.text = prediction
         
-        layout()
+        titleLabel.text = title
+        predictionLabel.text = prediction
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func layout() {
+    override func layout() {
+        super.layout()
+        
         addSubview(titleLabel)
         addSubview(predictionLabel)
         

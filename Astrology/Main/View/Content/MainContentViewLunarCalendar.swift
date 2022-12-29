@@ -7,16 +7,8 @@
 
 import UIKit
 
-class MainContentViewLunarCalendar: UIView {
-    
-    private let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue.withAlphaComponent(0.3)
-        view.layer.cornerRadius = 20
-        return view
-    }()
-    
+class MainContentViewLunarCalendar: MainContentViewItem {
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,14 +49,15 @@ class MainContentViewLunarCalendar: UIView {
         return stackView
     }()
     
-    init(currentPhase: MoonModel, nextPhases: [MoonModel]) {
-        super.init(frame: .zero)
+    init(currentPhase: Moon, nextPhases: [Moon]) {
+        super.init()
         
-        backgroundColor = .clear
+        backgroundColor = .blue.withAlphaComponent(0.25)
+        layer.cornerRadius = 20
         
         currentMoonImageView.image = currentPhase.image
         
-        var attributedString = NSMutableAttributedString()
+        let attributedString = NSMutableAttributedString()
         
         attributedString.append(
             NSAttributedString(
@@ -98,44 +91,34 @@ class MainContentViewLunarCalendar: UIView {
             stackView.addArrangedSubview(view)
         }
         
-        layout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
-    private func layout() {
-        addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(currentMoonImageView)
-        containerView.addSubview(currentMoonLabel)
-        containerView.addSubview(stackView)
+    override func layout() {
+        super.layout()
+        
+        addSubview(titleLabel)
+        addSubview(currentMoonImageView)
+        addSubview(currentMoonLabel)
+        addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                   constant: 20),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                    constant: -20),
-            containerView.topAnchor.constraint(equalTo: topAnchor,
-                                               constant: 8),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                                  constant: -8),
-            
-            
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                 constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor,
+            titleLabel.topAnchor.constraint(equalTo: topAnchor,
                                             constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                  constant: -12),
             
             
-            currentMoonImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
+            currentMoonImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                           constant: 12),
             currentMoonImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                                       constant: 20),
-            currentMoonImageView.heightAnchor.constraint(equalTo: containerView.widthAnchor,
+            currentMoonImageView.heightAnchor.constraint(equalTo: widthAnchor,
                                                          multiplier: 0.3),
             currentMoonImageView.widthAnchor.constraint(equalTo: currentMoonImageView.heightAnchor),
             
@@ -144,7 +127,7 @@ class MainContentViewLunarCalendar: UIView {
                                                 constant: 16),
             currentMoonLabel.topAnchor.constraint(equalTo: currentMoonImageView.topAnchor,
                                             constant: 16),
-            currentMoonLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
+            currentMoonLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                  constant: -16),
             
             
@@ -152,12 +135,12 @@ class MainContentViewLunarCalendar: UIView {
             stackView.trailingAnchor.constraint(equalTo: currentMoonLabel.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: currentMoonImageView.bottomAnchor,
                                            constant: 20),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                               constant: -12)
         ])
     }
     
-    private func createPhaseView(phase: MoonModel) -> UIView {
+    private func createPhaseView(phase: Moon) -> UIView {
         let view = UIView()
         
         let imageView = UIImageView()

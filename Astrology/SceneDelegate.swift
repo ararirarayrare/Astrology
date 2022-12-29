@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let builder = Builder()
         let mainCoordinator = MainCoordinator(window: window, builder: builder)
-        
+
         mainCoordinator.start()
     }
 

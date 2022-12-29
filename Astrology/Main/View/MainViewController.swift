@@ -87,27 +87,6 @@ class MainViewController: ViewController {
             contentViewHeight
         ])
     }
-    
-    private func infoView(shouldSnap: Bool) {
-        guard !infoView.isAnimating else {
-            return
-        }
-
-        infoView.isAnimating = true
-
-        let neededConstant = shouldSnap ? -(infoView.bounds.height - headerView.bounds.height) : 0
-//        let neededAlpha = shouldSnap ? 0.75 : 0
-        
-        UIView.animate(withDuration: 0.4) { [weak self] in
-            self?.infoView.topConstraint?.constant = neededConstant
-            self?.infoView.alpha = shouldSnap ? 0.3 : 1.0
-//            self?.infoView.blurEffectView.alpha = neededAlpha
-            self?.view.layoutIfNeeded()
-        } completion: { [weak self] _ in
-            self?.infoView.isAnimating = false
-        }
-    }
-    
 }
 
 extension MainViewController: UIScrollViewDelegate {
@@ -115,11 +94,14 @@ extension MainViewController: UIScrollViewDelegate {
         let y = scrollView.contentOffset.y
         
         if y >= 15 {
-            infoView(shouldSnap: true)
+            let constant = -(infoView.bounds.height - headerView.bounds.height)
+            infoView.animate(transparent: true, topConstraintConstant: constant)
+            headerView.shadow(hide: false)
         }
         
         if y <= -50 {
-            infoView(shouldSnap: false)
+            infoView.animate(transparent: false)
+            headerView.shadow(hide: true)
         }
     }
 }

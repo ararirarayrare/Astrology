@@ -10,9 +10,13 @@
 		04681C18295A236300B819AF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* MainContentView.swift */; };
 		04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* MainContentViewEssential.swift */; };
 		04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1C295A252400B819AF /* MainContentViewNumerology.swift */; };
-		04681C1F295A258700B819AF /* MainContentViewPredictionToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1E295A258700B819AF /* MainContentViewPredictionToday.swift */; };
+		04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1E295A258700B819AF /* MainContentViewPrediction.swift */; };
 		04681C21295A25DD00B819AF /* MainContentViewLunarCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C20295A25DD00B819AF /* MainContentViewLunarCalendar.swift */; };
-		04681C24295A2D4800B819AF /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C23295A2D4800B819AF /* MoonModel.swift */; };
+		04681C24295A2D4800B819AF /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C23295A2D4800B819AF /* Moon.swift */; };
+		04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C25295B434300B819AF /* MainContentViewMessage.swift */; };
+		04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */; };
+		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
+		04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
 		04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* MainViewController.swift */; };
@@ -29,9 +33,13 @@
 		04681C17295A236300B819AF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		04681C1A295A248A00B819AF /* MainContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewEssential.swift; sourceTree = "<group>"; };
 		04681C1C295A252400B819AF /* MainContentViewNumerology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerology.swift; sourceTree = "<group>"; };
-		04681C1E295A258700B819AF /* MainContentViewPredictionToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewPredictionToday.swift; sourceTree = "<group>"; };
+		04681C1E295A258700B819AF /* MainContentViewPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewPrediction.swift; sourceTree = "<group>"; };
 		04681C20295A25DD00B819AF /* MainContentViewLunarCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewLunarCalendar.swift; sourceTree = "<group>"; };
-		04681C23295A2D4800B819AF /* MoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonModel.swift; sourceTree = "<group>"; };
+		04681C23295A2D4800B819AF /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
+		04681C25295B434300B819AF /* MainContentViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewMessage.swift; sourceTree = "<group>"; };
+		04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythm.swift; sourceTree = "<group>"; };
+		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
+		04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoViewDetails.swift; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,24 +65,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04681C19295A246700B819AF /* ContentView */ = {
+		04681C19295A246700B819AF /* Content */ = {
 			isa = PBXGroup;
 			children = (
 				04681C17295A236300B819AF /* MainContentView.swift */,
 				04681C1A295A248A00B819AF /* MainContentViewEssential.swift */,
 				04681C1C295A252400B819AF /* MainContentViewNumerology.swift */,
-				04681C1E295A258700B819AF /* MainContentViewPredictionToday.swift */,
+				04681C1E295A258700B819AF /* MainContentViewPrediction.swift */,
 				04681C20295A25DD00B819AF /* MainContentViewLunarCalendar.swift */,
+				04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */,
+				04681C25295B434300B819AF /* MainContentViewMessage.swift */,
 			);
-			path = ContentView;
+			path = Content;
 			sourceTree = "<group>";
 		};
 		04681C22295A2D2600B819AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04681C23295A2D4800B819AF /* MoonModel.swift */,
+				04681C23295A2D4800B819AF /* Moon.swift */,
+				04C6F572295C5C580005B057 /* Biorythm.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04C6F574295C7C480005B057 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				04DEDA6A29577C0400DD5636 /* MainInfoView.swift */,
+				04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		04DEDA3D295735BF00DD5636 = {
@@ -139,8 +159,8 @@
 			children = (
 				04DEDA4D295735BF00DD5636 /* MainViewController.swift */,
 				04DEDA682957649300DD5636 /* MainHeaderView.swift */,
-				04DEDA6A29577C0400DD5636 /* MainInfoView.swift */,
-				04681C19295A246700B819AF /* ContentView */,
+				04C6F574295C7C480005B057 /* Info */,
+				04681C19295A246700B819AF /* Content */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,20 +235,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04681C24295A2D4800B819AF /* MoonModel.swift in Sources */,
+				04681C24295A2D4800B819AF /* Moon.swift in Sources */,
+				04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */,
 				04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */,
 				04DEDA692957649300DD5636 /* MainHeaderView.swift in Sources */,
 				04DEDA65295738D900DD5636 /* ViewController.swift in Sources */,
 				04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */,
+				04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */,
 				04DEDA6B29577C0400DD5636 /* MainInfoView.swift in Sources */,
+				04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */,
 				04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */,
 				04681C21295A25DD00B819AF /* MainContentViewLunarCalendar.swift in Sources */,
 				04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */,
 				04DEDA622957362200DD5636 /* Coordinator.swift in Sources */,
 				04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */,
+				04C6F573295C5C580005B057 /* Biorythm.swift in Sources */,
 				04DEDA5F2957361900DD5636 /* Builder.swift in Sources */,
 				04681C18295A236300B819AF /* MainContentView.swift in Sources */,
-				04681C1F295A258700B819AF /* MainContentViewPredictionToday.swift in Sources */,
+				04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let today = Date()
         
-        let moonModel = MoonModel.withNextPhase(fromDate: today)
+        let moonModel = Moon.withNextPhase(fromDate: today)
         
-        print("Today :", MoonModel.Phase.forDate(today))
+        print("Today :", MoonPhase.forDate(today))
         
         print("Next phase :", moonModel.phase, moonModel.date)
         

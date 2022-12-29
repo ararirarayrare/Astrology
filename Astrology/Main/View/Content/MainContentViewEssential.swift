@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentViewEssential: UIView {
+class MainContentViewEssential: MainContentViewItem {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -21,12 +21,10 @@ class MainContentViewEssential: UIView {
     }()
     
     init(parameters dict: [String : Float]) {
-        super.init(frame: .zero)
+        super.init()
         
         backgroundColor = .clear
-        
-        layout()
-        
+                
         for (title, progress) in dict {
             let indicatorView = createIndicatorView(title: title, progress: progress)
             stackView.addArrangedSubview(indicatorView)
@@ -37,18 +35,16 @@ class MainContentViewEssential: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func layout() {
+    override func layout() {
+        super.layout()
+        
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                               constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                constant: -20),
-            stackView.topAnchor.constraint(equalTo: topAnchor,
-                                          constant: 8),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                             constant: -8)
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

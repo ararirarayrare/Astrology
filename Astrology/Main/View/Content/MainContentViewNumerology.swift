@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentViewNumerology: UIView {
+class MainContentViewNumerology: MainContentViewItem {
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -28,8 +28,8 @@ class MainContentViewNumerology: UIView {
         return button
     }()
     
-    init() {
-        super.init(frame: .zero)
+    override init() {
+        super.init()
         
         isUserInteractionEnabled = true
                         
@@ -38,8 +38,6 @@ class MainContentViewNumerology: UIView {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         backgroundImageView.addGestureRecognizer(tapGesture)
-
-        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -52,19 +50,16 @@ class MainContentViewNumerology: UIView {
         print("tapped")
     }
     
-    private func layout() {
+    override func layout() {
+        super.layout()
         addSubview(backgroundImageView)
         addSubview(button)
         
         NSLayoutConstraint.activate([
-            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                         constant: 24),
-            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                          constant: -24),
-            backgroundImageView.topAnchor.constraint(equalTo: topAnchor,
-                                                     constant: 4),
-            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                                        constant: -4),
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             
             button.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor,
