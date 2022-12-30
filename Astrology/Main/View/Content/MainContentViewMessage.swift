@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MainContentViewMessage: MainContentViewItem {
+class MainContentViewMessage: MainContentViewItem, Coordinating {
     
     private let sendButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        button.setTitle("Chat", for: .normal)
+        button.setTitle("Send!", for: .normal)
         button.backgroundColor = .systemTeal.withAlphaComponent(0.35)
         button.setTitleColor(.white, for: .normal)
         
@@ -26,21 +26,25 @@ class MainContentViewMessage: MainContentViewItem {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .left
         label.textColor = .white
-        label.text = "Write a letter to the astrologer and get an individual answer within 24 hours"
+        label.text = "Personal message to the astrologer"
         label.numberOfLines = 0
         return label
     }()
     
-    override init() {
+    var coordinator: Coordinator?
+    
+    init(coordinator: Coordinator?) {
+        self.coordinator = coordinator
         super.init()
 
         backgroundColor = .blue.withAlphaComponent(0.4)
         layer.cornerRadius = 20
+        
+        sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
     }
-    
     
     override func layout() {
         super.layout()
@@ -65,6 +69,11 @@ class MainContentViewMessage: MainContentViewItem {
             label.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor,
                                             constant: -24)
         ])
+    }
+    
+    @objc
+    private func sendTapped() {
+        coordinator?.eventOccured(.message)
     }
     
     required init?(coder: NSCoder) {

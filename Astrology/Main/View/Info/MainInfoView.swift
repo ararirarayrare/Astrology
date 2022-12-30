@@ -10,7 +10,7 @@ import UIKit
 class MainInfoView: UIView {
     
     private(set) var isAnimating: Bool = false
-    
+        
     var topConstraint: NSLayoutConstraint?
     
     private let backgroundImageView: UIImageView = {
@@ -48,7 +48,20 @@ class MainInfoView: UIView {
         
         userImageView.image = UIImage(named: "user")
         
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 16
+        layer.shadowOffset.height = 16
+        layer.shadowOpacity = 0
+        
         layout()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if layer.shadowPath == nil, bounds != .zero {
+            layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 0).cgPath
+        }
     }
 
     func animate(transparent: Bool, topConstraintConstant constant: CGFloat = 0) {
@@ -57,13 +70,14 @@ class MainInfoView: UIView {
         }
         
         isAnimating = true
-        
-        UIView.animate(withDuration: 0.4) { [weak self] in
+            
+        UIView.animate(withDuration: 0.35) { [weak self] in
             self?.topConstraint?.constant = constant
-            self?.alpha = transparent ? 0.3 : 1.0
+            self?.backgroundImageView.alpha = transparent ? 0.5 : 1.0
             self?.userImageView.alpha = transparent ? 0 : 1
             self?.detailsView.alpha = transparent ? 0 : 1
             self?.superview?.layoutIfNeeded()
+            self?.layer.shadowOpacity = transparent ? 0.95 : 0
         } completion: { [weak self] _ in
             self?.isAnimating = false
         }

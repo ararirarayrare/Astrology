@@ -9,8 +9,8 @@ import UIKit
 
 class MainViewController: ViewController {
     
-    private let headerView: MainHeaderView = {
-        let headerView = MainHeaderView()
+    private lazy var headerView: MainHeaderView = {
+        let headerView = MainHeaderView(coordinator: self.coordinator)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()
@@ -21,8 +21,8 @@ class MainViewController: ViewController {
         return infoView
     }()
 
-    private let contentView: MainContentView = {
-        let contentView = MainContentView()
+    private lazy var contentView: MainContentView = {
+        let contentView = MainContentView(coordinator: self.coordinator)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()
@@ -31,21 +31,22 @@ class MainViewController: ViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.delegate = self
+//        scrollView.bounces = false
         return scrollView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        view.backgroundColor = .blue.withAlphaComponent(0.1)
-        
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
+                
         layout()
     }
 
     private func layout() {
         view.addSubview(headerView)
         view.insertSubview(infoView, belowSubview: headerView)
-        view.addSubview(scrollView)
+        view.insertSubview(scrollView, belowSubview: infoView)
         scrollView.addSubview(contentView)
         
         let infoViewTopConstraint = infoView.topAnchor.constraint(equalTo: view.topAnchor)
@@ -96,12 +97,13 @@ extension MainViewController: UIScrollViewDelegate {
         if y >= 15 {
             let constant = -(infoView.bounds.height - headerView.bounds.height)
             infoView.animate(transparent: true, topConstraintConstant: constant)
-            headerView.shadow(hide: false)
+//            headerView.shadow(hide: false)
         }
         
         if y <= -50 {
             infoView.animate(transparent: false)
-            headerView.shadow(hide: true)
+//            headerView.shadow(hide: true)
         }
+        
     }
 }

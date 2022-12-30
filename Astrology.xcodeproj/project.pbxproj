@@ -17,6 +17,7 @@
 		04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */; };
 		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
 		04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */; };
+		04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E690295F6C43001524EF /* MessageViewController.swift */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
 		04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* MainViewController.swift */; };
@@ -40,6 +41,7 @@
 		04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythm.swift; sourceTree = "<group>"; };
 		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
 		04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoViewDetails.swift; sourceTree = "<group>"; };
+		04C8E690295F6C43001524EF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,22 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		04C8E68F295F6C27001524EF /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				04C8E692295F6C70001524EF /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		04C8E692295F6C70001524EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04C8E690295F6C43001524EF /* MessageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04DEDA3D295735BF00DD5636 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +137,7 @@
 				04DEDA49295735BF00DD5636 /* AppDelegate.swift */,
 				04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */,
 				04DEDA632957367C00DD5636 /* Main */,
+				04C8E68F295F6C27001524EF /* Message */,
 				04DEDA52295735C100DD5636 /* Assets.xcassets */,
 				04DEDA54295735C100DD5636 /* LaunchScreen.storyboard */,
 				04DEDA57295735C100DD5636 /* Info.plist */,
@@ -249,6 +268,7 @@
 				04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */,
 				04DEDA622957362200DD5636 /* Coordinator.swift in Sources */,
 				04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */,
+				04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */,
 				04C6F573295C5C580005B057 /* Biorythm.swift in Sources */,
 				04DEDA5F2957361900DD5636 /* Builder.swift in Sources */,
 				04681C18295A236300B819AF /* MainContentView.swift in Sources */,

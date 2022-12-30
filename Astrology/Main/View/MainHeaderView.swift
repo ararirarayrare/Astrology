@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainHeaderView: UIView {
+class MainHeaderView: UIView, Coordinating {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -42,19 +42,27 @@ class MainHeaderView: UIView {
         return button
     }()
     
+    var coordinator: Coordinator?
             
-    init() {
+    init(coordinator: Coordinator?) {
+        self.coordinator = coordinator
         super.init(frame: .zero)
         
-        backgroundColor = .clear
-        
+        setup()
         layout()
     }
     
-    func shadow(hide: Bool) {
-        
+    @objc
+    private func messageTapped() {
+        coordinator?.eventOccured(.message)
     }
     
+    private func setup() {
+        backgroundColor = .clear
+
+        messageButton.addTarget(self, action: #selector(messageTapped), for: .touchUpInside)
+    }
+
     private func layout() {
         addSubview(messageButton)
         addSubview(titleLabel)

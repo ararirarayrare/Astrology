@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentView: UIView {
+class MainContentView: UIView, Coordinating {
     
     private let essentialView: MainContentViewEssential = {
         let view = MainContentViewEssential(parameters: [
@@ -68,9 +68,9 @@ class MainContentView: UIView {
         return view
     }()
     
-    private let messageView: MainContentViewMessage = {
-        let messageView = MainContentViewMessage()
-
+    private lazy var messageView: MainContentViewMessage = {
+        let messageView = MainContentViewMessage(coordinator: self.coordinator)
+        
         return messageView
     }()
     
@@ -84,7 +84,11 @@ class MainContentView: UIView {
         return view
     }()
     
-    init() {
+    
+    var coordinator: Coordinator?
+    
+    init(coordinator: Coordinator?) {
+        self.coordinator = coordinator
         super.init(frame: .zero)
         
         layout()
@@ -109,9 +113,9 @@ class MainContentView: UIView {
             
             
             numerologyView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                   constant: 20),
+                                                    constant: 20),
             numerologyView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                    constant: -20),
+                                                     constant: -20),
             numerologyView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
                                                 constant: 20),
             numerologyView.heightAnchor.constraint(equalToConstant: 80.0),
@@ -120,13 +124,13 @@ class MainContentView: UIView {
             todayPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             todayPredictionView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
-                                                constant: 20),
+                                                     constant: 20),
             
             
             lunarCalendarView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                      constant: 20),
+                                                       constant: 20),
             lunarCalendarView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                       constant: -20),
+                                                        constant: -20),
             lunarCalendarView.topAnchor.constraint(equalTo: todayPredictionView.bottomAnchor,
                                                    constant: 20),
             
@@ -137,20 +141,20 @@ class MainContentView: UIView {
             biorythmView.topAnchor.constraint(equalTo: lunarCalendarView.bottomAnchor,
                                               constant: 20),
             biorythmView.heightAnchor.constraint(equalToConstant: 240),
-
+            
             
             messageView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                constant: 20),
+                                                 constant: 20),
             messageView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                   constant: -20),
             messageView.topAnchor.constraint(equalTo: biorythmView.bottomAnchor,
                                              constant: 20),
-
+            
             
             yearlyPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             yearlyPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             yearlyPredictionView.topAnchor.constraint(equalTo: messageView.bottomAnchor,
-                                                constant: 20),
+                                                      constant: 20),
             yearlyPredictionView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                          constant: -20)
         ])

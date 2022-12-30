@@ -18,4 +18,8 @@ class Builder {
         return vc
     }
     
+    func createMessage(coordinator: Coordinator?) -> MessageViewController {
+        let vc = MessageViewController(coordinator: coordinator)
+        return vc
+    }
 }
