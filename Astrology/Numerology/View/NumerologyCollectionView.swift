@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol NumerologyCollectionViewScrollDelegate: AnyObject {
+    func collectionViewDidScroll(_ collectionView: UICollectionView)
+}
+
 class NumerologyCollectionView: UICollectionView {
+    
+    weak var scrollDelegate: NumerologyCollectionViewScrollDelegate?
     
     init() {
         let layout = NumerologyCollectionViewLayout()
@@ -19,11 +25,18 @@ class NumerologyCollectionView: UICollectionView {
         
         delegate = self
         dataSource = self
+                
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         
         let cellClass = NumerologyCollectionViewCell.self
         let identifier = String(describing: NumerologyCollectionViewCell.self)
         
         register(cellClass, forCellWithReuseIdentifier: identifier)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.collectionViewDidScroll(self)
     }
     
     required init?(coder: NSCoder) {
