@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentViewMessage: MainContentViewItem, Coordinating {
+class MainContentViewMessage: MainContentViewItem {
     
     private let sendButton: UIButton = {
         let button = UIButton(type: .system)
@@ -34,13 +34,13 @@ class MainContentViewMessage: MainContentViewItem, Coordinating {
         return label
     }()
     
-    var coordinator: Coordinator?
+    var coordinator: MainCoordinator?
     
-    init(coordinator: Coordinator?) {
+    init(coordinator: MainCoordinator?) {
         self.coordinator = coordinator
         super.init()
 
-        backgroundColor = .blue.withAlphaComponent(0.4)
+        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
         layer.cornerRadius = 20
         
         sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)

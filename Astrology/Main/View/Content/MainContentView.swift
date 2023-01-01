@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentView: UIView, Coordinating {
+class MainContentView: UIView {
     
     private let essentialView: MainContentViewEssential = {
         let view = MainContentViewEssential(parameters: [
@@ -19,8 +19,8 @@ class MainContentView: UIView, Coordinating {
         return view
     }()
     
-    private let numerologyView: MainContentViewNumerology = {
-        let view = MainContentViewNumerology()
+    private lazy var numerologyView: MainContentViewNumerology = {
+        let view = MainContentViewNumerology(coordinator: self.coordinator)
         
         return view
     }()
@@ -85,9 +85,9 @@ class MainContentView: UIView, Coordinating {
     }()
     
     
-    var coordinator: Coordinator?
+    let coordinator: MainCoordinator
     
-    init(coordinator: Coordinator?) {
+    init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
         super.init(frame: .zero)
         

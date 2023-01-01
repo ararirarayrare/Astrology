@@ -95,7 +95,7 @@ class MessageViewController: ViewController {
     
     @objc
     private func backTapped() {
-        coordinator?.eventOccured(.pop)
+        coordinator.eventOccured(.pop)
     }
     
     private func setup() {

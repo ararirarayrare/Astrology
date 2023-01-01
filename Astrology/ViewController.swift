@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, Coordinating {
+class ViewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
-    var coordinator: Coordinator?
+    let coordinator: MainCoordinator
     
-    init(coordinator: Coordinator?) {
+    init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }

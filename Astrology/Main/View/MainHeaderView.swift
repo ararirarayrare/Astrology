@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainHeaderView: UIView, Coordinating {
+class MainHeaderView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -42,9 +42,9 @@ class MainHeaderView: UIView, Coordinating {
         return button
     }()
     
-    var coordinator: Coordinator?
+    let coordinator: MainCoordinator
             
-    init(coordinator: Coordinator?) {
+    init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
         super.init(frame: .zero)
         
@@ -54,7 +54,7 @@ class MainHeaderView: UIView, Coordinating {
     
     @objc
     private func messageTapped() {
-        coordinator?.eventOccured(.message)
+        coordinator.eventOccured(.message)
     }
     
     private func setup() {

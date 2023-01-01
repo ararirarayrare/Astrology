@@ -18,6 +18,10 @@
 		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
 		04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */; };
 		04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E690295F6C43001524EF /* MessageViewController.swift */; };
+		04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6942960AEC4001524EF /* NumerologyViewController.swift */; };
+		04C8E6982960D00D001524EF /* NumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */; };
+		04C8E69A2961D90B001524EF /* NumerologyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6992961D90B001524EF /* NumerologyCollectionViewLayout.swift */; };
+		04C8E69C2961DF4A001524EF /* NumerologyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E69B2961DF4A001524EF /* NumerologyCollectionViewCell.swift */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
 		04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* MainViewController.swift */; };
@@ -42,6 +46,10 @@
 		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
 		04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoViewDetails.swift; sourceTree = "<group>"; };
 		04C8E690295F6C43001524EF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		04C8E6942960AEC4001524EF /* NumerologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewController.swift; sourceTree = "<group>"; };
+		04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCollectionView.swift; sourceTree = "<group>"; };
+		04C8E6992961D90B001524EF /* NumerologyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCollectionViewLayout.swift; sourceTree = "<group>"; };
+		04C8E69B2961DF4A001524EF /* NumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +123,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04C8E6932960AE9B001524EF /* Numerology */ = {
+			isa = PBXGroup;
+			children = (
+				04C8E6962960CFF2001524EF /* View */,
+			);
+			path = Numerology;
+			sourceTree = "<group>";
+		};
+		04C8E6962960CFF2001524EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04C8E6942960AEC4001524EF /* NumerologyViewController.swift */,
+				04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */,
+				04C8E69B2961DF4A001524EF /* NumerologyCollectionViewCell.swift */,
+				04C8E6992961D90B001524EF /* NumerologyCollectionViewLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04DEDA3D295735BF00DD5636 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +164,7 @@
 				04DEDA49295735BF00DD5636 /* AppDelegate.swift */,
 				04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */,
 				04DEDA632957367C00DD5636 /* Main */,
+				04C8E6932960AE9B001524EF /* Numerology */,
 				04C8E68F295F6C27001524EF /* Message */,
 				04DEDA52295735C100DD5636 /* Assets.xcassets */,
 				04DEDA54295735C100DD5636 /* LaunchScreen.storyboard */,
@@ -259,8 +287,11 @@
 				04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */,
 				04DEDA692957649300DD5636 /* MainHeaderView.swift in Sources */,
 				04DEDA65295738D900DD5636 /* ViewController.swift in Sources */,
+				04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */,
 				04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */,
+				04C8E69C2961DF4A001524EF /* NumerologyCollectionViewCell.swift in Sources */,
 				04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */,
+				04C8E6982960D00D001524EF /* NumerologyCollectionView.swift in Sources */,
 				04DEDA6B29577C0400DD5636 /* MainInfoView.swift in Sources */,
 				04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */,
 				04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */,
@@ -271,6 +302,7 @@
 				04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */,
 				04C6F573295C5C580005B057 /* Biorythm.swift in Sources */,
 				04DEDA5F2957361900DD5636 /* Builder.swift in Sources */,
+				04C8E69A2961D90B001524EF /* NumerologyCollectionViewLayout.swift in Sources */,
 				04681C18295A236300B819AF /* MainContentView.swift in Sources */,
 				04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */,
 			);

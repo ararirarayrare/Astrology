@@ -17,15 +17,12 @@ protocol Coordinator {
     
     func start()
         
-    func eventOccured(_ event: CoordinatorEvent)
 }
 
-protocol Coordinating {
-    var coordinator: Coordinator? { get set }
-}
-
-enum CoordinatorEvent {
-    case message, pop
+enum MainCoordinatorEvent {
+    case message, numerology
+         
+    case pop
 }
 
 class MainCoordinator: Coordinator {
@@ -51,11 +48,16 @@ class MainCoordinator: Coordinator {
         self.window?.rootViewController = navigationController
     }
     
-    func eventOccured(_ event: CoordinatorEvent) {
+    func eventOccured(_ event: MainCoordinatorEvent) {
         switch event {
         case .message:
             let vc = builder.createMessage(coordinator: self)
             navigationController?.pushViewController(vc, animated: true)
+            
+        case .numerology:
+            let vc = builder.createNumerology(coordinator: self)
+            navigationController?.pushViewController(vc, animated: true)
+            
         case .pop:
             navigationController?.popViewController(animated: true)
         }

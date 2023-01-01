@@ -13,13 +13,18 @@ class Builder {
         return NavigationController(rootViewController: rootViewController)
     }
     
-    func createMain(coordinator: Coordinator?) -> MainViewController {
+    func createMain(coordinator: MainCoordinator) -> MainViewController {
         let vc = MainViewController(coordinator: coordinator)
         return vc
     }
     
-    func createMessage(coordinator: Coordinator?) -> MessageViewController {
+    func createMessage(coordinator: MainCoordinator) -> MessageViewController {
         let vc = MessageViewController(coordinator: coordinator)
+        return vc
+    }
+    
+    func createNumerology(coordinator: MainCoordinator) -> NumerologyViewController {
+        let vc = NumerologyViewController(coordinator: coordinator)
         return vc
     }
 }

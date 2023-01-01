@@ -52,7 +52,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
     init(currentPhase: Moon, nextPhases: [Moon]) {
         super.init()
         
-        backgroundColor = .blue.withAlphaComponent(0.25)
+        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
         layer.cornerRadius = 20
         
         currentMoonImageView.image = currentPhase.image
