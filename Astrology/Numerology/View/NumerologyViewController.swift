@@ -53,6 +53,8 @@ class NumerologyViewController: ViewController {
         super.viewDidLayoutSubviews()
         
         collectionView.contentInset.top = titleLabel.frame.minY + 8
+        
+        
     }
     
     @objc

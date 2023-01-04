@@ -30,17 +30,80 @@ class MainViewController: ViewController {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.delegate = self
-//        scrollView.bounces = false
+        scrollView.isScrollEnabled = false
         return scrollView
     }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
-                
+        setup()
         layout()
+    }
+    
+    @objc
+    private func panned(_ gesture: UIPanGestureRecognizer) {
+        guard scrollView.contentOffset.y <= 0, !infoView.isAnimating else {
+            return
+        }
+        
+        let translation = gesture.translation(in: view)
+                
+        let offset = (infoView.bounds.height - headerView.bounds.height)
+        
+        let initialConstant = infoView.isOpen ? 0 : -offset
+        
+        let panningInCorrectDirection = (infoView.isOpen && translation.y < 0) || (!infoView.isOpen && translation.y > 0)
+        
+        if panningInCorrectDirection, !infoView.isPrehidden {
+                
+            infoView.prehide()
+            
+            if scrollView.isScrollEnabled { scrollView.isScrollEnabled = false }
+        }
+        
+        print(translation.y)
+                
+        switch gesture.state {
+        case .changed:
+            
+            let neededConstant = (initialConstant + translation.y)
+            
+            guard (-offset...0).contains(neededConstant) else {
+                return
+            }
+
+            infoView.topConstraint?.constant = neededConstant
+            view.layoutIfNeeded()
+            
+        case .ended, .cancelled:
+            
+            let shouldHide = infoView.isOpen ? (-translation.y >= 60) : (translation.y < 60)
+            let constant = shouldHide ? -offset : 0
+            
+            infoView.animate(transparent: shouldHide,
+                             topConstraintConstant: constant) { [weak self] in
+                
+                self?.scrollView.isScrollEnabled = shouldHide
+                print(self!.scrollView.isScrollEnabled)
+            }
+            
+            
+
+        default:
+            ()
+        }
+        
+        
+    }
+    
+    private func setup() {
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
+        panGesture.delegate = self
+        contentView.addGestureRecognizer(panGesture)
     }
 
     private func layout() {
@@ -90,20 +153,8 @@ class MainViewController: ViewController {
     }
 }
 
-extension MainViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = scrollView.contentOffset.y
-        
-        if y >= 15 {
-            let constant = -(infoView.bounds.height - headerView.bounds.height)
-            infoView.animate(transparent: true, topConstraintConstant: constant)
-//            headerView.shadow(hide: false)
-        }
-        
-        if y <= -50 {
-            infoView.animate(transparent: false)
-//            headerView.shadow(hide: true)
-        }
-        
+extension MainViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

@@ -10,6 +10,10 @@ import UIKit
 class MainInfoView: UIView {
     
     private(set) var isAnimating: Bool = false
+    
+    private(set) var isPrehidden: Bool = false
+    
+    var isOpen: Bool = true
         
     var topConstraint: NSLayoutConstraint?
     
@@ -63,8 +67,24 @@ class MainInfoView: UIView {
             layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 0).cgPath
         }
     }
+    
+    func prehide() {
+        guard !isPrehidden else {
+            return
+        }
+        
+        isPrehidden = true
+        
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.backgroundImageView.alpha = 0.5
+            self?.userImageView.alpha = 0.2
+            self?.detailsView.alpha = 0.2
+        }
+    }
 
-    func animate(transparent: Bool, topConstraintConstant constant: CGFloat = 0) {
+    func animate(transparent: Bool,
+                 topConstraintConstant constant: CGFloat = 0,
+                 completion: @escaping () -> Void) {
         guard !isAnimating, topConstraint?.constant != constant else {
             return
         }
@@ -76,10 +96,13 @@ class MainInfoView: UIView {
             self?.backgroundImageView.alpha = transparent ? 0.5 : 1.0
             self?.userImageView.alpha = transparent ? 0 : 1
             self?.detailsView.alpha = transparent ? 0 : 1
-            self?.superview?.layoutIfNeeded()
             self?.layer.shadowOpacity = transparent ? 0.95 : 0
+            self?.superview?.layoutIfNeeded()
         } completion: { [weak self] _ in
             self?.isAnimating = false
+            self?.isOpen = !transparent
+            self?.isPrehidden = false
+            completion()
         }
         
     }
