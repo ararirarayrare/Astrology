@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A99952966EABB0080CF93 /* NumerologyTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A99942966EABB0080CF93 /* NumerologyTitleLabel.swift */; };
 		04681C18295A236300B819AF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* MainContentView.swift */; };
 		04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* MainContentViewEssential.swift */; };
 		04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1C295A252400B819AF /* MainContentViewNumerology.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040A99942966EABB0080CF93 /* NumerologyTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyTitleLabel.swift; sourceTree = "<group>"; };
 		04681C17295A236300B819AF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		04681C1A295A248A00B819AF /* MainContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewEssential.swift; sourceTree = "<group>"; };
 		04681C1C295A252400B819AF /* MainContentViewNumerology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerology.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				04C8E6942960AEC4001524EF /* NumerologyViewController.swift */,
+				040A99942966EABB0080CF93 /* NumerologyTitleLabel.swift */,
 				04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */,
 				04C8E69B2961DF4A001524EF /* NumerologyCollectionViewCell.swift */,
 				04C8E6992961D90B001524EF /* NumerologyCollectionViewLayout.swift */,
@@ -290,6 +293,7 @@
 				04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */,
 				04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */,
 				04C8E69C2961DF4A001524EF /* NumerologyCollectionViewCell.swift in Sources */,
+				040A99952966EABB0080CF93 /* NumerologyTitleLabel.swift in Sources */,
 				04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */,
 				04C8E6982960D00D001524EF /* NumerologyCollectionView.swift in Sources */,
 				04DEDA6B29577C0400DD5636 /* MainInfoView.swift in Sources */,

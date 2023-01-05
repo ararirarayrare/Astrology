@@ -11,19 +11,8 @@ class MainInfoViewDetails: UIStackView {
     
     init(details: [String : String]) {
         super.init(frame: .zero)
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-//        backgroundColor = .blue
-        
-        axis = .vertical
-        spacing = 2
-        distribution = .fillEqually
-            
-        for (title, subtitle) in details {
-            let view = createDetailView(title: title, subtitle: subtitle)
-            addArrangedSubview(view)
-        }
+                        
+        setup(with: details)
     }
     
     private func createDetailView(title: String, subtitle: String) -> UIView {
@@ -64,6 +53,17 @@ class MainInfoViewDetails: UIStackView {
         ])
         
         return view
+    }
+    
+    private func setup(with details: [String : String]) {
+        axis = .vertical
+        spacing = 2
+        distribution = .fillEqually
+            
+        for (title, subtitle) in details {
+            let view = createDetailView(title: title, subtitle: subtitle)
+            addArrangedSubview(view)
+        }
     }
     
     required init(coder: NSCoder) {

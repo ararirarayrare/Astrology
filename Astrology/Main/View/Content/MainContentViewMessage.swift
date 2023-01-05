@@ -40,10 +40,7 @@ class MainContentViewMessage: MainContentViewItem {
         self.coordinator = coordinator
         super.init()
 
-        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
-        layer.cornerRadius = 20
-        
-        sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
+        setup()
     }
     
     override func layout() {
@@ -74,6 +71,13 @@ class MainContentViewMessage: MainContentViewItem {
     @objc
     private func sendTapped() {
         coordinator?.eventOccured(.message)
+    }
+    
+    private func setup() {
+        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
+        layer.cornerRadius = 20
+        
+        sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {

@@ -13,7 +13,7 @@ class MainInfoView: UIView {
     
     private(set) var isPrehidden: Bool = false
     
-    var isOpen: Bool = true
+    private(set)  var isOpen: Bool = true
         
     var topConstraint: NSLayoutConstraint?
     
@@ -43,6 +43,7 @@ class MainInfoView: UIView {
         ]
         
         let view = MainInfoViewDetails(details: details)
+        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
@@ -50,13 +51,7 @@ class MainInfoView: UIView {
     init() {
         super.init(frame: .zero)
         
-        userImageView.image = UIImage(named: "user")
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 16
-        layer.shadowOffset.height = 16
-        layer.shadowOpacity = 0
-        
+        setup()
         layout()
     }
     
@@ -85,6 +80,7 @@ class MainInfoView: UIView {
     func animate(transparent: Bool,
                  topConstraintConstant constant: CGFloat = 0,
                  completion: @escaping () -> Void) {
+        
         guard !isAnimating, topConstraint?.constant != constant else {
             return
         }
@@ -105,6 +101,15 @@ class MainInfoView: UIView {
             completion()
         }
         
+    }
+    
+    private func setup() {
+        userImageView.image = UIImage(named: "user")
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 16
+        layer.shadowOffset.height = 16
+        layer.shadowOpacity = 0
     }
     
     private func layout() {
@@ -133,9 +138,7 @@ class MainInfoView: UIView {
                                                  constant: 32),
             detailsView.trailingAnchor.constraint(equalTo:backgroundImageView.centerXAnchor),
             detailsView.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor,
-                                                constant: -8),
-//            detailsView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor,
-//                                                multiplier: 0.6)
+                                                constant: -8)
         ])
     }
     

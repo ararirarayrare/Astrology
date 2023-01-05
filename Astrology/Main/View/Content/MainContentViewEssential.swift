@@ -20,15 +20,10 @@ class MainContentViewEssential: MainContentViewItem {
         return stackView
     }()
     
-    init(parameters dict: [String : Float]) {
+    init(parameters: [String : Float]) {
         super.init()
         
-        backgroundColor = .clear
-                
-        for (title, progress) in dict {
-            let indicatorView = createIndicatorView(title: title, progress: progress)
-            stackView.addArrangedSubview(indicatorView)
-        }
+        setup(with: parameters)
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +41,15 @@ class MainContentViewEssential: MainContentViewItem {
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    private func setup(with parameters: [String : Float]) {
+        backgroundColor = .clear
+                
+        for (title, progress) in parameters {
+            let indicatorView = createIndicatorView(title: title, progress: progress)
+            stackView.addArrangedSubview(indicatorView)
+        }
     }
     
     private func createIndicatorView(title: String, progress: Float) -> UIView {

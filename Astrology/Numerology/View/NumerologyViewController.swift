@@ -16,17 +16,10 @@ class NumerologyViewController: ViewController {
         button.tintColor = .white
         return button
     }()
-    
-    private var titleIsAnimating = false
-    private let titleLabel: UILabel = {
-        let label = UILabel()
+
+    private let titleLabel: NumerologyTitleLabel = {
+        let label = NumerologyTitleLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Copperplate Bold", size: 26)
-        label.textColor = .white
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 2
-        
         label.text = "What the numbers says about you?"
         
         return label
@@ -42,10 +35,7 @@ class NumerologyViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
-        backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        collectionView.scrollDelegate = self
-        
+        setup()
         layout()
     }
     
@@ -53,8 +43,6 @@ class NumerologyViewController: ViewController {
         super.viewDidLayoutSubviews()
         
         collectionView.contentInset.top = titleLabel.frame.minY + 8
-        
-        
     }
     
     @objc
@@ -92,38 +80,26 @@ class NumerologyViewController: ViewController {
         ])
     }
     
-}
-
-extension NumerologyViewController: NumerologyCollectionViewScrollDelegate {
-    func collectionViewDidScroll(_ collectionView: UICollectionView) {
+    private func setup() {
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
+        backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         
-        guard !titleIsAnimating else {
-            return
-        }
-        
-        let offsetY = -collectionView.contentOffset.y
-        let insetTop = collectionView.contentInset.top
-        
-        if offsetY <= (insetTop), titleLabel.alpha == 1 {
-            titleIsAnimating = true
-            
-            UIView.animate(withDuration: 0.3) { [weak self] in
-                self?.titleLabel.alpha = 0
-            } completion: { [weak self] _ in
-                self?.titleIsAnimating = false
+        collectionView.scrollHandler = { [weak titleLabel] collectionView in
+            guard let titleLabel = titleLabel else {
+                return
             }
-        }
-                
-        if offsetY >= (insetTop + 12), titleLabel.alpha == 0 {
-            titleIsAnimating = true
             
-            UIView.animate(withDuration: 0.3) { [weak self] in
-                self?.titleLabel.alpha = 1
-            } completion: { [weak self] _ in
-                self?.titleIsAnimating = false
+            let offsetY = -collectionView.contentOffset.y
+            let insetTop = collectionView.contentInset.top
+            
+            if offsetY <= (insetTop + 14), titleLabel.alpha == 1 {
+                titleLabel.animate(shouldHide: true)
             }
+                    
+            if offsetY >= (insetTop + 18), titleLabel.alpha == 0 {
+                titleLabel.animate(shouldHide: false)
+            }
+            
         }
-        
     }
 }
- 

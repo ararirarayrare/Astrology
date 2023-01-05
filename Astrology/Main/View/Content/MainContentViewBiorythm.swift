@@ -34,12 +34,7 @@ class MainContentViewBiorythm: MainContentViewItem {
     init(biorythms: [Biorythm]) {
         super.init()
         
-        backgroundColor = .clear
-        
-        biorythms.forEach {
-            let view = createBarView(biorythm: $0)
-            stackView.addArrangedSubview(view)
-        }
+        setup(with: biorythms)
     }
     
     required init?(coder: NSCoder) {
@@ -63,6 +58,15 @@ class MainContentViewBiorythm: MainContentViewItem {
             stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    private func setup(with biorythms: [Biorythm]) {
+        backgroundColor = .clear
+        
+        biorythms.forEach {
+            let view = createBarView(biorythm: $0)
+            stackView.addArrangedSubview(view)
+        }
     }
     
     private func createBarView(biorythm: Biorythm) -> UIView {

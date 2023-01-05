@@ -79,7 +79,6 @@ class MainContentView: UIView {
         let prediction = "2023 for Scorpio zodiac sign shall go all relaxing and soothing. From the beginning, planet Jupiter will make a positive move in your natal chart. Thus, you would store luck in your pockets and enjoy a comfortable living. All your hindrances will wear off, and you will move forward in life with ease. Later with Saturn in Aquarius zodiac sign, some delay in work would come. Shackles will be there. But the guts to break them shall approach you in the latter half of the year. \n\n For money matters, predicts the Scorpio Yearly Horoscope 2022, you will easily gain financial resources in the first half of the year. Thanks to the planet Jupiter, which will transit in your eleventh house and Virgo sign. The eleventh house is the house of wealth and the presence of Jupiter will give good results. Thus, you enjoy wealth. Further, there may be some expenditure in the last quarter of the year. So manage it carefully. Are you planning to invest? Plan it during the transit of Jupiter in the house of wealth."
         
         let view = MainContentViewPrediction(title: title, prediction: prediction)
-        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()

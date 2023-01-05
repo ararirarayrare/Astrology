@@ -51,46 +51,8 @@ class MainContentViewLunarCalendar: MainContentViewItem {
     
     init(currentPhase: Moon, nextPhases: [Moon]) {
         super.init()
-        
-        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
-        layer.cornerRadius = 20
-        
-        currentMoonImageView.image = currentPhase.image
-        
-        let attributedString = NSMutableAttributedString()
-        
-        attributedString.append(
-            NSAttributedString(
-                string: currentPhase.phase.string + "\n",
-                attributes: [
-                    .font : UIFont.boldSystemFont(ofSize: 20),
-                    .foregroundColor : UIColor.white
-                ]
-            )
-        )
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        let dateString = dateFormatter.string(from: currentPhase.date)
-        
-        attributedString.append(
-            NSAttributedString(
-                string: dateString,
-                attributes: [
-                    .font : UIFont.systemFont(ofSize: 18),
-                    .foregroundColor : UIColor.white
-                ]
-            )
-        )
-        
-        currentMoonLabel.attributedText = attributedString
-        
-        
-        for phase in nextPhases {
-            let view = createPhaseView(phase: phase)
-            stackView.addArrangedSubview(view)
-        }
-        
+    
+        setup(currentPhase: currentPhase, nextPhases: nextPhases)
     }
 
     required init?(coder: NSCoder) {
@@ -138,6 +100,47 @@ class MainContentViewLunarCalendar: MainContentViewItem {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                               constant: -12)
         ])
+    }
+    
+    private func setup(currentPhase: Moon, nextPhases: [Moon]) {
+        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
+        layer.cornerRadius = 20
+        
+        currentMoonImageView.image = currentPhase.image
+        
+        let attributedString = NSMutableAttributedString()
+        
+        attributedString.append(
+            NSAttributedString(
+                string: currentPhase.phase.string + "\n",
+                attributes: [
+                    .font : UIFont.boldSystemFont(ofSize: 20),
+                    .foregroundColor : UIColor.white
+                ]
+            )
+        )
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let dateString = dateFormatter.string(from: currentPhase.date)
+        
+        attributedString.append(
+            NSAttributedString(
+                string: dateString,
+                attributes: [
+                    .font : UIFont.systemFont(ofSize: 18),
+                    .foregroundColor : UIColor.white
+                ]
+            )
+        )
+        
+        currentMoonLabel.attributedText = attributedString
+        
+        
+        for phase in nextPhases {
+            let view = createPhaseView(phase: phase)
+            stackView.addArrangedSubview(view)
+        }
     }
     
     private func createPhaseView(phase: Moon) -> UIView {

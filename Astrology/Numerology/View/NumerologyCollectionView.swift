@@ -7,20 +7,23 @@
 
 import UIKit
 
-protocol NumerologyCollectionViewScrollDelegate: AnyObject {
-    func collectionViewDidScroll(_ collectionView: UICollectionView)
-}
-
 class NumerologyCollectionView: UICollectionView {
-    
-    weak var scrollDelegate: NumerologyCollectionViewScrollDelegate?
+        
+    var scrollHandler: ((UICollectionView) -> Void)?
     
     init() {
         let layout = NumerologyCollectionViewLayout()
         super.init(frame: .zero, collectionViewLayout: layout)
-        
         layout.delegate = self
         
+        setup()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollHandler?(self)
+    }
+    
+    private func setup() {
         backgroundColor = .clear
         
         delegate = self
@@ -33,10 +36,6 @@ class NumerologyCollectionView: UICollectionView {
         let identifier = String(describing: NumerologyCollectionViewCell.self)
         
         register(cellClass, forCellWithReuseIdentifier: identifier)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollDelegate?.collectionViewDidScroll(self)
     }
     
     required init?(coder: NSCoder) {
@@ -65,6 +64,5 @@ extension NumerologyCollectionView: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
         
         return (indexPath.item) % 3 == 0 ? 200 : 300
-        
     }
 }

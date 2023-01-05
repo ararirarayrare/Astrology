@@ -65,5 +65,4 @@ class MainContentViewPrediction: MainContentViewItem {
                                                     constant: -24)
         ])
     }
-    
 }

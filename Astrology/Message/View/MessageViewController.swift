@@ -33,8 +33,6 @@ class MessageViewController: ViewController {
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont(name: "Copperplate Bold", size: 24)
-//        label.textColor = .systemYellow
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
