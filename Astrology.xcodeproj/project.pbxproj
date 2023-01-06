@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040A99952966EABB0080CF93 /* NumerologyTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A99942966EABB0080CF93 /* NumerologyTitleLabel.swift */; };
+		046569E12968BBB60087A959 /* MainHeaderViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */; };
 		04681C18295A236300B819AF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* MainContentView.swift */; };
 		04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* MainContentViewEssential.swift */; };
 		04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1C295A252400B819AF /* MainContentViewNumerology.swift */; };
@@ -17,7 +18,7 @@
 		04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C25295B434300B819AF /* MainContentViewMessage.swift */; };
 		04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */; };
 		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
-		04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */; };
+		04C8E67E295DA689001524EF /* MainHeaderViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */; };
 		04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E690295F6C43001524EF /* MessageViewController.swift */; };
 		04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6942960AEC4001524EF /* NumerologyViewController.swift */; };
 		04C8E6982960D00D001524EF /* NumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */; };
@@ -31,12 +32,13 @@
 		04DEDA5F2957361900DD5636 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA5E2957361800DD5636 /* Builder.swift */; };
 		04DEDA622957362200DD5636 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA612957362200DD5636 /* Coordinator.swift */; };
 		04DEDA65295738D900DD5636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA64295738D900DD5636 /* ViewController.swift */; };
-		04DEDA692957649300DD5636 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA682957649300DD5636 /* MainHeaderView.swift */; };
-		04DEDA6B29577C0400DD5636 /* MainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA6A29577C0400DD5636 /* MainInfoView.swift */; };
+		04DEDA692957649300DD5636 /* MainBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA682957649300DD5636 /* MainBarView.swift */; };
+		04DEDA6B29577C0400DD5636 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		040A99942966EABB0080CF93 /* NumerologyTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyTitleLabel.swift; sourceTree = "<group>"; };
+		046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderViewAnimator.swift; sourceTree = "<group>"; };
 		04681C17295A236300B819AF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		04681C1A295A248A00B819AF /* MainContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewEssential.swift; sourceTree = "<group>"; };
 		04681C1C295A252400B819AF /* MainContentViewNumerology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerology.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		04681C25295B434300B819AF /* MainContentViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewMessage.swift; sourceTree = "<group>"; };
 		04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythm.swift; sourceTree = "<group>"; };
 		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
-		04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoViewDetails.swift; sourceTree = "<group>"; };
+		04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderViewDetails.swift; sourceTree = "<group>"; };
 		04C8E690295F6C43001524EF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04C8E6942960AEC4001524EF /* NumerologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewController.swift; sourceTree = "<group>"; };
 		04C8E6972960D00D001524EF /* NumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCollectionView.swift; sourceTree = "<group>"; };
@@ -62,8 +64,8 @@
 		04DEDA5E2957361800DD5636 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		04DEDA612957362200DD5636 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		04DEDA64295738D900DD5636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04DEDA682957649300DD5636 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
-		04DEDA6A29577C0400DD5636 /* MainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoView.swift; sourceTree = "<group>"; };
+		04DEDA682957649300DD5636 /* MainBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBarView.swift; sourceTree = "<group>"; };
+		04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +102,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04C6F574295C7C480005B057 /* Info */ = {
+		04C6F574295C7C480005B057 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				04DEDA6A29577C0400DD5636 /* MainInfoView.swift */,
-				04C8E67D295DA689001524EF /* MainInfoViewDetails.swift */,
+				04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */,
+				046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */,
+				04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */,
 			);
-			path = Info;
+			path = Header;
 			sourceTree = "<group>";
 		};
 		04C8E68F295F6C27001524EF /* Message */ = {
@@ -208,8 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				04DEDA4D295735BF00DD5636 /* MainViewController.swift */,
-				04DEDA682957649300DD5636 /* MainHeaderView.swift */,
-				04C6F574295C7C480005B057 /* Info */,
+				04DEDA682957649300DD5636 /* MainBarView.swift */,
+				04C6F574295C7C480005B057 /* Header */,
 				04681C19295A246700B819AF /* Content */,
 			);
 			path = View;
@@ -288,15 +291,15 @@
 				04681C24295A2D4800B819AF /* Moon.swift in Sources */,
 				04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */,
 				04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */,
-				04DEDA692957649300DD5636 /* MainHeaderView.swift in Sources */,
+				04DEDA692957649300DD5636 /* MainBarView.swift in Sources */,
 				04DEDA65295738D900DD5636 /* ViewController.swift in Sources */,
 				04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */,
 				04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */,
 				04C8E69C2961DF4A001524EF /* NumerologyCollectionViewCell.swift in Sources */,
 				040A99952966EABB0080CF93 /* NumerologyTitleLabel.swift in Sources */,
-				04C8E67E295DA689001524EF /* MainInfoViewDetails.swift in Sources */,
+				04C8E67E295DA689001524EF /* MainHeaderViewDetails.swift in Sources */,
 				04C8E6982960D00D001524EF /* NumerologyCollectionView.swift in Sources */,
-				04DEDA6B29577C0400DD5636 /* MainInfoView.swift in Sources */,
+				04DEDA6B29577C0400DD5636 /* MainHeaderView.swift in Sources */,
 				04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */,
 				04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */,
 				04681C21295A25DD00B819AF /* MainContentViewLunarCalendar.swift in Sources */,
@@ -308,6 +311,7 @@
 				04DEDA5F2957361900DD5636 /* Builder.swift in Sources */,
 				04C8E69A2961D90B001524EF /* NumerologyCollectionViewLayout.swift in Sources */,
 				04681C18295A236300B819AF /* MainContentView.swift in Sources */,
+				046569E12968BBB60087A959 /* MainHeaderViewAnimator.swift in Sources */,
 				04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

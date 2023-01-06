@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainHeaderView: UIView {
+class MainBarView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()

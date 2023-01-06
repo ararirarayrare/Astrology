@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainInfoViewDetails: UIStackView {
+class MainHeaderViewDetails: UIStackView {
     
     init(details: [String : String]) {
         super.init(frame: .zero)
