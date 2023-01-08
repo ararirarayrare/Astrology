@@ -36,7 +36,7 @@ class MainBarView: UIView {
     private let messageButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setBackgroundImage(UIImage(systemName: "paperplane"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "chat-button"), for: .normal)
         button.tintColor = .white
         
         return button
@@ -72,8 +72,8 @@ class MainBarView: UIView {
                                                     constant: -20),
             messageButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
                                                constant: 16),
-            messageButton.widthAnchor.constraint(equalToConstant: 32),
-            messageButton.heightAnchor.constraint(equalToConstant: 32),
+            messageButton.widthAnchor.constraint(equalToConstant: 40),
+            messageButton.heightAnchor.constraint(equalToConstant: 40),
             
             
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,

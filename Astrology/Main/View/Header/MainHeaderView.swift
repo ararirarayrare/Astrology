@@ -34,13 +34,7 @@ class MainHeaderView: UIView {
     func resetAnimations(withCompletion completion: @escaping (Bool) -> Void) {
         animator.stopAnimation(false)
         animator.finishAnimation(at: .current)
-        
-//        self.layoutIfNeeded()
-//        self.superview?.layoutIfNeeded()
-        
-//        self.signBottomConstraint?.constant = self.animator.neededBottomConsant
-//        self.topConstraint?.constant = self.animator.neededTopConstant
-        
+
         self.setNeedsLayout()
         self.superview?.setNeedsLayout()
         
@@ -56,9 +50,6 @@ class MainHeaderView: UIView {
                                     
             self.layoutIfNeeded()
             self.superview?.layoutIfNeeded()
-            
-//            self.setNeedsLayout()
-//            self.superview?.setNeedsLayout()
         }
         
         animator.addCompletion(completion)
