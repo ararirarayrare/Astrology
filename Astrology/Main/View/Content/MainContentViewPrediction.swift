@@ -52,20 +52,34 @@ class MainContentViewPrediction: MainContentViewItem {
         
         return button
     }()
+
         
     init(title: String, prediction: String) {
         super.init()
         
+        setup()
+        
         titleLabel.text = title
         predictionLabel.text = prediction
+    }
+    
+    init(attributedTitle: NSAttributedString, prediction: String) {
+        super.init()
         
-        layer.borderColor = UIColor(red: 211/255, green: 195/255, blue: 243/255, alpha: 1.0).cgColor
-        layer.borderWidth = 0.75
-        layer.cornerRadius = 20
+        setup()
+        
+        titleLabel.attributedText = attributedTitle
+        predictionLabel.text = prediction
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        layer.borderColor = UIColor(red: 211/255, green: 195/255, blue: 243/255, alpha: 1.0).cgColor
+        layer.borderWidth = 0.75
+        layer.cornerRadius = 20
     }
 
     override func layout() {

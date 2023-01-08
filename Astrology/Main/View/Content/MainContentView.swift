@@ -26,10 +26,27 @@ class MainContentView: UIView {
     }()
     
     private let todayPredictionView: MainContentViewPrediction = {
-        let title = "Prediction for today: "
+        let attributedString = NSMutableAttributedString()
+        
+        attributedString.append(
+            NSAttributedString(string: "Prediction for ")
+        )
+        attributedString.append(
+            NSAttributedString(
+                string: "today ",
+                attributes: [
+                    .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+                ]
+            )
+        )
+        attributedString.append(
+            NSAttributedString(string: ":")
+        )
+        
+        
         let prediction = "You've been working hard and should reap some rewards. Today's aspects suggest that you will. Enjoy your newfound peace of mind, but don't go out and use the credit cards in celebration!\n\nGet to your authentic self with the guidance of a psychic advisor. Click here to get the 1st 3 minutes of your reading free!"
         
-        let view = MainContentViewPrediction(title: title, prediction: prediction)
+        let view = MainContentViewPrediction(attributedTitle: attributedString, prediction: prediction)
         
         return view
     }()

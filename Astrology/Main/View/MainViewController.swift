@@ -46,6 +46,15 @@ class MainViewController: ViewController {
         super.viewDidLayoutSubviews()
 
         headerView.animator.topOffset = -(headerView.bounds.height - barView.bounds.height)
+        
+        let link = CADisplayLink(target: self, selector: #selector(test))
+        link.add(to: .main, forMode: .common)
+    }
+    
+    
+    @objc
+    func test() {
+        
     }
     
     @objc
@@ -62,34 +71,38 @@ class MainViewController: ViewController {
         let panningInCorrectDirection = (headerView.animator.shouldHide && translation.y < 0) || (!headerView.animator.shouldHide && translation.y > 0)
         
         let shouldCompleteAnimation = (headerView.animator.shouldHide && translation.y > 0) || (!headerView.animator.shouldHide && translation.y < 0)
-        
-        if shouldCompleteAnimation {
-            headerView.animator.completeAnimation()
-        }
                 
         if !headerView.animator.hasAnimations, panningInCorrectDirection {
             self.scrollView.isScrollEnabled = false
             
             headerView.resetAnimations { isHidden in
                 self.scrollView.isScrollEnabled = isHidden
+                gesture.isEnabled = true
+                self.view.setNeedsDisplay()
             }
         }
         
+        if shouldCompleteAnimation, headerView.animator.hasAnimations {
+            gesture.isEnabled = false
+            headerView.animator.completeAnimation()
+        }
                         
         switch gesture.state {
         case .changed:
             
             let neededConstant = (initialConstant + translation.y)
 
-            if (-offset...0).contains(neededConstant), !headerView.animator.isCompletingAnimation {
+            if (-offset...0).contains(neededConstant)/*, !headerView.animator.isCompletingAnimation*/ {
                 headerView.animator.fractionComplete = fraction
             }
             
         case .ended, .cancelled:
-                        
-            if !headerView.animator.isCompletingAnimation {
+                    
+            if headerView.animator.hasAnimations {
+                gesture.isEnabled = false
                 headerView.animator.completeAnimation()
             }
+            
 
         default:
             break
@@ -135,7 +148,7 @@ class MainViewController: ViewController {
             
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 400),
+            headerView.heightAnchor.constraint(equalToConstant: 300),
             infoViewTopConstraint,
 
             

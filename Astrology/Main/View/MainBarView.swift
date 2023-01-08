@@ -28,7 +28,17 @@ class MainBarView: UIView {
         dateFormatter.dateFormat = "EEEE"
         let weekdayString = dateFormatter.string(from: today)
         
-        label.text = dateString + ",\n" + weekdayString
+        let attributedString = NSMutableAttributedString(string: dateString + ",\n")
+        attributedString.append(
+            NSAttributedString(
+                string: weekdayString,
+                attributes: [
+                    .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+                ]
+            )
+        )
+        
+        label.attributedText = attributedString
         
         return label
     }()
