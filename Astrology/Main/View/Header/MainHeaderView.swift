@@ -26,28 +26,45 @@ class MainHeaderView: UIView {
     
     init() {
         super.init(frame: .zero)
-        
+                
         setup()
         layout()
     }
     
     func resetAnimations(withCompletion completion: @escaping (Bool) -> Void) {
+        animator.stopAnimation(false)
+        animator.finishAnimation(at: .current)
+        
+//        self.layoutIfNeeded()
+//        self.superview?.layoutIfNeeded()
+        
+//        self.signBottomConstraint?.constant = self.animator.neededBottomConsant
+//        self.topConstraint?.constant = self.animator.neededTopConstant
+        
+        self.setNeedsLayout()
+        self.superview?.setNeedsLayout()
+        
         animator.addAnimations { [weak self] in
             guard let self = self else {
                 return
             }
-            
-            self.signBottomConstraint?.constant = self.animator.neededBottomConsant
-            
+
             self.signImageView.transform = self.animator.neededTransform
             
+            self.signBottomConstraint?.constant = self.animator.neededBottomConsant
             self.topConstraint?.constant = self.animator.neededTopConstant
-            
+                                    
             self.layoutIfNeeded()
             self.superview?.layoutIfNeeded()
+            
+//            self.setNeedsLayout()
+//            self.superview?.setNeedsLayout()
         }
         
-        animator.addCompletion(completion)
+        animator.addCompletion { bool in
+            completion(bool)
+
+        }
     }
     
     private func setup() {
@@ -56,7 +73,6 @@ class MainHeaderView: UIView {
     
     private func layout() {
         addSubview(signImageView)
-        
         
         let signBottomConstraint = signImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                                          constant: -120)
