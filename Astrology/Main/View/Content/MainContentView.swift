@@ -27,7 +27,7 @@ class MainContentView: UIView {
     
     private let todayPredictionView: MainContentViewPrediction = {
         let title = "Prediction for today: "
-        let prediction = "You've been working hard and should reap some rewards. Today's aspects suggest that you will. Enjoy your newfound peace of mind, but don't go out and use the credit cards in celebration!\nGet to your authentic self with the guidance of a psychic advisor. Click here to get the 1st 3 minutes of your reading free!"
+        let prediction = "You've been working hard and should reap some rewards. Today's aspects suggest that you will. Enjoy your newfound peace of mind, but don't go out and use the credit cards in celebration!\n\nGet to your authentic self with the guidance of a psychic advisor. Click here to get the 1st 3 minutes of your reading free!"
         
         let view = MainContentViewPrediction(title: title, prediction: prediction)
         
@@ -95,7 +95,7 @@ class MainContentView: UIView {
     
     private func layout() {
         addSubview(essentialView)
-        addSubview(numerologyView)
+//        addSubview(numerologyView)
         addSubview(todayPredictionView)
         addSubview(lunarCalendarView)
         addSubview(biorythmView)
@@ -103,34 +103,43 @@ class MainContentView: UIView {
         addSubview(yearlyPredictionView)
         
         NSLayoutConstraint.activate([
+            todayPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                         constant: 20),
+            todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                          constant: -20),
+            todayPredictionView.topAnchor.constraint(equalTo: topAnchor,
+                                                     constant: 20),
+            
+            
             essentialView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                    constant: 20),
             essentialView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                     constant: -20),
-            essentialView.topAnchor.constraint(equalTo: topAnchor,
+            essentialView.topAnchor.constraint(equalTo: todayPredictionView.bottomAnchor,
                                                constant: 20),
             
+//            numerologyView.leadingAnchor.constraint(equalTo: leadingAnchor,
+//                                                    constant: 20),
+//            numerologyView.trailingAnchor.constraint(equalTo: trailingAnchor,
+//                                                     constant: -20),
+//            numerologyView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
+//                                                constant: 20),
+//            numerologyView.heightAnchor.constraint(equalToConstant: 80.0),
             
-            numerologyView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                    constant: 20),
-            numerologyView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                     constant: -20),
-            numerologyView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
-                                                constant: 20),
-            numerologyView.heightAnchor.constraint(equalToConstant: 80.0),
             
-            
-            todayPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            todayPredictionView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
-                                                     constant: 20),
+//            todayPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
+//                                                         constant: 20),
+//            todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
+//                                                          constant: -20),
+//            todayPredictionView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
+//                                                     constant: 20),
             
             
             lunarCalendarView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                        constant: 20),
             lunarCalendarView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                         constant: -20),
-            lunarCalendarView.topAnchor.constraint(equalTo: todayPredictionView.bottomAnchor,
+            lunarCalendarView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
                                                    constant: 20),
             
             biorythmView.leadingAnchor.constraint(equalTo: leadingAnchor,
@@ -150,8 +159,10 @@ class MainContentView: UIView {
                                              constant: 20),
             
             
-            yearlyPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            yearlyPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            yearlyPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                          constant: 20),
+            yearlyPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                           constant: -20),
             yearlyPredictionView.topAnchor.constraint(equalTo: messageView.bottomAnchor,
                                                       constant: 20),
             yearlyPredictionView.bottomAnchor.constraint(equalTo: bottomAnchor,
@@ -166,6 +177,7 @@ class MainContentView: UIView {
 
 class MainContentViewItem: UIView {
     
+    
     init() {
         super.init(frame: .zero)
         
@@ -177,6 +189,7 @@ class MainContentViewItem: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func layout() { }
+    
 }

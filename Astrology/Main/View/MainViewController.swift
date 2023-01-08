@@ -50,23 +50,22 @@ class MainViewController: ViewController {
     
     @objc
     private func panned(_ gesture: UIPanGestureRecognizer) {
-        guard scrollView.contentOffset.y <= 0, !headerView.animator.isCompletingAnimation else {
+        guard scrollView.contentOffset.y <= 0 /*, !headerView.animator.isCompletingAnimation */ else {
             return
         }
         
-        
         let translation = gesture.translation(in: view)
-//        let velocity = gesture.velocity(in: view)
         let offset = (headerView.bounds.height - barView.bounds.height)
         let initialConstant = headerView.animator.shouldHide ? 0 : -offset
         let fraction = abs(translation.y / offset)
 
         let panningInCorrectDirection = (headerView.animator.shouldHide && translation.y < 0) || (!headerView.animator.shouldHide && translation.y > 0)
         
-        guard panningInCorrectDirection else {
-            return
+        let shouldCompleteAnimation = (headerView.animator.shouldHide && translation.y > 0) || (!headerView.animator.shouldHide && translation.y < 0)
+        
+        if shouldCompleteAnimation {
+            headerView.animator.completeAnimation()
         }
-
                 
         if !headerView.animator.hasAnimations, panningInCorrectDirection {
             self.scrollView.isScrollEnabled = false
@@ -76,40 +75,22 @@ class MainViewController: ViewController {
             }
         }
         
-//        if velocity.y > 1000 {
-//            headerView.animator.completeAnimation()
-//        }
-    
                         
         switch gesture.state {
         case .changed:
-            print("changed")
             
             let neededConstant = (initialConstant + translation.y)
 
-//            guard (-offset...0).contains(neededConstant) else {
-//                return
-//            }
-            
-            if (-offset...0).contains(neededConstant) {
+            if (-offset...0).contains(neededConstant), !headerView.animator.isCompletingAnimation {
                 headerView.animator.fractionComplete = fraction
             }
             
-//            headerView.animator.fractionComplete = fraction
-            
-    
-            
         case .ended, .cancelled:
                         
-            if abs(translation.y) > 30 {
+            if !headerView.animator.isCompletingAnimation {
                 headerView.animator.completeAnimation()
-            } else {
-                headerView.animator.finishedAtStart = true
-                headerView.animator.fractionComplete = 0
-                headerView.animator.stopAnimation(false)
-                headerView.animator.finishAnimation(at: .start)
             }
-            
+
         default:
             break
         }
@@ -118,6 +99,7 @@ class MainViewController: ViewController {
     
     
     private func setup() {
+        view.backgroundColor = .black
         let backgroundImageView = UIImageView(frame: view.bounds)
         backgroundImageView.image = UIImage(named: "main-bg")
         backgroundImageView.contentMode = .scaleAspectFill

@@ -8,7 +8,7 @@
 import UIKit
 
 class MainContentViewLunarCalendar: MainContentViewItem {
-
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -76,8 +76,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
                                                  constant: -12),
             
             
-            currentMoonImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                          constant: 12),
+            currentMoonImageView.trailingAnchor.constraint(equalTo: centerXAnchor),
             currentMoonImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                                       constant: 20),
             currentMoonImageView.heightAnchor.constraint(equalTo: widthAnchor,
@@ -93,8 +92,10 @@ class MainContentViewLunarCalendar: MainContentViewItem {
                                                  constant: -16),
             
             
-            stackView.leadingAnchor.constraint(equalTo: currentMoonImageView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: currentMoonLabel.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: 12),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: -12),
             stackView.topAnchor.constraint(equalTo: currentMoonImageView.bottomAnchor,
                                            constant: 20),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor,
@@ -103,8 +104,11 @@ class MainContentViewLunarCalendar: MainContentViewItem {
     }
     
     private func setup(currentPhase: Moon, nextPhases: [Moon]) {
-        backgroundColor = UIColor(red: 0, green: 0, blue: 110/255, alpha: 1.0)
+        backgroundColor = UIColor(red: 201/255, green: 133/255, blue: 1, alpha: 0.15)
+        
         layer.cornerRadius = 20
+        layer.borderColor = UIColor(red: 148/255, green: 92/255, blue: 246/255, alpha: 1.0).cgColor
+        layer.borderWidth = 0.75
         
         currentMoonImageView.image = currentPhase.image
         
@@ -129,7 +133,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
                 string: dateString,
                 attributes: [
                     .font : UIFont.systemFont(ofSize: 18),
-                    .foregroundColor : UIColor.white
+                    .foregroundColor : UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
                 ]
             )
         )
@@ -154,7 +158,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .white
+        label.textColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
         label.textAlignment = .center
         label.numberOfLines = 2
         

@@ -86,7 +86,8 @@ struct Moon {
     var image: UIImage? {
         switch phase {
         case .newMoon:
-            return UIImage(named: "newMoon")
+//            return UIImage(named: "newMoon")
+            return nil
         case .waxingCrescent:
             return UIImage(named: "waxingCrescent")
         case .firstQuater:

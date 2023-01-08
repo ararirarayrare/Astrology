@@ -17,7 +17,6 @@ class MainHeaderViewAnimator: UIViewPropertyAnimator {
     
     var topOffset: CGFloat = 0
     
-//    private var resetToStart = false
     
     var neededTopConstant: CGFloat {
         return shouldHide ? topOffset : 0
@@ -35,31 +34,26 @@ class MainHeaderViewAnimator: UIViewPropertyAnimator {
         super.addAnimations(animation)
         
         hasAnimations = true
-        
+        isCompletingAnimation = false
     }
     
-    var finishedAtStart = false
     
     func addCompletion(_ completion: @escaping (Bool) -> Void) {
         super.addCompletion { _ in
             
-            if !self.finishedAtStart {
+//            if !self.finishedAtStart {
                 self.shouldHide = !self.shouldHide
-            }
-            
-//            if self.fractionComplete == 0 {
-//               print("fraction == 0")
 //            }
-             
+
 //            self.isReversed = false
 //            self.resetToStart = false
-            
-            completion(!self.shouldHide)
             
             self.hasAnimations = false
             self.isCompletingAnimation = false
             
-            self.finishedAtStart = false
+//            self.finishedAtStart = false
+            
+            completion(!self.shouldHide)
         }
     }
     

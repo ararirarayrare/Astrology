@@ -57,51 +57,54 @@ class MainContentViewEssential: MainContentViewItem {
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = .boldSystemFont(ofSize: 18)
+        titleLabel.font = UIFont(name: "Copperplate Bold", size: 20)
         titleLabel.textColor = .white
         titleLabel.text = title
         titleLabel.textAlignment = .left
+        titleLabel.adjustsFontSizeToFitWidth = true
         
         
         let progressView = UIProgressView()
         progressView.translatesAutoresizingMaskIntoConstraints = false
-        progressView.progressTintColor = .purple
-        progressView.trackTintColor = .lightGray.withAlphaComponent(0.5)
+        progressView.progressTintColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+        progressView.trackTintColor = .darkGray
         progressView.progress = progress
+        progressView.layer.cornerRadius = 6
+        progressView.layer.masksToBounds = true
         
-        
+
         let progressLabel = UILabel()
         progressLabel.translatesAutoresizingMaskIntoConstraints = false
-        progressLabel.font = .boldSystemFont(ofSize: 18)
-        progressLabel.textColor = .systemBlue
+        progressLabel.font = UIFont(name: "Copperplate Bold", size: 20)
+        progressLabel.textColor = .white
         progressLabel.textAlignment = .left
         progressLabel.text = "\(Int(progress * 100))%"
+        titleLabel.adjustsFontSizeToFitWidth = true
+        
         
         view.addSubview(titleLabel)
-        view.addSubview(progressView)
         view.addSubview(progressLabel)
+        view.addSubview(progressView)
+        
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                constant: 4),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor,
-                                            constant: 4),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                 constant: -4),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
             
-            progressView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            progressView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            
+            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             progressView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                              constant: 4),
-            progressView.heightAnchor.constraint(equalToConstant: 4),
+                                              constant: 6),
+            progressView.heightAnchor.constraint(equalToConstant: 12),
+
             
-            
-            progressLabel.leadingAnchor.constraint(equalTo: progressView.leadingAnchor),
-            progressLabel.trailingAnchor.constraint(equalTo: progressView.trailingAnchor),
+            progressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             progressLabel.topAnchor.constraint(equalTo: progressView.bottomAnchor,
-                                               constant: 4),
-            progressLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                  constant: -4)
+                                               constant: 6),
+            progressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            progressLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         return view

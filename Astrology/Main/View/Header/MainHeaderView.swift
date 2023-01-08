@@ -61,10 +61,7 @@ class MainHeaderView: UIView {
 //            self.superview?.setNeedsLayout()
         }
         
-        animator.addCompletion { bool in
-            completion(bool)
-
-        }
+        animator.addCompletion(completion)
     }
     
     private func setup() {
