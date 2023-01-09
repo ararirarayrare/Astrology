@@ -22,7 +22,7 @@ class MainHeaderViewAnimator: UIViewPropertyAnimator {
     }
     
     var neededBottomConsant: CGFloat {
-        return shouldHide ? 12 : -60
+        return shouldHide ? 12 : -48
     }
     
     var neededTransform: CGAffineTransform {

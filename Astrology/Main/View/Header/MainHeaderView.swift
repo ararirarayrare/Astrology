@@ -136,7 +136,7 @@ class MainHeaderView: UIView {
         signImageView.addSubview(signLabel)
         
         let signBottomConstraint = signImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                                                         constant: -60)
+                                                                         constant: -48)
         
         let leftDetailsLeadingConstraint = leftDetailsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
         

@@ -35,6 +35,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
         
         return label
     }()
