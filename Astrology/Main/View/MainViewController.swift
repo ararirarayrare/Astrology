@@ -92,8 +92,17 @@ class MainViewController: ViewController {
             
             let neededConstant = (initialConstant + translation.y)
 
-            if (-offset...0).contains(neededConstant)/*, !headerView.animator.isCompletingAnimation*/ {
+            if (-offset...0).contains(neededConstant) {
                 headerView.animator.fractionComplete = fraction
+                
+                if headerView.detailsAnimator.shouldHide, fraction <= 0.5 {
+                    headerView.detailsAnimator.fractionComplete = (fraction * 2)
+                }
+                
+                if !headerView.detailsAnimator.shouldHide {
+                    headerView.detailsAnimator.fractionComplete = fraction
+                }
+
             }
             
         case .ended, .cancelled:
@@ -101,6 +110,7 @@ class MainViewController: ViewController {
             if headerView.animator.hasAnimations {
                 gesture.isEnabled = false
                 headerView.animator.completeAnimation()
+                headerView.detailsAnimator.completeAnimation()
             }
             
 

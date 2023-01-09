@@ -71,3 +71,46 @@ class MainHeaderViewAnimator: UIViewPropertyAnimator {
  
 }
 
+class MainHeaderViewAnimatorDetails: UIViewPropertyAnimator {
+    
+    private(set) var shouldHide: Bool = true
+    
+    private(set) var hasAnimations: Bool = false
+    
+    var neededTransform: CGAffineTransform {
+        
+        let scaleTransform = CGAffineTransform(scaleX: 0.8, y: 0.1)
+        let translationTransform = CGAffineTransform(translationX: 0, y: -32)
+        
+        return shouldHide ? scaleTransform.concatenating(translationTransform) : .identity
+    }
+    
+    var neededTrailingConstant: CGFloat {
+        return shouldHide ? 200 : -32
+    }
+    
+    var neededLeadingConstant: CGFloat {
+        return shouldHide ? -200 : 32
+    }
+    
+    var neededAlpha: CGFloat {
+        return shouldHide ? 0 : 1
+    }
+    
+    override func addAnimations(_ animation: @escaping () -> Void) {
+        self.hasAnimations = true
+        
+        super.addAnimations(animation)
+        
+        addCompletion { _ in
+            self.shouldHide = !self.shouldHide
+            self.hasAnimations = false
+        }
+    }
+    
+    func completeAnimation() {
+        continueAnimation(withTimingParameters: UISpringTimingParameters(dampingRatio: 1.0),
+                          durationFactor: 0)
+    }
+    
+}

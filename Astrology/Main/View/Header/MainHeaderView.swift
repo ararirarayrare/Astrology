@@ -18,7 +18,7 @@ class MainHeaderView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "cancer-sign")
         imageView.contentMode = .scaleAspectFit
-        
+                
         return imageView
     }()
     
@@ -40,7 +40,38 @@ class MainHeaderView: UIView {
         return label
     }()
     
+    private let leftDetailsView: MainHeaderViewDetails = {
+        let details = [
+            "Gender" : "Male",
+            "Birth stone" : "Ruby",
+            "Color" : "White"
+        ]
+        
+        let view = MainHeaderViewDetails(details: details, textAligment: .left)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private let rightDetailsView: MainHeaderViewDetails = {
+        let details = [
+            "Animal" : "Cow",
+            "Age" : "20",
+            "Name" : "Artem"
+        ]
+        
+        let view = MainHeaderViewDetails(details: details, textAligment: .right)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     let animator = MainHeaderViewAnimator(duration: 0.4, dampingRatio: 1.0)
+    
+    let detailsAnimator = MainHeaderViewAnimatorDetails(duration: 0.25, curve: .linear)
+    
+    private var leftCenter: CGPoint = .zero
+    private var rightCenter: CGPoint = .zero
     
     init() {
         super.init(frame: .zero)
@@ -49,9 +80,17 @@ class MainHeaderView: UIView {
         layout()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if leftCenter.equalTo(.zero), rightCenter.equalTo(.zero), !bounds.height.isEqual(to: .zero) {
+            leftCenter = leftDetailsView.center
+            rightCenter = rightDetailsView.center
+        }
+    }
+    
+    
     func resetAnimations(withCompletion completion: @escaping (Bool) -> Void) {
-//        animator.stopAnimation(false)
-//        animator.finishAnimation(at: .current)
 
         self.setNeedsLayout()
         self.superview?.setNeedsLayout()
@@ -72,6 +111,17 @@ class MainHeaderView: UIView {
             self.superview?.layoutIfNeeded()
         }
         
+        detailsAnimator.addAnimations {
+             
+            self.leftDetailsView.transform = self.detailsAnimator.neededTransform
+            self.rightDetailsView.transform = self.detailsAnimator.neededTransform
+            
+            self.leftDetailsView.alpha = self.detailsAnimator.neededAlpha
+            self.rightDetailsView.alpha = self.detailsAnimator.neededAlpha
+            
+        }
+        
+        
         animator.addCompletion(completion)
     }
     
@@ -80,12 +130,21 @@ class MainHeaderView: UIView {
     }
     
     private func layout() {
+        addSubview(leftDetailsView)
+        addSubview(rightDetailsView)
         addSubview(signImageView)
         signImageView.addSubview(signLabel)
         
         let signBottomConstraint = signImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                                          constant: -60)
+        
+        let leftDetailsLeadingConstraint = leftDetailsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
+        
+        let rightDetailsTrailingConstraint = rightDetailsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
+        
         self.signBottomConstraint = signBottomConstraint
+        self.leftDetailsView.leadingConstraint = leftDetailsLeadingConstraint
+        self.rightDetailsView.trailingConstraint = rightDetailsTrailingConstraint
         
         NSLayoutConstraint.activate([
             signImageView.widthAnchor.constraint(equalTo: widthAnchor,
@@ -96,7 +155,19 @@ class MainHeaderView: UIView {
             
             
             signLabel.bottomAnchor.constraint(equalTo: signImageView.topAnchor),
-            signLabel.centerXAnchor.constraint(equalTo: signImageView.centerXAnchor)
+            signLabel.centerXAnchor.constraint(equalTo: signImageView.centerXAnchor),
+            
+            
+            leftDetailsLeadingConstraint,
+            leftDetailsView.trailingAnchor.constraint(equalTo: signImageView.leadingAnchor,
+                                                      constant: -8),
+            leftDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor),
+            
+            
+            rightDetailsTrailingConstraint,
+            rightDetailsView.leadingAnchor.constraint(equalTo: signImageView.trailingAnchor,
+                                                      constant: 8),
+            rightDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor)
         ])
     }
     
