@@ -22,39 +22,6 @@ enum Biorythm: CaseIterable {
         }
     }
 
-    var yesterdayValue: Float {
-        switch self {
-        case .physical:
-            return -0.3
-        case .emotional:
-            return 0.9
-        case .intellectual:
-            return 0.7
-        }
-    }
-
-    var todayValue: Float {
-        switch self {
-        case .physical:
-            return 0.5
-        case .emotional:
-            return 0.4
-        case .intellectual:
-            return 0.5
-        }
-    }
-
-    var tomorrowValue: Float {
-        switch self {
-        case .physical:
-            return 0.1
-        case .emotional:
-            return -0.7
-        case .intellectual:
-            return 0.9
-        }
-    }
-
     var title: String {
         switch self {
         case .physical:
@@ -64,6 +31,23 @@ enum Biorythm: CaseIterable {
         case .intellectual:
             return "Intellectual"
         }
+    }
+
+    func value(forDate date: Date?) -> Float {
+        var P: Float {
+            switch self {
+            case .physical:
+                return 23
+            case .emotional:
+                return 28
+            case .intellectual:
+                return 33
+            }
+        }
+        
+        let t = Float(Date.daysFromBirthday(toDate: date))
+                
+        return sin(2 * .pi * t / P)
     }
 }
 

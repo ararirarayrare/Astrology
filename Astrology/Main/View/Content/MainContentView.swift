@@ -51,7 +51,7 @@ class MainContentView: UIView {
         return view
     }()
     
-    private let lunarCalendarView: MainContentViewLunarCalendar = {
+    private let moonCalendarView: MainContentViewMoonCalendar = {
         let today = Date()
         
         let currentPhase = Moon(date: today, phase: .forDate(today))
@@ -68,7 +68,7 @@ class MainContentView: UIView {
             nextPhase4
         ]
         
-        let view = MainContentViewLunarCalendar(currentPhase: currentPhase,
+        let view = MainContentViewMoonCalendar(currentPhase: currentPhase,
                                                 nextPhases: nextPhases)
         return view
     }()
@@ -108,7 +108,7 @@ class MainContentView: UIView {
         addSubview(essentialView)
         addSubview(numerologyView)
         addSubview(todayPredictionView)
-        addSubview(lunarCalendarView)
+        addSubview(moonCalendarView)
         addSubview(biorythmView)
         addSubview(messageView)
         addSubview(yearlyPredictionView)
@@ -136,18 +136,18 @@ class MainContentView: UIView {
                                                 constant: 32),
             
             
-            lunarCalendarView.leadingAnchor.constraint(equalTo: leadingAnchor,
+            moonCalendarView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                        constant: 20),
-            lunarCalendarView.trailingAnchor.constraint(equalTo: trailingAnchor,
+            moonCalendarView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                         constant: -20),
-            lunarCalendarView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
+            moonCalendarView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
                                                    constant: 32),
             
             biorythmView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                   constant: 20),
             biorythmView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                    constant: -20),
-            biorythmView.topAnchor.constraint(equalTo: lunarCalendarView.bottomAnchor,
+            biorythmView.topAnchor.constraint(equalTo: moonCalendarView.bottomAnchor,
                                               constant: 32),
             
             

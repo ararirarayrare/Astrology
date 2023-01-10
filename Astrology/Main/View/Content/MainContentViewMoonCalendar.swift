@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainContentViewLunarCalendar: MainContentViewItem {
+class MainContentViewMoonCalendar: MainContentViewItem {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -15,7 +15,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
         label.textAlignment = .left
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 22)
-        label.text = "Lunar calendar"
+        label.text = "Moon calendar"
         
         return label
     }()
