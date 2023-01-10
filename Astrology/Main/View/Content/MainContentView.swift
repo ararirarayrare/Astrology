@@ -74,13 +74,9 @@ class MainContentView: UIView {
     }()
     
     private let biorythmView: MainContentViewBiorythm = {
-        let biorythms: [Biorythm] = [
-            .emotional(value: 0.5),
-            .physical(value: 0.86),
-            .intellectual(value: 0.77)
-        ]
+
         
-        let view = MainContentViewBiorythm(biorythms: biorythms)
+        let view = MainContentViewBiorythm(biorythms: [])
         
         return view
     }()
@@ -155,7 +151,6 @@ class MainContentView: UIView {
                                                    constant: -20),
             biorythmView.topAnchor.constraint(equalTo: lunarCalendarView.bottomAnchor,
                                               constant: 32),
-            biorythmView.heightAnchor.constraint(equalToConstant: 240),
             
             
             messageView.leadingAnchor.constraint(equalTo: leadingAnchor,

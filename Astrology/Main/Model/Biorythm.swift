@@ -7,10 +7,10 @@
 
 import UIKit
 
-enum Biorythm {
-    
-    case physical(value: Double), emotional(value: Double), intellectual(value: Double)
-    
+enum Biorythm: CaseIterable {
+
+    case physical, emotional, intellectual
+
     var barColor: UIColor {
         switch self {
         case .physical:
@@ -21,18 +21,40 @@ enum Biorythm {
             return .yellow
         }
     }
-    
-    var value: Double {
+
+    var yesterdayValue: Float {
         switch self {
-        case .physical(let value):
-            return value
-        case .emotional(let value):
-            return value
-        case .intellectual(let value):
-            return value
+        case .physical:
+            return -0.3
+        case .emotional:
+            return 0.9
+        case .intellectual:
+            return 0.7
         }
     }
-    
+
+    var todayValue: Float {
+        switch self {
+        case .physical:
+            return 0.5
+        case .emotional:
+            return 0.4
+        case .intellectual:
+            return 0.5
+        }
+    }
+
+    var tomorrowValue: Float {
+        switch self {
+        case .physical:
+            return 0.1
+        case .emotional:
+            return -0.7
+        case .intellectual:
+            return 0.9
+        }
+    }
+
     var title: String {
         switch self {
         case .physical:
@@ -44,3 +66,4 @@ enum Biorythm {
         }
     }
 }
+
