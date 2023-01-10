@@ -14,11 +14,11 @@ enum Biorythm: CaseIterable {
     var barColor: UIColor {
         switch self {
         case .physical:
-            return .blue.withAlphaComponent(0.5)
+            return UIColor(red: 87/255, green: 45/255, blue: 1, alpha: 1.0)
         case .emotional:
-            return .orange
+            return UIColor(red: 170/255, green: 85/255, blue: 1, alpha: 1.0)
         case .intellectual:
-            return .yellow
+            return UIColor(red: 149/255, green: 147/255, blue: 1, alpha: 1.0)
         }
     }
 

@@ -13,3 +13,13 @@ struct Icon {
     static let instagram = UIImage(named: "instagram")
     
 }
+
+extension Date {
+    static var yesterday: Date? {
+        return Calendar.current.date(byAdding: .day, value: -1, to: Date())
+    }
+    
+    static var tomorrow: Date? {
+        return Calendar.current.date(byAdding: .day, value: 1, to: Date())
+    }
+}

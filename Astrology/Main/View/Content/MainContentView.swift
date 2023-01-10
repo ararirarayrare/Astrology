@@ -73,10 +73,8 @@ class MainContentView: UIView {
         return view
     }()
     
-    private let biorythmView: MainContentViewBiorythm = {
-
-        
-        let view = MainContentViewBiorythm(biorythms: [])
+    private let biorythmView: MainContentViewBiorythm = {        
+        let view = MainContentViewBiorythm()
         
         return view
     }()
@@ -158,7 +156,7 @@ class MainContentView: UIView {
             messageView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                   constant: -20),
             messageView.topAnchor.constraint(equalTo: biorythmView.bottomAnchor,
-                                             constant: 20),
+                                             constant: 32),
             
             
             yearlyPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
