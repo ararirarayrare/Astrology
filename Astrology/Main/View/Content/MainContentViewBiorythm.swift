@@ -15,7 +15,7 @@ class MainContentViewBiorythm: MainContentViewItem {
         label.font = .boldSystemFont(ofSize: 22)
         label.textColor = .white
         label.textAlignment = .left
-        label.text = "Biorythm:"
+        label.text = "Biorythm"
         
         return label
     }()
@@ -49,9 +49,8 @@ class MainContentViewBiorythm: MainContentViewItem {
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                constant: 0),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor,
-                                            constant: 20),
+                                               constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
             
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),

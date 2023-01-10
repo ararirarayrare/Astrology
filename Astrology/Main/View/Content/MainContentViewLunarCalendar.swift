@@ -15,7 +15,7 @@ class MainContentViewLunarCalendar: MainContentViewItem {
         label.textAlignment = .left
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 22)
-        label.text = "Lunar calendar:"
+        label.text = "Lunar calendar"
         
         return label
     }()

@@ -9,108 +9,54 @@ import UIKit
 
 class MainHeaderViewAnimator: UIViewPropertyAnimator {
     
-//    private(set) var isCompletingAnimation: Bool = false
-    
     private(set) var shouldHide: Bool = true
     
     private(set) var hasAnimations: Bool = false
-    
+        
     var topOffset: CGFloat = 0
     
-    var neededTopConstant: CGFloat {
+    var topConstant: CGFloat {
         return shouldHide ? topOffset : 0
     }
     
-    var neededBottomConsant: CGFloat {
+    var bottomConsant: CGFloat {
         return shouldHide ? 12 : -48
     }
     
-    var neededTransform: CGAffineTransform {
+    var signTransform: CGAffineTransform {
         return shouldHide ? CGAffineTransform(scaleX: 0.35, y: 0.35) : .identity
     }
     
-    override func addAnimations(_ animation: @escaping () -> Void) {
+    var detailsTransform: CGAffineTransform {
+        return shouldHide ? CGAffineTransform(scaleX: 0.5, y: 0.01) : CGAffineTransform(scaleX: 1, y: 1)
+    }
+    
+    var alpha: CGFloat {
+        return shouldHide ? -1 : 1
+    }
+    
+    func addAnimations(_ animation: @escaping (MainHeaderViewAnimator) -> Void) {
         guard !hasAnimations else {
             return
         }
         
-        super.addAnimations(animation)
+        addAnimations { animation(self) }
         
         hasAnimations = true
-//        isCompletingAnimation = false
-        
-//        print(isCompletingAnimation, "FROM ADD ANIM")
     }
-    
-    
+
     func addCompletion(_ completion: @escaping (Bool) -> Void) {
         super.addCompletion { _ in
             
             self.shouldHide = !self.shouldHide
-
             self.hasAnimations = false
-//            self.isCompletingAnimation = false
             
-//            print(self.isCompletingAnimation, "FROM COMPLETION")
-                        
             completion(!self.shouldHide)
         }
     }
-    
-    func completeAnimation() {
-//        guard !isCompletingAnimation else {
-//            return
-//        }
-        
-//        isCompletingAnimation = true
-                
-        continueAnimation(withTimingParameters: UISpringTimingParameters(dampingRatio: 1.0),
-                          durationFactor: 0)
-    }
-    
  
-}
-
-class MainHeaderViewAnimatorDetails: UIViewPropertyAnimator {
-    
-    private(set) var shouldHide: Bool = true
-    
-    private(set) var hasAnimations: Bool = false
-    
-    var neededTransform: CGAffineTransform {
-        
-        let scaleTransform = CGAffineTransform(scaleX: 0.8, y: 0.1)
-        let translationTransform = CGAffineTransform(translationX: 0, y: -32)
-        
-        return shouldHide ? scaleTransform.concatenating(translationTransform) : .identity
-    }
-    
-    var neededTrailingConstant: CGFloat {
-        return shouldHide ? 200 : -32
-    }
-    
-    var neededLeadingConstant: CGFloat {
-        return shouldHide ? -200 : 32
-    }
-    
-    var neededAlpha: CGFloat {
-        return shouldHide ? 0 : 1
-    }
-    
-    override func addAnimations(_ animation: @escaping () -> Void) {
-        self.hasAnimations = true
-        
-        super.addAnimations(animation)
-        
-        addCompletion { _ in
-            self.shouldHide = !self.shouldHide
-            self.hasAnimations = false
-        }
-    }
-    
     func completeAnimation() {
         continueAnimation(withTimingParameters: UISpringTimingParameters(dampingRatio: 1.0),
                           durationFactor: 0)
     }
-    
 }

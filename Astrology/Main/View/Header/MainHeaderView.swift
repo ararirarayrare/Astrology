@@ -40,6 +40,27 @@ class MainHeaderView: UIView {
         return label
     }()
     
+    private let editLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.font = .boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.textColor = .white
+        
+        let attributedString = NSMutableAttributedString(string: "Edit  ")
+        
+        let attachment = NSTextAttachment()
+        attachment.image = Icon.pencil
+        attachment.bounds.size = CGSize(width: 11, height: 11)
+        
+        attributedString.append(NSAttributedString(attachment: attachment))
+        
+        label.attributedText = attributedString
+        
+        return label
+    }()
+    
     private let leftDetailsView: MainHeaderViewDetails = {
         let details = [
             "Gender" : "Male",
@@ -68,25 +89,11 @@ class MainHeaderView: UIView {
     
     let animator = MainHeaderViewAnimator(duration: 0.4, dampingRatio: 1.0)
     
-    let detailsAnimator = MainHeaderViewAnimatorDetails(duration: 0.25, curve: .linear)
-    
-    private var leftCenter: CGPoint = .zero
-    private var rightCenter: CGPoint = .zero
-    
     init() {
         super.init(frame: .zero)
                 
         setup()
         layout()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if leftCenter.equalTo(.zero), rightCenter.equalTo(.zero), !bounds.height.isEqual(to: .zero) {
-            leftCenter = leftDetailsView.center
-            rightCenter = rightDetailsView.center
-        }
     }
     
     
@@ -95,33 +102,36 @@ class MainHeaderView: UIView {
         self.setNeedsLayout()
         self.superview?.setNeedsLayout()
         
-        animator.addAnimations { [weak self] in
+        animator.addAnimations { [weak self] animator in
             guard let self = self else {
                 return
             }
 
-            self.signImageView.transform = self.animator.neededTransform
+            self.signImageView.transform = animator.signTransform
             
-            self.signBottomConstraint?.constant = self.animator.neededBottomConsant
-            self.topConstraint?.constant = self.animator.neededTopConstant
+            self.signBottomConstraint?.constant = animator.bottomConsant
+            self.topConstraint?.constant = animator.topConstant
         
-            self.signLabel.alpha = self.animator.shouldHide ? 0 : 1
+            self.signLabel.alpha = animator.shouldHide ? 0 : 1
+            self.editLabel.alpha = animator.shouldHide ? -3 : 1
+                        
+            let x = animator.shouldHide ? 260.0 : 0
+            let y = animator.shouldHide ? -12.0 : 0
+            
+            let leftTransform = animator.detailsTransform.translatedBy(x: x, y: y)
+            
+            let rightTransform = animator.detailsTransform.translatedBy(x: -x, y: y)
+            
+            self.leftDetailsView.transform = leftTransform
+            self.rightDetailsView.transform = rightTransform
+            
+            self.leftDetailsView.alpha = animator.alpha
+            self.rightDetailsView.alpha = animator.alpha
                                     
             self.layoutIfNeeded()
             self.superview?.layoutIfNeeded()
         }
-        
-        detailsAnimator.addAnimations {
-             
-            self.leftDetailsView.transform = self.detailsAnimator.neededTransform
-            self.rightDetailsView.transform = self.detailsAnimator.neededTransform
-            
-            self.leftDetailsView.alpha = self.detailsAnimator.neededAlpha
-            self.rightDetailsView.alpha = self.detailsAnimator.neededAlpha
-            
-        }
-        
-        
+         
         animator.addCompletion(completion)
     }
     
@@ -133,18 +143,14 @@ class MainHeaderView: UIView {
         addSubview(leftDetailsView)
         addSubview(rightDetailsView)
         addSubview(signImageView)
+        
         signImageView.addSubview(signLabel)
+        signImageView.addSubview(editLabel)
         
         let signBottomConstraint = signImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                                          constant: -48)
-        
-        let leftDetailsLeadingConstraint = leftDetailsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
-        
-        let rightDetailsTrailingConstraint = rightDetailsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
-        
         self.signBottomConstraint = signBottomConstraint
-        self.leftDetailsView.leadingConstraint = leftDetailsLeadingConstraint
-        self.rightDetailsView.trailingConstraint = rightDetailsTrailingConstraint
+
         
         NSLayoutConstraint.activate([
             signImageView.widthAnchor.constraint(equalTo: widthAnchor,
@@ -158,15 +164,21 @@ class MainHeaderView: UIView {
             signLabel.centerXAnchor.constraint(equalTo: signImageView.centerXAnchor),
             
             
-            leftDetailsLeadingConstraint,
+            editLabel.topAnchor.constraint(equalTo: signImageView.bottomAnchor),
+            editLabel.centerXAnchor.constraint(equalTo: signImageView.centerXAnchor),
+            
+
             leftDetailsView.trailingAnchor.constraint(equalTo: signImageView.leadingAnchor,
                                                       constant: -8),
+            leftDetailsView.widthAnchor.constraint(equalTo: widthAnchor,
+                                                   multiplier: 0.25),
             leftDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor),
             
-            
-            rightDetailsTrailingConstraint,
+
             rightDetailsView.leadingAnchor.constraint(equalTo: signImageView.trailingAnchor,
                                                       constant: 8),
+            rightDetailsView.widthAnchor.constraint(equalTo: widthAnchor,
+                                                   multiplier: 0.25),
             rightDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor)
         ])
     }

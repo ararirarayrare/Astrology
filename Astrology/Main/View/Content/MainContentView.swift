@@ -112,7 +112,7 @@ class MainContentView: UIView {
     
     private func layout() {
         addSubview(essentialView)
-//        addSubview(numerologyView)
+        addSubview(numerologyView)
         addSubview(todayPredictionView)
         addSubview(lunarCalendarView)
         addSubview(biorythmView)
@@ -135,36 +135,26 @@ class MainContentView: UIView {
             essentialView.topAnchor.constraint(equalTo: todayPredictionView.bottomAnchor,
                                                constant: 20),
             
-//            numerologyView.leadingAnchor.constraint(equalTo: leadingAnchor,
-//                                                    constant: 20),
-//            numerologyView.trailingAnchor.constraint(equalTo: trailingAnchor,
-//                                                     constant: -20),
-//            numerologyView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
-//                                                constant: 20),
-//            numerologyView.heightAnchor.constraint(equalToConstant: 80.0),
             
-            
-//            todayPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
-//                                                         constant: 20),
-//            todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
-//                                                          constant: -20),
-//            todayPredictionView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
-//                                                     constant: 20),
+            numerologyView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            numerologyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            numerologyView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
+                                                constant: 32),
             
             
             lunarCalendarView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                        constant: 20),
             lunarCalendarView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                         constant: -20),
-            lunarCalendarView.topAnchor.constraint(equalTo: essentialView.bottomAnchor,
-                                                   constant: 20),
+            lunarCalendarView.topAnchor.constraint(equalTo: numerologyView.bottomAnchor,
+                                                   constant: 32),
             
             biorythmView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                   constant: 20),
             biorythmView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                    constant: -20),
             biorythmView.topAnchor.constraint(equalTo: lunarCalendarView.bottomAnchor,
-                                              constant: 20),
+                                              constant: 32),
             biorythmView.heightAnchor.constraint(equalToConstant: 240),
             
             

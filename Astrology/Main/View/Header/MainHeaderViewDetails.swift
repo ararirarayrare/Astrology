@@ -16,7 +16,7 @@ class MainHeaderViewDetails: UIStackView {
         super.init(frame: .zero)
                         
         setup(with: details, textAligment: textAligment)
-        
+
     }
     
     private func createDetailView(title: String,

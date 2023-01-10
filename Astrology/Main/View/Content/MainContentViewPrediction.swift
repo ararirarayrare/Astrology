@@ -13,7 +13,7 @@ class MainContentViewPrediction: MainContentViewItem {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.setImage(UIImage(named: "instagram"), for: .normal)
+        button.setImage(Icon.instagram, for: .normal)
         
         return button
     }()
@@ -77,6 +77,8 @@ class MainContentViewPrediction: MainContentViewItem {
     }
     
     private func setup() {
+        backgroundColor = UIColor(red: 141/255, green: 112/255, blue: 1, alpha: 0.15)
+        
         layer.borderColor = UIColor(red: 211/255, green: 195/255, blue: 243/255, alpha: 1.0).cgColor
         layer.borderWidth = 0.75
         layer.cornerRadius = 20

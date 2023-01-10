@@ -46,26 +46,17 @@ class MainViewController: ViewController {
         super.viewDidLayoutSubviews()
 
         headerView.animator.topOffset = -(headerView.bounds.height - barView.bounds.height)
-        
-        let link = CADisplayLink(target: self, selector: #selector(test))
-        link.add(to: .main, forMode: .common)
+
     }
-    
-    
-    @objc
-    func test() {
-        
-    }
-    
+
     @objc
     private func panned(_ gesture: UIPanGestureRecognizer) {
-        guard scrollView.contentOffset.y <= 0 /*, !headerView.animator.isCompletingAnimation */ else {
+        guard scrollView.contentOffset.y <= 0 else {
             return
         }
         
         let translation = gesture.translation(in: view)
         let offset = (headerView.bounds.height - barView.bounds.height)
-        let initialConstant = headerView.animator.shouldHide ? 0 : -offset
         let fraction = abs(translation.y / offset)
 
         let panningInCorrectDirection = (headerView.animator.shouldHide && translation.y < 0) || (!headerView.animator.shouldHide && translation.y > 0)
@@ -75,10 +66,13 @@ class MainViewController: ViewController {
         if !headerView.animator.hasAnimations, panningInCorrectDirection {
             self.scrollView.isScrollEnabled = false
             
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            
             headerView.resetAnimations { isHidden in
                 self.scrollView.isScrollEnabled = isHidden
                 gesture.isEnabled = true
                 self.view.setNeedsDisplay()
+            
             }
         }
         
@@ -89,20 +83,9 @@ class MainViewController: ViewController {
                         
         switch gesture.state {
         case .changed:
-            
-            let neededConstant = (initialConstant + translation.y)
 
-            if (-offset...0).contains(neededConstant) {
+            if panningInCorrectDirection {
                 headerView.animator.fractionComplete = fraction
-                
-                if headerView.detailsAnimator.shouldHide, fraction <= 0.5 {
-                    headerView.detailsAnimator.fractionComplete = (fraction * 2)
-                }
-                
-                if !headerView.detailsAnimator.shouldHide {
-                    headerView.detailsAnimator.fractionComplete = fraction
-                }
-
             }
             
         case .ended, .cancelled:
@@ -110,9 +93,7 @@ class MainViewController: ViewController {
             if headerView.animator.hasAnimations {
                 gesture.isEnabled = false
                 headerView.animator.completeAnimation()
-                headerView.detailsAnimator.completeAnimation()
             }
-            
 
         default:
             break
