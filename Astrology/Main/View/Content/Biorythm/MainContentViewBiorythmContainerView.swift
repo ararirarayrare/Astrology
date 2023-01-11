@@ -151,7 +151,7 @@ class MainContentViewBiorythmContainerView: UIView {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12)
+        label.font = UIFont(name: "GothamPro-Medium", size: 12)
         label.textAlignment = .left
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
@@ -180,8 +180,10 @@ class MainContentViewBiorythmContainerView: UIView {
     
     private func createLabel(text: String, aligment: NSTextAlignment) -> UILabel {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .white
+         
+        let isToday = text == "Today"
+        label.font = isToday ? .boldGothamPro(ofSize: 16) : .mediumGothamPro(ofSize: 14)
+        label.textColor = isToday ? .white : UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1.0)
         label.textAlignment = aligment
         label.text = text
         label.adjustsFontSizeToFitWidth = true

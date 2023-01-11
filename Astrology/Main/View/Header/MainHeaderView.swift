@@ -26,7 +26,7 @@ class MainHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont(name: "Copperplate Bold", size: 16)
+        label.font = .boldGothamPro(ofSize: 14)
         label.textAlignment = .center
         label.textColor = UIColor(red: 189/255, green: 158/255, blue: 1, alpha: 1.0)
         
@@ -44,7 +44,7 @@ class MainHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldGothamPro(ofSize: 14)
         label.textAlignment = .center
         label.textColor = .white
         

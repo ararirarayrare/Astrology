@@ -31,7 +31,7 @@ class MainContentViewPrediction: MainContentViewItem {
     private let predictionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16)
+        label.font = .mediumGothamPro(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -44,7 +44,7 @@ class MainContentViewPrediction: MainContentViewItem {
         
         button.backgroundColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         
-        button.titleLabel?.font = UIFont(name: "Copperplate Bold", size: 20)
+        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("More", for: .normal)
         
@@ -118,7 +118,7 @@ class MainContentViewPrediction: MainContentViewItem {
             
             moreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             moreButton.topAnchor.constraint(equalTo: predictionLabel.bottomAnchor,
-                                            constant: 20),
+                                            constant: 24),
             moreButton.heightAnchor.constraint(equalToConstant: 40),
             moreButton.widthAnchor.constraint(equalToConstant: 120),
             moreButton.bottomAnchor.constraint(equalTo: bottomAnchor,

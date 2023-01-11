@@ -24,9 +24,10 @@
 		04C9C3B9296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */; };
 		04C9C3C6296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C5296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift */; };
 		04C9C3C8296E091A005C7003 /* MainContentViewBiorythmChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C7296E091A005C7003 /* MainContentViewBiorythmChartView.swift */; };
-		04C9C3CD296EB411005C7003 /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CB296EB411005C7003 /* gothampro_black.ttf */; };
-		04C9C3CE296EB411005C7003 /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */; };
 		04C9C3D0296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3CF296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift */; };
+		04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */; };
+		04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CB296EB411005C7003 /* gothampro_black.ttf */; };
+		04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
 		04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* MainViewController.swift */; };
@@ -60,6 +61,7 @@
 		04C9C3CB296EB411005C7003 /* gothampro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_black.ttf; sourceTree = "<group>"; };
 		04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bold.ttf; sourceTree = "<group>"; };
 		04C9C3CF296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerologyCollectionView.swift; sourceTree = "<group>"; };
+		04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_medium.ttf; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,11 +92,11 @@
 			children = (
 				04681C17295A236300B819AF /* MainContentView.swift */,
 				04681C1A295A248A00B819AF /* MainContentViewEssential.swift */,
-				04C9C3B5296D8403005C7003 /* Numerology */,
 				04681C1E295A258700B819AF /* MainContentViewPrediction.swift */,
 				04681C20295A25DD00B819AF /* MainContentViewMoonCalendar.swift */,
-				04C9C3C4296E089F005C7003 /* Biorythm */,
 				04681C25295B434300B819AF /* MainContentViewMessage.swift */,
+				04C9C3B5296D8403005C7003 /* Numerology */,
+				04C9C3C4296E089F005C7003 /* Biorythm */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -184,6 +186,7 @@
 			children = (
 				04C9C3CB296EB411005C7003 /* gothampro_black.ttf */,
 				04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */,
+				04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -317,10 +320,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */,
+				04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */,
 				04DEDA56295735C100DD5636 /* LaunchScreen.storyboard in Resources */,
 				04DEDA53295735C100DD5636 /* Assets.xcassets in Resources */,
-				04C9C3CD296EB411005C7003 /* gothampro_black.ttf in Resources */,
-				04C9C3CE296EB411005C7003 /* gothampro_bold.ttf in Resources */,
+				04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

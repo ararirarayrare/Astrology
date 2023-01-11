@@ -15,7 +15,7 @@ class MainBarView: UIView {
 
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 2
+        label.numberOfLines = 3
                 
         let dateFormatter = DateFormatter()
 
@@ -26,7 +26,7 @@ class MainBarView: UIView {
         let attributedString = NSMutableAttributedString(
             string: dateString + ",\n",
             attributes: [
-                .font : UIFont(name: "gothampro_black", size: 24) ?? .boldSystemFont(ofSize: 24),
+                .font : UIFont.blackGothamPro(ofSize: 24) ?? .boldSystemFont(ofSize: 22),
                 .foregroundColor : UIColor.white
             ]
         )
@@ -35,7 +35,7 @@ class MainBarView: UIView {
             NSAttributedString(
                 string: weekdayString,
                 attributes: [
-                    .font : UIFont(name: "gothampro_bold", size: 22) ?? .boldSystemFont(ofSize: 22),
+                    .font : UIFont.boldGothamPro(ofSize: 22) ?? .boldSystemFont(ofSize: 22),
                     .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
                 ]
             )
@@ -90,7 +90,7 @@ class MainBarView: UIView {
             
             
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                constant: 16),
+                                                constant: 20),
             titleLabel.topAnchor.constraint(equalTo: messageButton.topAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: messageButton.leadingAnchor,
                                                  constant: -16),

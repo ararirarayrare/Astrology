@@ -17,7 +17,7 @@ class MainContentViewMessage: MainContentViewItem {
         
         button.backgroundColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
         button.setTitle("Send", for: .normal)
         button.setTitleColor(.white, for: .normal)
         
@@ -29,7 +29,7 @@ class MainContentViewMessage: MainContentViewItem {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldGothamPro(ofSize: 18)
         label.textAlignment = .left
         label.textColor = .white
         label.text = "Personal consultation with an astrologer"

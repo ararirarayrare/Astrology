@@ -57,7 +57,7 @@ class MainContentViewEssential: MainContentViewItem {
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name: "Copperplate Bold", size: 20)
+        titleLabel.font = .boldGothamPro(ofSize: 18)
         titleLabel.textColor = .white
         titleLabel.text = title
         titleLabel.textAlignment = .left
@@ -75,7 +75,7 @@ class MainContentViewEssential: MainContentViewItem {
 
         let progressLabel = UILabel()
         progressLabel.translatesAutoresizingMaskIntoConstraints = false
-        progressLabel.font = UIFont(name: "Copperplate Bold", size: 20)
+        progressLabel.font = .boldGothamPro(ofSize: 18)
         progressLabel.textColor = .white
         progressLabel.textAlignment = .left
         progressLabel.text = "\(Int(progress * 100))%"

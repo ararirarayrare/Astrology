@@ -9,9 +9,6 @@ import UIKit
 
 class MainHeaderViewDetails: UIStackView {
     
-    var leadingConstraint: NSLayoutConstraint?
-    var trailingConstraint: NSLayoutConstraint?
-    
     init(details: [String : String], textAligment: NSTextAlignment) {
         super.init(frame: .zero)
                         
@@ -27,14 +24,14 @@ class MainHeaderViewDetails: UIStackView {
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = .boldSystemFont(ofSize: 14)
+        titleLabel.font = .mediumGothamPro(ofSize: 14)
         titleLabel.textColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1.0)
         titleLabel.textAlignment = textAligment
         titleLabel.text = title
         
         let subtitleLabel = UILabel()
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.font = .boldSystemFont(ofSize: 16)
+        subtitleLabel.font = .boldGothamPro(ofSize: 16)
         subtitleLabel.textColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         subtitleLabel.textAlignment = textAligment
         subtitleLabel.numberOfLines = 2
@@ -68,7 +65,8 @@ class MainHeaderViewDetails: UIStackView {
             
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor,
                                                    constant: subtitleConstant),
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                              constant: 6),
             subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor,
                                                     constant: subtitleConstant),
             subtitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor,

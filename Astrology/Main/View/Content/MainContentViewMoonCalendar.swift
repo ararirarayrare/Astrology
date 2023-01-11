@@ -31,10 +31,8 @@ class MainContentViewMoonCalendar: MainContentViewItem {
     private let currentMoonLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .left
-        label.textColor = .white
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         
         return label
@@ -117,23 +115,21 @@ class MainContentViewMoonCalendar: MainContentViewItem {
         
         attributedString.append(
             NSAttributedString(
-                string: currentPhase.phase.string + "\n",
+                string: currentPhase.phase.string + "\n\n",
                 attributes: [
-                    .font : UIFont.boldSystemFont(ofSize: 20),
+                    .font : UIFont.boldGothamPro(ofSize: 18) ?? .boldSystemFont(ofSize: 20),
                     .foregroundColor : UIColor.white
                 ]
             )
         )
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        let dateString = dateFormatter.string(from: currentPhase.date)
+        let dateString = DateFormatter().string(from: currentPhase.date, format: "MMM d, yyyy")
         
         attributedString.append(
             NSAttributedString(
                 string: dateString,
                 attributes: [
-                    .font : UIFont.systemFont(ofSize: 18),
+                    .font : UIFont.mediumGothamPro(ofSize: 16) ?? .boldSystemFont(ofSize: 18),
                     .foregroundColor : UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
                 ]
             )
@@ -158,7 +154,7 @@ class MainContentViewMoonCalendar: MainContentViewItem {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .mediumGothamPro(ofSize: 14)
         label.textColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
         label.textAlignment = .center
         label.numberOfLines = 2

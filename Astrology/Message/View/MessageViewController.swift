@@ -12,7 +12,7 @@ class MessageViewController: ViewController {
     private let backButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setBackgroundImage(Icon.arrowLeft, for: .normal)
         button.tintColor = .white
         return button
     }()
@@ -33,7 +33,7 @@ class MessageViewController: ViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         
         let attributedString = NSMutableAttributedString()
         
@@ -41,7 +41,7 @@ class MessageViewController: ViewController {
             NSAttributedString(
                 string: "Online",
                 attributes: [
-                    .font : UIFont(name: "Copperplate", size: 18) ?? .systemFont(ofSize: 14),
+                    .font : UIFont.mediumGothamPro(ofSize: 14) ?? .systemFont(ofSize: 14),
                     .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
                 ]
             )
@@ -49,9 +49,9 @@ class MessageViewController: ViewController {
         
         attributedString.append(
             NSAttributedString(
-                string: "\nKatrina Loo",
+                string: "\n\nKatrina Loo",
                 attributes: [
-                    .font : UIFont(name: "Copperplate Bold", size: 24) ?? .boldSystemFont(ofSize: 20),
+                    .font : UIFont.boldGothamPro(ofSize: 20) ?? .boldSystemFont(ofSize: 20),
                     .foregroundColor : UIColor.white
                 ]
             )
@@ -66,7 +66,7 @@ class MessageViewController: ViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont(name: "Copperplate", size: 20)
+        label.font = .mediumGothamPro(ofSize: 18)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -80,7 +80,7 @@ class MessageViewController: ViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont(name: "Copperplate", size: 14)
+        label.font = .mediumGothamPro(ofSize: 12)
         label.textColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -94,7 +94,7 @@ class MessageViewController: ViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.titleLabel?.font = UIFont(name: "Copperplate Bold", size: 26)
+        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
         button.setTitle("Send", for: .normal)
         button.backgroundColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)
@@ -143,17 +143,14 @@ class MessageViewController: ViewController {
         
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                            constant: 8),
+                                            constant: 12),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                constant: 16),
-            backButton.heightAnchor.constraint(equalToConstant: 32),
-            backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor,
-                                              multiplier: 0.6),
+                                                constant: 20),
+            backButton.heightAnchor.constraint(equalToConstant: 40),
+            backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor),
             
 
             avatarImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            avatarImageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor,
-//                                                 constant: -8),
             avatarImageView.widthAnchor.constraint(equalTo: view.widthAnchor,
                                                    multiplier: 0.4),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),

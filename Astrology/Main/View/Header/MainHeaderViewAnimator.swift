@@ -20,7 +20,7 @@ class MainHeaderViewAnimator: UIViewPropertyAnimator {
     }
     
     var bottomConsant: CGFloat {
-        return shouldHide ? 12 : -48
+        return shouldHide ? 16 : -48
     }
     
     var signTransform: CGAffineTransform {

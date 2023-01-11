@@ -12,6 +12,9 @@ struct Icon {
     static let pencil = UIImage(named: "pencil")
     static let instagram = UIImage(named: "instagram")
     
+    static let arrowRight = UIImage(named: "arrow-right")
+    static let arrowLeft = UIImage(named: "arrow-left")
+    
 }
 
 extension Date {
@@ -48,5 +51,19 @@ extension DateFormatter {
     func string(from date: Date, format: String) -> String {
         self.dateFormat = format
         return string(from: date)
+    }
+}
+
+extension UIFont {
+    static func boldGothamPro(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "GothamPro-Bold", size: size)
+    }
+    
+    static func mediumGothamPro(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "GothamPro-Medium", size: size)
+    }
+    
+    static func blackGothamPro(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "GothamPro-Black", size: size)
     }
 }

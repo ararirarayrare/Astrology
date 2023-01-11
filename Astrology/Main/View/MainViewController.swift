@@ -31,6 +31,7 @@ class MainViewController: ViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isScrollEnabled = false
+        scrollView.indicatorStyle = .white
         return scrollView
     }()
     
