@@ -17,20 +17,20 @@ class NumerologyViewController: ViewController {
         return button
     }()
 
-    private let titleLabel: NumerologyTitleLabel = {
-        let label = NumerologyTitleLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "What the numbers says about you?"
-        
-        return label
-    }()
-    
-    private let collectionView: NumerologyCollectionView = {
-        let collectionView = NumerologyCollectionView()
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return collectionView
-    }()
+//    private let titleLabel: NumerologyTitleLabel = {
+//        let label = NumerologyTitleLabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.text = "What the numbers says about you?"
+//
+//        return label
+//    }()
+//
+//    private let collectionView: NumerologyCollectionView = {
+//        let collectionView = NumerologyCollectionView()
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        return collectionView
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class NumerologyViewController: ViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        collectionView.contentInset.top = titleLabel.frame.minY + 8
+//        collectionView.contentInset.top = titleLabel.frame.minY + 8
     }
     
     @objc
@@ -51,9 +51,9 @@ class NumerologyViewController: ViewController {
     }
     
     private func layout() {
-        view.addSubview(collectionView)
+//        view.addSubview(collectionView)
         view.addSubview(backButton)
-        view.addSubview(titleLabel)
+//        view.addSubview(titleLabel)
 
         
         NSLayoutConstraint.activate([
@@ -66,17 +66,17 @@ class NumerologyViewController: ViewController {
                                               multiplier: 0.6),
             
             
-            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor,
-                                            constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                 constant: -16),
-            
-            
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor,
+//                                            constant: 8),
+//            titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor),
+//            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+//                                                 constant: -16),
+//
+//
+//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -84,22 +84,22 @@ class NumerologyViewController: ViewController {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 23/255, alpha: 1.0)
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         
-        collectionView.scrollHandler = { [weak titleLabel] collectionView in
-            guard let titleLabel = titleLabel else {
-                return
-            }
-            
-            let offsetY = -collectionView.contentOffset.y
-            let insetTop = collectionView.contentInset.top
-            
-            if offsetY <= (insetTop + 14), titleLabel.alpha == 1 {
-                titleLabel.animate(shouldHide: true)
-            }
-                    
-            if offsetY >= (insetTop + 18), titleLabel.alpha == 0 {
-                titleLabel.animate(shouldHide: false)
-            }
-            
-        }
+//        collectionView.scrollHandler = { [weak titleLabel] collectionView in
+//            guard let titleLabel = titleLabel else {
+//                return
+//            }
+//
+//            let offsetY = -collectionView.contentOffset.y
+//            let insetTop = collectionView.contentInset.top
+//
+//            if offsetY <= (insetTop + 14), titleLabel.alpha == 1 {
+//                titleLabel.animate(shouldHide: true)
+//            }
+//
+//            if offsetY >= (insetTop + 18), titleLabel.alpha == 0 {
+//                titleLabel.animate(shouldHide: false)
+//            }
+//
+//        }
     }
 }

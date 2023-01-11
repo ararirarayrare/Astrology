@@ -12,27 +12,30 @@ class MainBarView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Copperplate Bold", size: 24)
-        label.textColor = .white
+
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
                 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMMM"
-        
-        let today = Date()
 
-        let dateString = dateFormatter.string(from: today)
+        let today = Date()
+        let dateString = dateFormatter.string(from: today, format: "d MMMM")
+        let weekdayString = dateFormatter.string(from: today, format: "EEEE")
         
-        dateFormatter.dateFormat = "EEEE"
-        let weekdayString = dateFormatter.string(from: today)
-        
-        let attributedString = NSMutableAttributedString(string: dateString + ",\n")
+        let attributedString = NSMutableAttributedString(
+            string: dateString + ",\n",
+            attributes: [
+                .font : UIFont(name: "gothampro_black", size: 24) ?? .boldSystemFont(ofSize: 24),
+                .foregroundColor : UIColor.white
+            ]
+        )
+
         attributedString.append(
             NSAttributedString(
                 string: weekdayString,
                 attributes: [
+                    .font : UIFont(name: "gothampro_bold", size: 22) ?? .boldSystemFont(ofSize: 22),
                     .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
                 ]
             )
