@@ -21,10 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.overrideUserInterfaceStyle = .dark
         window?.makeKeyAndVisible()
         
-        let builder = MainBuilder()
-        let mainCoordinator = MainCoordinator(window: window, builder: builder)
+        let builder = TabBarBuilder()
+        let coordinator = TabBarCoordinator(window: window,
+                                            builder: builder)
 
-        mainCoordinator.start()
+        coordinator.start()
     }
 
 }

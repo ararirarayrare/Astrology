@@ -14,6 +14,8 @@ class CompatibilityViewController: ViewController {
     init(coordinator: CompatibilityCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
+        
+        view.backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
