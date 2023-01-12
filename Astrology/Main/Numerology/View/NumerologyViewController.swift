@@ -74,9 +74,9 @@ class NumerologyViewController: ViewController {
     
     private let numerology: Numerology
     
-    let coordinator: MainCoordinator
+    let coordinator: HomeCoordinator
     
-    init(numerologyType: Numerology, coordinator: MainCoordinator) {
+    init(numerologyType: Numerology, coordinator: HomeCoordinator) {
         self.numerology = numerologyType
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)

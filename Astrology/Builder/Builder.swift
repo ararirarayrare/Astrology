@@ -15,7 +15,7 @@ class Builder {
 
 class TabBarBuilder: Builder {
     
-    let mainBuilder = MainBuilder()
+    let mainBuilder = HomeBuilder()
     
     let compatibilityBuilder = CompatibilityBuilder()
     
@@ -28,19 +28,19 @@ class TabBarBuilder: Builder {
     
 }
 
-class MainBuilder: Builder {
+class HomeBuilder: Builder {
     
-    func createMain(coordinator: MainCoordinator) -> MainViewController {
-        let vc = MainViewController(coordinator: coordinator)
+    func createHome(coordinator: HomeCoordinator) -> HomeViewController {
+        let vc = HomeViewController(coordinator: coordinator)
         return vc
     }
     
-    func createMessage(coordinator: MainCoordinator) -> MessageViewController {
+    func createMessage(coordinator: HomeCoordinator) -> MessageViewController {
         let vc = MessageViewController(coordinator: coordinator)
         return vc
     }
     
-    func createNumerology(type: Numerology, coordinator: MainCoordinator) -> NumerologyViewController {
+    func createNumerology(type: Numerology, coordinator: HomeCoordinator) -> NumerologyViewController {
         let vc = NumerologyViewController(numerologyType: type, coordinator: coordinator)
         return vc
     }

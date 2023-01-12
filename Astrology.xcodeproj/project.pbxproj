@@ -34,7 +34,7 @@
 		04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
-		04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* MainViewController.swift */; };
+		04DEDA4E295735BF00DD5636 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* HomeViewController.swift */; };
 		04DEDA53295735C100DD5636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DEDA52295735C100DD5636 /* Assets.xcassets */; };
 		04DEDA56295735C100DD5636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DEDA54295735C100DD5636 /* LaunchScreen.storyboard */; };
 		04DEDA5F2957361900DD5636 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA5E2957361800DD5636 /* Builder.swift */; };
@@ -63,7 +63,7 @@
 		04C8E690295F6C43001524EF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04C8E6942960AEC4001524EF /* NumerologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewController.swift; sourceTree = "<group>"; };
 		04C9C3B3296CEA0E005C7003 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainContentViewNumerologyCollectionViewCell.swift; path = ../../../../../../../MainContentViewNumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
+		04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04C9C3C5296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythmContainerView.swift; sourceTree = "<group>"; };
 		04C9C3C7296E091A005C7003 /* MainContentViewBiorythmChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythmChartView.swift; sourceTree = "<group>"; };
 		04C9C3CB296EB411005C7003 /* gothampro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_black.ttf; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04DEDA4D295735BF00DD5636 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		04DEDA4D295735BF00DD5636 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04DEDA52295735C100DD5636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DEDA55295735C100DD5636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DEDA57295735C100DD5636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +109,15 @@
 				04309BF12970734300A439D4 /* CompatibilityViewController.swift */,
 			);
 			path = Compatibility;
+			sourceTree = "<group>";
+		};
+		04309BF72970CE2500A439D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04DEDA6E29578B4000DD5636 /* View */,
+				04681C22295A2D2600B819AF /* Model */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		04681C19295A246700B819AF /* Content */ = {
@@ -235,21 +244,19 @@
 		04DEDA48295735BF00DD5636 /* Astrology */ = {
 			isa = PBXGroup;
 			children = (
-				04309BF02970733200A439D4 /* Compatibility */,
-				04309BED2970671C00A439D4 /* Profile */,
 				04DEDA49295735BF00DD5636 /* AppDelegate.swift */,
 				04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */,
+				04309BF329707AED00A439D4 /* TabBarController.swift */,
+				04309BF02970733200A439D4 /* Compatibility */,
 				04DEDA632957367C00DD5636 /* Main */,
-				04C8E6932960AE9B001524EF /* Numerology */,
-				04C8E68F295F6C27001524EF /* Message */,
-				04C9C3C9296EB3D0005C7003 /* Resources */,
+				04309BED2970671C00A439D4 /* Profile */,
 				04DEDA54295735C100DD5636 /* LaunchScreen.storyboard */,
 				04DEDA57295735C100DD5636 /* Info.plist */,
+				04C9C3C9296EB3D0005C7003 /* Resources */,
 				04DEDA5D2957361800DD5636 /* Builder */,
 				04DEDA602957362200DD5636 /* Coordinator */,
 				04DEDA64295738D900DD5636 /* ViewController.swift */,
 				04C9C3B3296CEA0E005C7003 /* Extensions.swift */,
-				04309BF329707AED00A439D4 /* TabBarController.swift */,
 			);
 			path = Astrology;
 			sourceTree = "<group>";
@@ -273,8 +280,9 @@
 		04DEDA632957367C00DD5636 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				04DEDA6E29578B4000DD5636 /* View */,
-				04681C22295A2D2600B819AF /* Model */,
+				04309BF72970CE2500A439D4 /* Home */,
+				04C8E6932960AE9B001524EF /* Numerology */,
+				04C8E68F295F6C27001524EF /* Message */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -282,7 +290,7 @@
 		04DEDA6E29578B4000DD5636 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04DEDA4D295735BF00DD5636 /* MainViewController.swift */,
+				04DEDA4D295735BF00DD5636 /* HomeViewController.swift */,
 				04DEDA682957649300DD5636 /* MainBarView.swift */,
 				04C6F574295C7C480005B057 /* Header */,
 				04681C19295A246700B819AF /* Content */,
@@ -371,7 +379,7 @@
 				04DEDA65295738D900DD5636 /* ViewController.swift in Sources */,
 				04C9C3D0296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift in Sources */,
 				04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */,
-				04DEDA4E295735BF00DD5636 /* MainViewController.swift in Sources */,
+				04DEDA4E295735BF00DD5636 /* HomeViewController.swift in Sources */,
 				04C8E67E295DA689001524EF /* MainHeaderViewDetails.swift in Sources */,
 				04DEDA6B29577C0400DD5636 /* MainHeaderView.swift in Sources */,
 				04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */,

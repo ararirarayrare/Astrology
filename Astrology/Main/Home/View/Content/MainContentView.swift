@@ -95,9 +95,9 @@ class MainContentView: UIView {
     }()
     
     
-    let coordinator: MainCoordinator
+    let coordinator: HomeCoordinator
     
-    init(coordinator: MainCoordinator) {
+    init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator
         super.init(frame: .zero)
         

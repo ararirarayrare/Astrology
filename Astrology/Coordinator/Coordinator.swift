@@ -39,39 +39,24 @@ class TabBarCoordinator: Coordinator {
     }
     
     func start() {
-//        let tabBarController = builder.createTabBarController()
-//
-//        let compatibilityCoordinator = CompatibilityCoordinator(builder: builder.compatibilityBuilder,
-//                                                                tabBarController: tabBarController)
-//
-//        let mainCoordinator = MainCoordinator(builder: builder.mainBuilder,
-//                                              tabBarController: tabBarController)
-//
-//        let profileCoordinator = ProfileCoordinator(builder: builder.profileBuilder,
-//                                                    tabBarController: tabBarController)
-        
-//        compatibilityCoordinator.start()
-//        mainCoordinator.start()
-//        profileCoordinator.start()
-        
         let compatibilityCoordinator = CompatibilityCoordinator(builder: builder.compatibilityBuilder)
         
-        let mainCoordinator = MainCoordinator(builder: builder.mainBuilder)
+        let homeCoordinator = HomeCoordinator(builder: builder.mainBuilder)
         
         let profileCoordinator = ProfileCoordinator(builder: builder.profileBuilder)
         
         compatibilityCoordinator.start()
-        mainCoordinator.start()
+        homeCoordinator.start()
         profileCoordinator.start()
         
         if let compatibilityVc = compatibilityCoordinator.navigationController,
-           let mainVc = mainCoordinator.navigationController,
+           let homeVc = homeCoordinator.navigationController,
            let profileVc = profileCoordinator.navigationController {
             
             let tabBarController = builder.createTabBarController(
                 viewControllers: [
                     compatibilityVc,
-                    mainVc,
+                    homeVc,
                     profileVc
                 ]
             )
@@ -84,7 +69,7 @@ class TabBarCoordinator: Coordinator {
     
 }
 
-class MainCoordinator: Coordinator {
+class HomeCoordinator: Coordinator {
     
     enum Event {
         case message, numerology(Numerology)
@@ -100,9 +85,9 @@ class MainCoordinator: Coordinator {
     
     var childred: [Coordinator]?
     
-    let builder: MainBuilder
+    let builder: HomeBuilder
     
-    init(builder: MainBuilder) {
+    init(builder: HomeBuilder) {
         self.builder = builder
 //        self.tabBarController = tabBarController
         
@@ -110,7 +95,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = builder.createMain(coordinator: self)
+        let vc = builder.createHome(coordinator: self)
         let navController = builder.createNavigationController(rootViewController: vc)
         
         self.navigationController = navController

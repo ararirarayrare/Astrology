@@ -37,9 +37,9 @@ class MainContentViewMessage: MainContentViewItem {
         return label
     }()
     
-    var coordinator: MainCoordinator?
+    var coordinator: HomeCoordinator?
     
-    init(coordinator: MainCoordinator?) {
+    init(coordinator: HomeCoordinator?) {
         self.coordinator = coordinator
         super.init()
 

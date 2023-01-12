@@ -11,7 +11,7 @@ class MainContentViewNumerologyCollectionView: UICollectionView {
     
     let numbers: [Numerology]
         
-    var coordinator: MainCoordinator?
+    var coordinator: HomeCoordinator?
     
     init(numbers: [Numerology]) {
         self.numbers = numbers

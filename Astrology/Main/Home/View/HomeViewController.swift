@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: ViewController {
+class HomeViewController: ViewController {
     
     private lazy var barView: MainBarView = {
         let barView = MainBarView(coordinator: self.coordinator)
@@ -35,9 +35,9 @@ class MainViewController: ViewController {
         return scrollView
     }()
     
-    let coordinator: MainCoordinator
+    let coordinator: HomeCoordinator
     
-    init(coordinator: MainCoordinator) {
+    init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -164,7 +164,7 @@ class MainViewController: ViewController {
     }
 }
 
-extension MainViewController: UIGestureRecognizerDelegate {
+extension HomeViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
