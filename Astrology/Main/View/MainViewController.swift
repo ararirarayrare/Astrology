@@ -27,7 +27,7 @@ class MainViewController: ViewController {
         return contentView
     }()
     
-    private lazy var scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isScrollEnabled = false
@@ -35,21 +35,86 @@ class MainViewController: ViewController {
         return scrollView
     }()
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-                
-        setup()
-        layout()
+    let coordinator: MainCoordinator
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         headerView.animator.topOffset = -(headerView.bounds.height - barView.bounds.height)
-
+    }
+    
+    override func setup() {
+        super.setup()
+        
+        view.backgroundColor = .black
+        let backgroundImageView = UIImageView(frame: view.bounds)
+        backgroundImageView.image = UIImage(named: "main-bg")
+        backgroundImageView.contentMode = .scaleAspectFill
+        view.addSubview(backgroundImageView)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
+        panGesture.delegate = self
+        scrollView.addGestureRecognizer(panGesture)
     }
 
+    override func layout() {
+        super.layout()
+        
+        view.addSubview(barView)
+        view.insertSubview(headerView, belowSubview: barView)
+        view.insertSubview(scrollView, belowSubview: headerView)
+        scrollView.addSubview(contentView)
+        
+        let infoViewTopConstraint = headerView.topAnchor.constraint(equalTo: view.topAnchor)
+        headerView.topConstraint = infoViewTopConstraint
+        
+        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        contentViewCenterY.priority = .defaultLow
+
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+        
+        let contentGuide = scrollView.contentLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            barView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            barView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            barView.topAnchor.constraint(equalTo: view.topAnchor),
+            
+            
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 300),
+            infoViewTopConstraint,
+
+            
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            
+            contentView.leadingAnchor.constraint(equalTo: contentGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: contentGuide.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: contentGuide.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: contentGuide.bottomAnchor),
+            
+            
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentViewCenterY,
+            contentViewHeight
+        ])
+    }
+    
     @objc
     private func panned(_ gesture: UIPanGestureRecognizer) {
         guard scrollView.contentOffset.y <= 0 else {
@@ -100,66 +165,6 @@ class MainViewController: ViewController {
             break
         }
         
-    }
-    
-    
-    private func setup() {
-        view.backgroundColor = .black
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "main-bg")
-        backgroundImageView.contentMode = .scaleAspectFill
-        view.addSubview(backgroundImageView)
-        
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
-        panGesture.delegate = self
-        scrollView.addGestureRecognizer(panGesture)
-    }
-
-    private func layout() {
-        view.addSubview(barView)
-        view.insertSubview(headerView, belowSubview: barView)
-        view.insertSubview(scrollView, belowSubview: headerView)
-        scrollView.addSubview(contentView)
-        
-        let infoViewTopConstraint = headerView.topAnchor.constraint(equalTo: view.topAnchor)
-        headerView.topConstraint = infoViewTopConstraint
-        
-        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
-        contentViewCenterY.priority = .defaultLow
-
-        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
-        contentViewHeight.priority = .defaultLow
-        
-        let contentGuide = scrollView.contentLayoutGuide
-        
-        NSLayoutConstraint.activate([
-            barView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            barView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            barView.topAnchor.constraint(equalTo: view.topAnchor),
-            
-            
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 300),
-            infoViewTopConstraint,
-
-            
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            
-            contentView.leadingAnchor.constraint(equalTo: contentGuide.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: contentGuide.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: contentGuide.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: contentGuide.bottomAnchor),
-            
-            
-            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            contentViewCenterY,
-            contentViewHeight
-        ])
     }
 }
 

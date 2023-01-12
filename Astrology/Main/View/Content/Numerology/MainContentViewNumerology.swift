@@ -21,14 +21,7 @@ class MainContentViewNumerology: MainContentViewItem {
     }()
     
     private let collectionView: MainContentViewNumerologyCollectionView = {
-        let numbers = [
-            "Destiny number" : 8,
-            "Radial number" : 1,
-            "Evil number" : 7,
-            "Name number" : 23
-        ]
-        
-        let collectionView = MainContentViewNumerologyCollectionView(numbers: numbers)
+        let collectionView = MainContentViewNumerologyCollectionView(numbers: Numerology.allCases)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         return collectionView
@@ -48,7 +41,7 @@ class MainContentViewNumerology: MainContentViewItem {
     }
     
     private func setup() {
-        
+        collectionView.coordinator = self.coordinator
     }
     
     override func layout() {

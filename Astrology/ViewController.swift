@@ -13,15 +13,19 @@ class ViewController: UIViewController {
         return .portrait
     }
     
-    let coordinator: MainCoordinator
-    
-    init(coordinator: MainCoordinator) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+        layout()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setup() {
+        
+    }
+    
+    func layout() {
+        
     }
     
 }

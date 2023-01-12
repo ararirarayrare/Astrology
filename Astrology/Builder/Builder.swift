@@ -7,7 +7,38 @@
 
 import UIKit
 
-class Builder {
+class TabBarBuilder {
+    
+    let mainBuilder = MainBuilder()
+    
+    let compatibilityBuilder = CompatibilityBuilder()
+    
+    let profileBuilder = ProfileBuiler()
+    
+    func createMain(coordinator: MainCoordinator) -> MainViewController {
+        let vc = MainViewController(coordinator: coordinator)
+        return vc
+    }
+    
+    func createProfile(coordinator: ProfileCoordinator) -> ProfileViewController {
+        let vc = ProfileViewController(coordinator: coordinator)
+        return vc
+    }
+    
+    func createCompatibility(coordinator: CompatibilityCoordinator) -> CompatibilityViewController {
+        let vc = CompatibilityViewController(coordinator: coordinator)
+        return vc
+    }
+    
+    func createTabBarController(viewControllers: [ViewController]) -> TabBarController {
+        let tabBarController = TabBarController()
+        tabBarController.viewControllers = viewControllers
+        
+        return tabBarController
+    }
+}
+
+class MainBuilder {
     
     func createNavigation(rootViewController: ViewController) -> NavigationController {
         return NavigationController(rootViewController: rootViewController)
@@ -23,8 +54,20 @@ class Builder {
         return vc
     }
     
-    func createNumerology(coordinator: MainCoordinator) -> NumerologyViewController {
-        let vc = NumerologyViewController(coordinator: coordinator)
+    func createNumerology(type: Numerology, coordinator: MainCoordinator) -> NumerologyViewController {
+        let vc = NumerologyViewController(numerologyType: type, coordinator: coordinator)
         return vc
     }
+
+}
+
+class ProfileBuiler {
+    
+
+    
+}
+
+class CompatibilityBuilder {
+    
+    
 }

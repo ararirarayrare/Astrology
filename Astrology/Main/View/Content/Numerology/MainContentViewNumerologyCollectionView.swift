@@ -9,9 +9,11 @@ import UIKit
 
 class MainContentViewNumerologyCollectionView: UICollectionView {
     
-    let numbers: [String : Int]
+    let numbers: [Numerology]
+        
+    var coordinator: MainCoordinator?
     
-    init(numbers: [String : Int]) {
+    init(numbers: [Numerology]) {
         self.numbers = numbers
         
         let layout = UICollectionViewFlowLayout()
@@ -53,10 +55,13 @@ extension MainContentViewNumerologyCollectionView: UICollectionViewDelegate, UIC
             return MainContentViewNumerologyCollectionViewCell()
         }
         
-        let title = Array(numbers.keys)[indexPath.item]
-        let number = numbers[title] ?? -1
-                
-        cell.setup(withTitle: title, number: number)
+        let numerologyType = numbers[indexPath.item]
+        
+        cell.setup(withTitle: numerologyType.title,
+                   number: numerologyType.number) { [weak self] in
+            
+            self?.coordinator?.eventOccured(.numerology(numerologyType))
+        }
         
         cell.imageView.image = UIImage(named: "number-bg-\(indexPath.item)")
         

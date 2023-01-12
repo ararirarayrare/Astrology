@@ -104,25 +104,26 @@ class MessageViewController: ViewController {
         return button
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setup()
-        layout()
+    let coordinator: MainCoordinator
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+ 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
     }
     
-    @objc
-    private func backTapped() {
-        coordinator.eventOccured(.pop)
-    }
-    
-    private func setup() {
+    override func setup() {
+        super.setup()
+        
         let backgroundImageView = UIImageView(frame: view.bounds)
         backgroundImageView.image = UIImage(named: "message-bg")
         view.addSubview(backgroundImageView)
@@ -133,7 +134,9 @@ class MessageViewController: ViewController {
         
     }
     
-    private func layout() {
+    override func layout() {
+        super.layout()
+        
         view.addSubview(backButton)
         view.addSubview(avatarImageView)
         view.addSubview(nameLabel)
@@ -183,6 +186,11 @@ class MessageViewController: ViewController {
             sendButton.widthAnchor.constraint(equalToConstant: 160),
             sendButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc
+    private func backTapped() {
+        coordinator.eventOccured(.pop)
     }
     
 }
