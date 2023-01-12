@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         layout()
     }
     
+    func setBackground(image: UIImage?) {
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+    }
+    
     func setup() {
         
     }

@@ -55,12 +55,8 @@ class MainViewController: ViewController {
     override func setup() {
         super.setup()
         
-        view.backgroundColor = .black
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "main-bg")
-        backgroundImageView.contentMode = .scaleAspectFill
-        view.addSubview(backgroundImageView)
-        
+        setBackground(image: UIImage(named: "main-bg"))
+    
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
         panGesture.delegate = self
         scrollView.addGestureRecognizer(panGesture)

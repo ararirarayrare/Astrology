@@ -15,6 +15,9 @@ class CompatibilityViewController: ViewController {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
         
+//        tabBarItem.image = Icon.match
+//        tabBarItem.title = "Match"
+        
         view.backgroundColor = .red
     }
     
@@ -22,4 +25,10 @@ class CompatibilityViewController: ViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    override func setup() {
+        super.setup()
+        
+     
+    }
 }
