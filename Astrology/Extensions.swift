@@ -58,6 +58,11 @@ extension DateFormatter {
         self.dateFormat = format
         return string(from: date)
     }
+    
+    func date(from string: String, format: String) -> Date? {
+        self.dateFormat = format
+        return date(from: string)
+    }
 }
 
 extension UIFont {
@@ -94,5 +99,13 @@ extension UIImage {
 extension UINavigationController {
     var rootViewController: UIViewController? {
         return viewControllers.first
+    }
+}
+
+extension DateComponents: Comparable {
+    public static func < (lhs: DateComponents, rhs: DateComponents) -> Bool {
+        let now = Date()
+        let calendar = Calendar.current
+        return calendar.date(byAdding: lhs, to: now)! < calendar.date(byAdding: rhs, to: now)!
     }
 }

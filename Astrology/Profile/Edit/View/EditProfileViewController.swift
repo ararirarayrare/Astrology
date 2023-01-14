@@ -34,8 +34,6 @@ class EditProfileViewController: ViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        imageView.image = UIImage(named: "cancer-sign")
-        
         imageView.layer.cornerRadius = 60
         imageView.layer.masksToBounds = true
         
@@ -98,6 +96,15 @@ class EditProfileViewController: ViewController {
         
         return datePicker
     }()
+    
+    private let signImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+                
+        
+        return imageView
+    }()
+    
     
     private lazy var genderLabel = createLabel(text: "Gender", textAligment: .center)
     
@@ -169,8 +176,14 @@ class EditProfileViewController: ViewController {
         setBackground(image: .background1)
         
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        birthdayDatePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+        
+        imageView.image = UIImage(named: "cancer-sign")
         
         nameTextField.text = "Poroshenko"
+        
+        signImageView.image = UIImage(named: "cancer-sign")
+        
         genderSegmentedControl.selectedSegmentIndex = 1
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -190,7 +203,7 @@ class EditProfileViewController: ViewController {
         
         view.addSubview(birthdayLabel)
         view.addSubview(birthdayDatePicker)
-        
+        view.addSubview(signImageView)
         
         view.addSubview(genderLabel)
         view.addSubview(genderSegmentedControl)
@@ -245,7 +258,13 @@ class EditProfileViewController: ViewController {
             
             birthdayDatePicker.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor,
                                                    constant: 16),
-            birthdayDatePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            birthdayDatePicker.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+            
+            
+            signImageView.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+            signImageView.centerYAnchor.constraint(equalTo: birthdayDatePicker.centerYAnchor),
+            signImageView.heightAnchor.constraint(equalToConstant: 32),
+            signImageView.widthAnchor.constraint(equalTo: signImageView.heightAnchor),
             
             
             genderLabel.topAnchor.constraint(equalTo: birthdayDatePicker.bottomAnchor,
@@ -262,7 +281,7 @@ class EditProfileViewController: ViewController {
             
             
             saveButton.topAnchor.constraint(equalTo: genderSegmentedControl.bottomAnchor,
-                                            constant: 24),
+                                            constant: 32),
             saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             saveButton.widthAnchor.constraint(equalToConstant: 160),
             saveButton.heightAnchor.constraint(equalToConstant: 50)
@@ -272,6 +291,13 @@ class EditProfileViewController: ViewController {
     @objc
     private func backTapped() {
         coordinator.eventOccured(.pop)
+    }
+    
+    @objc
+    private func dateChanged(_ sender: UIDatePicker) {
+        if let sign = ZodiacSign.forDate(sender.date) {
+            signImageView.image = sign.image
+        }
     }
     
     private func createLabel(text: String, textAligment: NSTextAlignment) -> UILabel {

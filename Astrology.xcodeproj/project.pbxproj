@@ -19,6 +19,7 @@
 		04309C0B2971F54700A439D4 /* gothampro_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0A2971F54700A439D4 /* gothampro_italic.ttf */; };
 		04309C0D2971F56B00A439D4 /* gothampro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0C2971F56B00A439D4 /* gothampro.ttf */; };
 		04309C0F2971FC7900A439D4 /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */; };
+		04309C122972D9B600A439D4 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C112972D9B600A439D4 /* ZodiacSign.swift */; };
 		046569E12968BBB60087A959 /* HomeHeaderViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */; };
 		04681C18295A236300B819AF /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* HomeContentView.swift */; };
 		04681C1B295A248A00B819AF /* HomeContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */; };
@@ -65,6 +66,7 @@
 		04309C0A2971F54700A439D4 /* gothampro_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_italic.ttf; sourceTree = "<group>"; };
 		04309C0C2971F56B00A439D4 /* gothampro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro.ttf; sourceTree = "<group>"; };
 		04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
+		04309C112972D9B600A439D4 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
 		046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewAnimator.swift; sourceTree = "<group>"; };
 		04681C17295A236300B819AF /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewEssential.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				04309C042971E6BE00A439D4 /* View */,
+				04309C102972D9A000A439D4 /* Model */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -195,6 +198,14 @@
 				04309C082971E80D00A439D4 /* HelpViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04309C102972D9A000A439D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04309C112972D9B600A439D4 /* ZodiacSign.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		04681C19295A246700B819AF /* Content */ = {
@@ -476,6 +487,7 @@
 				04681C1B295A248A00B819AF /* HomeContentViewEssential.swift in Sources */,
 				04DEDA622957362200DD5636 /* Coordinator.swift in Sources */,
 				04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */,
+				04309C122972D9B600A439D4 /* ZodiacSign.swift in Sources */,
 				04C9C3B9296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift in Sources */,
 				04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */,
 				04309BEF2970673500A439D4 /* ProfileViewController.swift in Sources */,

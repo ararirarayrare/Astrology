@@ -23,6 +23,7 @@ class ProfileTableView: UITableView {
         separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         backgroundColor = .clear
+    
                 
 //        allowsSelection = false
         
@@ -61,6 +62,8 @@ extension ProfileTableView: UITableViewDelegate, UITableViewDataSource {
         let setting = settings[indexPath.item]
         cell.titleLabel.text = setting.title
         cell.iconImageView.image = setting.image
+        
+        cell.selectionStyle = .none
         
         return cell
     }
