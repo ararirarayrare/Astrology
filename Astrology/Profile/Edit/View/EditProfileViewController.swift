@@ -182,7 +182,9 @@ class EditProfileViewController: ViewController {
         
         nameTextField.text = "Poroshenko"
         
-        signImageView.image = UIImage(named: "cancer-sign")
+        if let sign = ZodiacSign.forDate(birthdayDatePicker.date) {
+            signImageView.image = sign.image
+        }
         
         genderSegmentedControl.selectedSegmentIndex = 1
         

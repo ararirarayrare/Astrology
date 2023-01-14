@@ -40,159 +40,116 @@ enum ZodiacSign: CaseIterable {
         }
     }
     
-    var dates: (from: DateComponents, to: DateComponents)? {
+    private func components(fromDate: String, to date: String) -> (from: DateComponents, to: DateComponents)? {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM"
         
-//        let components = Calendar.current.date(<#T##date: Date##Date#>, matchesComponents: <#T##DateComponents#>)
-        
-        switch self {
-        case .aries:
-           if let dateFrom = formatter.date(from: "21.03"),
-              let dateTo = formatter.date(from: "19.04") {
-               
-               let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-               let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-               
-               return (componentsFrom, componentsTo)
-           }
-            
-//            return (formatter.date(from: "21.03"), formatter.date(from: "19.04"))
-        case .taurus:
-            if let dateFrom = formatter.date(from: "20.04"),
-               let dateTo = formatter.date(from: "20.05") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "20.04"), formatter.date(from: "20.05"))
-        case .gemini:
-            if let dateFrom = formatter.date(from: "21.05"),
-               let dateTo = formatter.date(from: "21.06") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "21.05"), formatter.date(from: "20.06"))
-        case .cancer:
-            if let dateFrom = formatter.date(from: "22.06"),
-               let dateTo = formatter.date(from: "22.07") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "21.06"), formatter.date(from: "22.07"))
-        case .leo:
-            if let dateFrom = formatter.date(from: "23.07"),
-               let dateTo = formatter.date(from: "22.08") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "23.07"), formatter.date(from: "22.08"))
-        case .virgo:
-            if let dateFrom = formatter.date(from: "23.08"),
-               let dateTo = formatter.date(from: "22.09") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "23.08"), formatter.date(from: "22.09"))
-        case .libra:
-            if let dateFrom = formatter.date(from: "23.09"),
-               let dateTo = formatter.date(from: "22.10") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "23.09"), formatter.date(from: "22.10"))
-        case .scorpio:
-            if let dateFrom = formatter.date(from: "23.10"),
-               let dateTo = formatter.date(from: "21.11") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "23.10"), formatter.date(from: "21.11"))
-        case .sagittarius:
-            if let dateFrom = formatter.date(from: "22.11"),
-               let dateTo = formatter.date(from: "21.12") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "22.11"), formatter.date(from: "21.12"))
-        case .capricorn:
-            if let dateFrom = formatter.date(from: "22.12"),
-               let dateTo = formatter.date(from: "19.01") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "22.12"), formatter.date(from: "19.01"))
-        case .aquarius:
-            if let dateFrom = formatter.date(from: "20.01"),
-               let dateTo = formatter.date(from: "18.02") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "20.01"), formatter.date(from: "18.02"))
-        case .pisces:
-            if let dateFrom = formatter.date(from: "19.02"),
-               let dateTo = formatter.date(from: "20.03") {
-                
-                let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
-                let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
-                
-                return (componentsFrom, componentsTo)
-            }
-            
-//            return (formatter.date(from: "19.02"), formatter.date(from: "20.03"))
+        guard let dateFrom = formatter.date(from: fromDate),
+              let dateTo = formatter.date(from: date) else {
+            return nil
         }
         
-        return nil
+        let componentsFrom = Calendar.current.dateComponents([.day, .month], from: dateFrom)
+        let componentsTo = Calendar.current.dateComponents([.day, .month], from: dateTo)
+        
+        return (componentsFrom, componentsTo)
+    }
+    
+    func dates() -> [(from: DateComponents, to: DateComponents)?] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM"
+    
+        switch self {
+        case .aries:
+            
+            if let components = components(fromDate: "21.03", to: "19.04") {
+                return [components]
+            }
+
+        case .taurus:
+
+            if let components = components(fromDate: "20.04", to: "20.05") {
+                return [components]
+            }
+            
+        case .gemini:
+            
+            if let components = components(fromDate: "21.05", to: "21.06") {
+                return [components]
+            }
+            
+        case .cancer:
+
+            if let components = components(fromDate: "22.06", to: "22.07") {
+                return [components]
+            }
+            
+        case .leo:
+
+            if let components = components(fromDate: "23.07", to: "22.08") {
+                return [components]
+            }
+            
+        case .virgo:
+
+            if let components = components(fromDate: "23.08", to: "22.09") {
+                return [components]
+            }
+            
+        case .libra:
+
+            if let components = components(fromDate: "23.09", to: "22.10") {
+                return [components]
+            }
+            
+        case .scorpio:
+            
+            if let components = components(fromDate: "23.10", to: "21.11") {
+                return [components]
+            }
+            
+        case .sagittarius:
+
+            if let components = components(fromDate: "22.11", to: "21.12") {
+                return [components]
+            }
+            
+        case .capricorn:
+
+                if let firstComponents = components(fromDate: "01.01", to: "19.01"),
+                   let lastComponents = components(fromDate: "22.12", to: "31.12") {
+                    return [firstComponents, lastComponents]
+                }
+            
+        case .aquarius:
+            
+            if let components = components(fromDate: "20.01", to: "18.02") {
+                return [components]
+            }
+            
+        case .pisces:
+            
+            if let components = components(fromDate: "19.02", to: "20.03") {
+                return [components]
+            }
+            
+        }
+        
+        return []
     }
     
     static func forDate(_ date: Date) -> Self? {
         var zodiacSign: Self? = nil
         
+        let dateComponents = Calendar.current.dateComponents([.day, .month], from: date)
+        
         allCases.forEach { sign in
-            if let dates = sign.dates {
-                let dateComponents = Calendar.current.dateComponents([.day, .month], from: date)
-
-                if dateComponents > dates.from, dateComponents < dates.to {
+            let dates = sign.dates()
+            
+            dates.forEach { date in
+                if let date = date, dateComponents >= date.from, dateComponents <= date.to {
                     zodiacSign = sign
+                    return
                 }
             }
         }
