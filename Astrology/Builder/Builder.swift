@@ -54,6 +54,16 @@ class ProfileBuiler: Builder {
         return vc
     }
     
+    func createEditProfile(coordinator: ProfileCoordinator) -> EditProfileViewController {
+        let vc = EditProfileViewController(coordinator: coordinator)
+        return vc
+    }
+    
+    func createHelp(coordinator: ProfileCoordinator) -> HelpViewController {
+        let vc = HelpViewController(coordinator: coordinator)
+        return vc
+    }
+    
 }
 
 class CompatibilityBuilder: Builder {

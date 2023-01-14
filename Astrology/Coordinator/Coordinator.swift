@@ -121,7 +121,9 @@ class HomeCoordinator: Coordinator {
 class ProfileCoordinator: Coordinator {
     
     enum Event {
+        case editProfile, helpCenter
         
+        case pop
     }
     
     var window: UIWindow?
@@ -149,7 +151,17 @@ class ProfileCoordinator: Coordinator {
     }
     
     func eventOccured(_ event: Event) {
-        
+        switch event {
+        case .editProfile:
+            let vc = builder.createEditProfile(coordinator: self)
+            navigationController?.pushViewController(vc, animated: true)
+        case .helpCenter:
+            let vc = builder.createHelp(coordinator: self)
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .pop:
+            navigationController?.popViewController(animated: true)
+        }
     }
     
 }

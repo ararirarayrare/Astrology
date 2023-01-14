@@ -7,6 +7,9 @@
 		<string>gothampro_medium.ttf</string>
 		<string>gothampro_bold.ttf</string>
 		<string>gothampro_black.ttf</string>
+		<string>gothampro_italic.ttf</string>
+		<string>gothampro.ttf</string>
+		<string>gothampro_bolditalic.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -8,7 +8,7 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    
+        
     private lazy var matchButton = createButton(image: Icon.match, tag: 0)
     private lazy var matchLabel = createLabel(text: "Match")
     
@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
     
     private lazy var profileButton = createButton(image: Icon.profile, tag: 2)
     private lazy var profileLabel = createLabel(text: "Profile")
-    
+        
     init(viewControllers: [UIViewController]) {
         super.init(nibName: nil, bundle: nil)
         
@@ -54,7 +54,40 @@ class TabBarController: UITabBarController {
     
     @objc
     private func buttonTapped(_ sender: UIButton) {
+        guard tabBar.isUserInteractionEnabled else {
+            return
+        }
+        
         selectedIndex = sender.tag
+//        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+    }
+    
+    func hideTabBar() {
+//        UIView.animate(withDuration: 0.25) {
+            self.homeButton.alpha = 0
+            self.matchButton.alpha = 0
+            self.profileButton.alpha = 0
+            self.matchLabel.alpha = 0
+            self.profileLabel.alpha = 0
+            self.tabBar.alpha = 0
+//        }
+        tabBar.isHidden = true
+    }
+    
+    func showTabBar() {        
+//        UIView.animate(withDuration: 0.15) {
+            self.homeButton.alpha = 1
+            self.matchButton.alpha = 1
+            self.profileButton.alpha = 1
+            self.matchLabel.alpha = 1
+            self.profileLabel.alpha = 1
+            self.tabBar.alpha = 1
+//        }
+        tabBar.isHidden = false
     }
     
     private func setup() {
@@ -72,7 +105,7 @@ class TabBarController: UITabBarController {
         
         view.addSubview(matchLabel)
         view.addSubview(matchButton)
-        
+
         view.addSubview(profileLabel)
         view.addSubview(profileButton)
         
@@ -87,8 +120,8 @@ class TabBarController: UITabBarController {
                                                constant: -4),
             matchLabel.centerXAnchor.constraint(equalTo: matchButton.centerXAnchor),
             matchLabel.heightAnchor.constraint(equalToConstant: 12),
-            
-            
+
+
             matchButton.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor,
                                                  constant: 56),
             matchButton.topAnchor.constraint(equalTo: tabBar.topAnchor,
@@ -96,15 +129,15 @@ class TabBarController: UITabBarController {
             matchButton.bottomAnchor.constraint(equalTo: matchLabel.topAnchor,
                                                constant: -4),
             matchButton.widthAnchor.constraint(equalTo: matchButton.heightAnchor),
-            
-            
+
+
             profileLabel.bottomAnchor.constraint(equalTo: tabBar.safeAreaLayoutGuide.bottomAnchor,
                                                  constant: -4),
             profileLabel.centerXAnchor.constraint(equalTo: profileButton.centerXAnchor),
             profileLabel.heightAnchor.constraint(equalToConstant: 12),
-            
-            
-            
+
+
+
             profileButton.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor,
                                                     constant: -56),
             profileButton.topAnchor.constraint(equalTo: tabBar.topAnchor,

@@ -11,24 +11,32 @@
 		04309BEF2970673500A439D4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BEE2970673500A439D4 /* ProfileViewController.swift */; };
 		04309BF22970734300A439D4 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BF12970734300A439D4 /* CompatibilityViewController.swift */; };
 		04309BF429707AED00A439D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BF329707AED00A439D4 /* TabBarController.swift */; };
-		046569E12968BBB60087A959 /* MainHeaderViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */; };
-		04681C18295A236300B819AF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* MainContentView.swift */; };
-		04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* MainContentViewEssential.swift */; };
-		04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1C295A252400B819AF /* MainContentViewNumerology.swift */; };
-		04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1E295A258700B819AF /* MainContentViewPrediction.swift */; };
-		04681C21295A25DD00B819AF /* MainContentViewMoonCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C20295A25DD00B819AF /* MainContentViewMoonCalendar.swift */; };
+		04309BF92970D16E00A439D4 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BF82970D16E00A439D4 /* ProfileTableView.swift */; };
+		04309BFB2971BAC500A439D4 /* ProfileSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BFA2971BAC500A439D4 /* ProfileSetting.swift */; };
+		04309BFF2971E58F00A439D4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BFE2971E58F00A439D4 /* ProfileTableViewCell.swift */; };
+		04309C032971E61F00A439D4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C022971E61F00A439D4 /* EditProfileViewController.swift */; };
+		04309C092971E80D00A439D4 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C082971E80D00A439D4 /* HelpViewController.swift */; };
+		04309C0B2971F54700A439D4 /* gothampro_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0A2971F54700A439D4 /* gothampro_italic.ttf */; };
+		04309C0D2971F56B00A439D4 /* gothampro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0C2971F56B00A439D4 /* gothampro.ttf */; };
+		04309C0F2971FC7900A439D4 /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */; };
+		046569E12968BBB60087A959 /* HomeHeaderViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */; };
+		04681C18295A236300B819AF /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* HomeContentView.swift */; };
+		04681C1B295A248A00B819AF /* HomeContentViewEssential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */; };
+		04681C1D295A252400B819AF /* HomeContentViewNumerology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1C295A252400B819AF /* HomeContentViewNumerology.swift */; };
+		04681C1F295A258700B819AF /* HomeContentViewPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C1E295A258700B819AF /* HomeContentViewPrediction.swift */; };
+		04681C21295A25DD00B819AF /* HomeContentViewMoonCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */; };
 		04681C24295A2D4800B819AF /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C23295A2D4800B819AF /* Moon.swift */; };
-		04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C25295B434300B819AF /* MainContentViewMessage.swift */; };
-		04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */; };
+		04681C26295B434300B819AF /* HomeContentViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C25295B434300B819AF /* HomeContentViewMessage.swift */; };
+		04C6F571295C56F40005B057 /* HomeContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* HomeContentViewBiorythm.swift */; };
 		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
-		04C8E67E295DA689001524EF /* MainHeaderViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */; };
+		04C8E67E295DA689001524EF /* HomeHeaderViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* HomeHeaderViewDetails.swift */; };
 		04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E690295F6C43001524EF /* MessageViewController.swift */; };
 		04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E6942960AEC4001524EF /* NumerologyViewController.swift */; };
 		04C9C3B4296CEA0E005C7003 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3B3296CEA0E005C7003 /* Extensions.swift */; };
-		04C9C3B9296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */; };
-		04C9C3C6296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C5296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift */; };
-		04C9C3C8296E091A005C7003 /* MainContentViewBiorythmChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C7296E091A005C7003 /* MainContentViewBiorythmChartView.swift */; };
-		04C9C3D0296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3CF296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift */; };
+		04C9C3B9296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3B8296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift */; };
+		04C9C3C6296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C5296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift */; };
+		04C9C3C8296E091A005C7003 /* HomeContentViewBiorythmChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C7296E091A005C7003 /* HomeContentViewBiorythmChartView.swift */; };
+		04C9C3D0296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3CF296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift */; };
 		04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */; };
 		04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CB296EB411005C7003 /* gothampro_black.ttf */; };
 		04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */; };
@@ -40,8 +48,8 @@
 		04DEDA5F2957361900DD5636 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA5E2957361800DD5636 /* Builder.swift */; };
 		04DEDA622957362200DD5636 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA612957362200DD5636 /* Coordinator.swift */; };
 		04DEDA65295738D900DD5636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA64295738D900DD5636 /* ViewController.swift */; };
-		04DEDA692957649300DD5636 /* MainBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA682957649300DD5636 /* MainBarView.swift */; };
-		04DEDA6B29577C0400DD5636 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */; };
+		04DEDA692957649300DD5636 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA682957649300DD5636 /* HomeTopView.swift */; };
+		04DEDA6B29577C0400DD5636 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA6A29577C0400DD5636 /* HomeHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,26 +57,34 @@
 		04309BEE2970673500A439D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04309BF12970734300A439D4 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
 		04309BF329707AED00A439D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderViewAnimator.swift; sourceTree = "<group>"; };
-		04681C17295A236300B819AF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
-		04681C1A295A248A00B819AF /* MainContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewEssential.swift; sourceTree = "<group>"; };
-		04681C1C295A252400B819AF /* MainContentViewNumerology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerology.swift; sourceTree = "<group>"; };
-		04681C1E295A258700B819AF /* MainContentViewPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewPrediction.swift; sourceTree = "<group>"; };
-		04681C20295A25DD00B819AF /* MainContentViewMoonCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewMoonCalendar.swift; sourceTree = "<group>"; };
+		04309BF82970D16E00A439D4 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
+		04309BFA2971BAC500A439D4 /* ProfileSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetting.swift; sourceTree = "<group>"; };
+		04309BFE2971E58F00A439D4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		04309C022971E61F00A439D4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		04309C082971E80D00A439D4 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		04309C0A2971F54700A439D4 /* gothampro_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_italic.ttf; sourceTree = "<group>"; };
+		04309C0C2971F56B00A439D4 /* gothampro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro.ttf; sourceTree = "<group>"; };
+		04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
+		046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewAnimator.swift; sourceTree = "<group>"; };
+		04681C17295A236300B819AF /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
+		04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewEssential.swift; sourceTree = "<group>"; };
+		04681C1C295A252400B819AF /* HomeContentViewNumerology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewNumerology.swift; sourceTree = "<group>"; };
+		04681C1E295A258700B819AF /* HomeContentViewPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewPrediction.swift; sourceTree = "<group>"; };
+		04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewMoonCalendar.swift; sourceTree = "<group>"; };
 		04681C23295A2D4800B819AF /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
-		04681C25295B434300B819AF /* MainContentViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewMessage.swift; sourceTree = "<group>"; };
-		04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythm.swift; sourceTree = "<group>"; };
+		04681C25295B434300B819AF /* HomeContentViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewMessage.swift; sourceTree = "<group>"; };
+		04C6F570295C56F40005B057 /* HomeContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythm.swift; sourceTree = "<group>"; };
 		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
-		04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderViewDetails.swift; sourceTree = "<group>"; };
+		04C8E67D295DA689001524EF /* HomeHeaderViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewDetails.swift; sourceTree = "<group>"; };
 		04C8E690295F6C43001524EF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04C8E6942960AEC4001524EF /* NumerologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewController.swift; sourceTree = "<group>"; };
 		04C9C3B3296CEA0E005C7003 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
-		04C9C3C5296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythmContainerView.swift; sourceTree = "<group>"; };
-		04C9C3C7296E091A005C7003 /* MainContentViewBiorythmChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBiorythmChartView.swift; sourceTree = "<group>"; };
+		04C9C3B8296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewNumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
+		04C9C3C5296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythmContainerView.swift; sourceTree = "<group>"; };
+		04C9C3C7296E091A005C7003 /* HomeContentViewBiorythmChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythmChartView.swift; sourceTree = "<group>"; };
 		04C9C3CB296EB411005C7003 /* gothampro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_black.ttf; sourceTree = "<group>"; };
 		04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bold.ttf; sourceTree = "<group>"; };
-		04C9C3CF296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewNumerologyCollectionView.swift; sourceTree = "<group>"; };
+		04C9C3CF296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewNumerologyCollectionView.swift; sourceTree = "<group>"; };
 		04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_medium.ttf; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +96,8 @@
 		04DEDA5E2957361800DD5636 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		04DEDA612957362200DD5636 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		04DEDA64295738D900DD5636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04DEDA682957649300DD5636 /* MainBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBarView.swift; sourceTree = "<group>"; };
-		04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		04DEDA682957649300DD5636 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
+		04DEDA6A29577C0400DD5636 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +114,9 @@
 		04309BED2970671C00A439D4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				04309BEE2970673500A439D4 /* ProfileViewController.swift */,
+				04309C002971E60600A439D4 /* Profile */,
+				04309C012971E61200A439D4 /* Edit */,
+				04309C062971E7F400A439D4 /* Help */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -111,23 +129,82 @@
 			path = Compatibility;
 			sourceTree = "<group>";
 		};
-		04309BF72970CE2500A439D4 /* Home */ = {
+		04309BF72970CE2500A439D4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				04DEDA6E29578B4000DD5636 /* View */,
 				04681C22295A2D2600B819AF /* Model */,
 			);
-			path = Home;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04309BFC2971E51D00A439D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04309BEE2970673500A439D4 /* ProfileViewController.swift */,
+				04309BF82970D16E00A439D4 /* ProfileTableView.swift */,
+				04309BFE2971E58F00A439D4 /* ProfileTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04309BFD2971E52400A439D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04309BFA2971BAC500A439D4 /* ProfileSetting.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04309C002971E60600A439D4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04309BFC2971E51D00A439D4 /* View */,
+				04309BFD2971E52400A439D4 /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		04309C012971E61200A439D4 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				04309C042971E6BE00A439D4 /* View */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		04309C042971E6BE00A439D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04309C022971E61F00A439D4 /* EditProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04309C062971E7F400A439D4 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				04309C072971E80200A439D4 /* View */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		04309C072971E80200A439D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04309C082971E80D00A439D4 /* HelpViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04681C19295A246700B819AF /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				04681C17295A236300B819AF /* MainContentView.swift */,
-				04681C1A295A248A00B819AF /* MainContentViewEssential.swift */,
-				04681C1E295A258700B819AF /* MainContentViewPrediction.swift */,
-				04681C20295A25DD00B819AF /* MainContentViewMoonCalendar.swift */,
-				04681C25295B434300B819AF /* MainContentViewMessage.swift */,
+				04681C17295A236300B819AF /* HomeContentView.swift */,
+				04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */,
+				04681C1E295A258700B819AF /* HomeContentViewPrediction.swift */,
+				04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */,
+				04681C25295B434300B819AF /* HomeContentViewMessage.swift */,
 				04C9C3B5296D8403005C7003 /* Numerology */,
 				04C9C3C4296E089F005C7003 /* Biorythm */,
 			);
@@ -147,9 +224,9 @@
 		04C6F574295C7C480005B057 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				04DEDA6A29577C0400DD5636 /* MainHeaderView.swift */,
-				04C8E67D295DA689001524EF /* MainHeaderViewDetails.swift */,
-				046569E02968BBB60087A959 /* MainHeaderViewAnimator.swift */,
+				04DEDA6A29577C0400DD5636 /* HomeHeaderView.swift */,
+				04C8E67D295DA689001524EF /* HomeHeaderViewDetails.swift */,
+				046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -189,9 +266,9 @@
 		04C9C3B5296D8403005C7003 /* Numerology */ = {
 			isa = PBXGroup;
 			children = (
-				04681C1C295A252400B819AF /* MainContentViewNumerology.swift */,
-				04C9C3CF296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift */,
-				04C9C3B8296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift */,
+				04681C1C295A252400B819AF /* HomeContentViewNumerology.swift */,
+				04C9C3CF296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift */,
+				04C9C3B8296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift */,
 			);
 			path = Numerology;
 			sourceTree = "<group>";
@@ -199,9 +276,9 @@
 		04C9C3C4296E089F005C7003 /* Biorythm */ = {
 			isa = PBXGroup;
 			children = (
-				04C6F570295C56F40005B057 /* MainContentViewBiorythm.swift */,
-				04C9C3C5296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift */,
-				04C9C3C7296E091A005C7003 /* MainContentViewBiorythmChartView.swift */,
+				04C6F570295C56F40005B057 /* HomeContentViewBiorythm.swift */,
+				04C9C3C5296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift */,
+				04C9C3C7296E091A005C7003 /* HomeContentViewBiorythmChartView.swift */,
 			);
 			path = Biorythm;
 			sourceTree = "<group>";
@@ -221,6 +298,9 @@
 				04C9C3CB296EB411005C7003 /* gothampro_black.ttf */,
 				04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */,
 				04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */,
+				04309C0A2971F54700A439D4 /* gothampro_italic.ttf */,
+				04309C0C2971F56B00A439D4 /* gothampro.ttf */,
+				04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -280,9 +360,9 @@
 		04DEDA632957367C00DD5636 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				04309BF72970CE2500A439D4 /* Home */,
-				04C8E6932960AE9B001524EF /* Numerology */,
+				04309BF72970CE2500A439D4 /* Main */,
 				04C8E68F295F6C27001524EF /* Message */,
+				04C8E6932960AE9B001524EF /* Numerology */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -291,7 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				04DEDA4D295735BF00DD5636 /* HomeViewController.swift */,
-				04DEDA682957649300DD5636 /* MainBarView.swift */,
+				04DEDA682957649300DD5636 /* HomeTopView.swift */,
 				04C6F574295C7C480005B057 /* Header */,
 				04681C19295A246700B819AF /* Content */,
 			);
@@ -359,7 +439,10 @@
 				04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */,
 				04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */,
 				04DEDA56295735C100DD5636 /* LaunchScreen.storyboard in Resources */,
+				04309C0F2971FC7900A439D4 /* gothampro_bolditalic.ttf in Resources */,
 				04DEDA53295735C100DD5636 /* Assets.xcassets in Resources */,
+				04309C0B2971F54700A439D4 /* gothampro_italic.ttf in Resources */,
+				04309C0D2971F56B00A439D4 /* gothampro.ttf in Resources */,
 				04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,34 +455,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				04681C24295A2D4800B819AF /* Moon.swift in Sources */,
-				04C6F571295C56F40005B057 /* MainContentViewBiorythm.swift in Sources */,
-				04681C1D295A252400B819AF /* MainContentViewNumerology.swift in Sources */,
+				04C6F571295C56F40005B057 /* HomeContentViewBiorythm.swift in Sources */,
+				04681C1D295A252400B819AF /* HomeContentViewNumerology.swift in Sources */,
+				04309BFF2971E58F00A439D4 /* ProfileTableViewCell.swift in Sources */,
 				04309BF429707AED00A439D4 /* TabBarController.swift in Sources */,
-				04DEDA692957649300DD5636 /* MainBarView.swift in Sources */,
+				04DEDA692957649300DD5636 /* HomeTopView.swift in Sources */,
 				04DEDA65295738D900DD5636 /* ViewController.swift in Sources */,
-				04C9C3D0296EB758005C7003 /* MainContentViewNumerologyCollectionView.swift in Sources */,
+				04309BFB2971BAC500A439D4 /* ProfileSetting.swift in Sources */,
+				04C9C3D0296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift in Sources */,
 				04C8E6952960AEC4001524EF /* NumerologyViewController.swift in Sources */,
 				04DEDA4E295735BF00DD5636 /* HomeViewController.swift in Sources */,
-				04C8E67E295DA689001524EF /* MainHeaderViewDetails.swift in Sources */,
-				04DEDA6B29577C0400DD5636 /* MainHeaderView.swift in Sources */,
-				04681C26295B434300B819AF /* MainContentViewMessage.swift in Sources */,
+				04309C032971E61F00A439D4 /* EditProfileViewController.swift in Sources */,
+				04C8E67E295DA689001524EF /* HomeHeaderViewDetails.swift in Sources */,
+				04DEDA6B29577C0400DD5636 /* HomeHeaderView.swift in Sources */,
+				04309C092971E80D00A439D4 /* HelpViewController.swift in Sources */,
+				04681C26295B434300B819AF /* HomeContentViewMessage.swift in Sources */,
 				04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */,
-				04681C21295A25DD00B819AF /* MainContentViewMoonCalendar.swift in Sources */,
-				04681C1B295A248A00B819AF /* MainContentViewEssential.swift in Sources */,
+				04309BF92970D16E00A439D4 /* ProfileTableView.swift in Sources */,
+				04681C21295A25DD00B819AF /* HomeContentViewMoonCalendar.swift in Sources */,
+				04681C1B295A248A00B819AF /* HomeContentViewEssential.swift in Sources */,
 				04DEDA622957362200DD5636 /* Coordinator.swift in Sources */,
 				04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */,
-				04C9C3B9296D8438005C7003 /* MainContentViewNumerologyCollectionViewCell.swift in Sources */,
+				04C9C3B9296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift in Sources */,
 				04C8E691295F6C43001524EF /* MessageViewController.swift in Sources */,
 				04309BEF2970673500A439D4 /* ProfileViewController.swift in Sources */,
 				04309BF22970734300A439D4 /* CompatibilityViewController.swift in Sources */,
 				04C6F573295C5C580005B057 /* Biorythm.swift in Sources */,
 				04DEDA5F2957361900DD5636 /* Builder.swift in Sources */,
 				04C9C3B4296CEA0E005C7003 /* Extensions.swift in Sources */,
-				04C9C3C6296E08EC005C7003 /* MainContentViewBiorythmContainerView.swift in Sources */,
-				04681C18295A236300B819AF /* MainContentView.swift in Sources */,
-				04C9C3C8296E091A005C7003 /* MainContentViewBiorythmChartView.swift in Sources */,
-				046569E12968BBB60087A959 /* MainHeaderViewAnimator.swift in Sources */,
-				04681C1F295A258700B819AF /* MainContentViewPrediction.swift in Sources */,
+				04C9C3C6296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift in Sources */,
+				04681C18295A236300B819AF /* HomeContentView.swift in Sources */,
+				04C9C3C8296E091A005C7003 /* HomeContentViewBiorythmChartView.swift in Sources */,
+				046569E12968BBB60087A959 /* HomeHeaderViewAnimator.swift in Sources */,
+				04681C1F295A258700B819AF /* HomeContentViewPrediction.swift in Sources */,
 				04309BEC29702F6D00A439D4 /* Numerology.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
