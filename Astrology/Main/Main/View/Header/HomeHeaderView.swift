@@ -70,7 +70,7 @@ class HomeHeaderView: UIView {
         
         return view
     }()
-    
+
     let animator = HomeHeaderViewAnimator(duration: 0.4, dampingRatio: 1.0)
     
     init() {
@@ -90,6 +90,8 @@ class HomeHeaderView: UIView {
             guard let self = self else {
                 return
             }
+            
+            self.layer.shadowOpacity = animator.shouldHide ? 0.8 : 0
 
             self.signImageView.transform = animator.signTransform
             
@@ -119,7 +121,12 @@ class HomeHeaderView: UIView {
     }
     
     private func setup() {
+        backgroundColor = UIColor(red: 24/255, green: 17/255, blue: 38/255, alpha: 1.0)
         
+        layer.shadowColor = backgroundColor?.cgColor
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 0
+        layer.shadowOffset.height = 16
     }
     
     private func layout() {

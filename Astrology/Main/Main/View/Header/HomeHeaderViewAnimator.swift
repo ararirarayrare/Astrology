@@ -12,7 +12,7 @@ class HomeHeaderViewAnimator: UIViewPropertyAnimator {
     private(set) var shouldHide: Bool = true
     
     private(set) var hasAnimations: Bool = false
-        
+    
     var topOffset: CGFloat = 0
     
     var topConstant: CGFloat {

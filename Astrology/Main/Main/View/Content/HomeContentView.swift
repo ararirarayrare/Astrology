@@ -119,7 +119,7 @@ class HomeContentView: UIView {
             todayPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                           constant: -20),
             todayPredictionView.topAnchor.constraint(equalTo: topAnchor,
-                                                     constant: 20),
+                                                     constant: 24),
             
             
             essentialView.leadingAnchor.constraint(equalTo: leadingAnchor,
