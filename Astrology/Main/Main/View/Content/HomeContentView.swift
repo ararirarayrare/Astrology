@@ -110,7 +110,7 @@ class HomeContentView: UIView {
         addSubview(todayPredictionView)
         addSubview(moonCalendarView)
         addSubview(biorythmView)
-        addSubview(messageView)
+//        addSubview(messageView)   
         addSubview(yearlyPredictionView)
         
         NSLayoutConstraint.activate([
@@ -151,19 +151,19 @@ class HomeContentView: UIView {
                                               constant: 32),
             
             
-            messageView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                 constant: 20),
-            messageView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                  constant: -20),
-            messageView.topAnchor.constraint(equalTo: biorythmView.bottomAnchor,
-                                             constant: 32),
+//            messageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+//                                                 constant: 20),
+//            messageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+//                                                  constant: -20),
+//            messageView.topAnchor.constraint(equalTo: biorythmView.bottomAnchor,
+//                                             constant: 32),
             
             
             yearlyPredictionView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                           constant: 20),
             yearlyPredictionView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                            constant: -20),
-            yearlyPredictionView.topAnchor.constraint(equalTo: messageView.bottomAnchor,
+            yearlyPredictionView.topAnchor.constraint(equalTo: biorythmView.bottomAnchor,
                                                       constant: 20),
             yearlyPredictionView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                          constant: -20)

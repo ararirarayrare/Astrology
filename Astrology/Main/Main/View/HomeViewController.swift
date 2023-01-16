@@ -9,10 +9,10 @@ import UIKit
 
 class HomeViewController: ViewController {
     
-    private lazy var topView: HomeTopView = {
-        let barView = HomeTopView(coordinator: self.coordinator)
-        barView.translatesAutoresizingMaskIntoConstraints = false
-        return barView
+    private let topView: HomeTopView = {
+        let view = HomeTopView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private let headerView: HomeHeaderView = {
@@ -26,12 +26,13 @@ class HomeViewController: ViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()
-    
+        
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isScrollEnabled = false
         scrollView.indicatorStyle = .white
+        
         return scrollView
     }()
     

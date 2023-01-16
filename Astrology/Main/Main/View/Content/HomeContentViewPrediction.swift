@@ -8,20 +8,13 @@
 import UIKit
 
 class HomeContentViewPrediction: HomeContentViewItem {
-        
-    private let instagramButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.setImage(Icon.instagram, for: .normal)
-        
-        return button
-    }()
+    
+    private var borderLayer: CALayer?
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .regularPoppinsFont(ofSize: 20)
         label.textColor = .white
         label.textAlignment = .left
     
@@ -31,7 +24,7 @@ class HomeContentViewPrediction: HomeContentViewItem {
     private let predictionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .mediumGothamPro(ofSize: 16)
+        label.font = .regularNunitoFont(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -42,13 +35,26 @@ class HomeContentViewPrediction: HomeContentViewItem {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.backgroundColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+        button.setImage(UIImage(named: "more-button"), for: .normal)
         
-        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("More", for: .normal)
+        button.layer.shadowColor = UIColor.white.cgColor
+        button.layer.shadowRadius = 8
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
         
-        button.layer.cornerRadius = 20
+        return button
+    }()
+    
+    private let instagramButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.setImage(Icon.instagram, for: .normal)
+        
+        button.layer.shadowColor = UIColor.white.cgColor
+        button.layer.shadowRadius = 8
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
         
         return button
     }()
@@ -71,41 +77,62 @@ class HomeContentViewPrediction: HomeContentViewItem {
         titleLabel.attributedText = attributedTitle
         predictionLabel.text = prediction
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if borderLayer == nil, bounds.size != .zero {
+            let gradient = CAGradientLayer()
+            gradient.frame = bounds
+            gradient.colors = [
+                UIColor(red: 122/255, green: 194/255, blue: 224/255, alpha: 1.0).cgColor,
+                UIColor(red: 83/255, green: 39/255, blue: 197/255, alpha: 1.0).cgColor
+            ]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            
+            gradient.cornerRadius = layer.cornerRadius
+
+            let shape = CAShapeLayer()
+            shape.lineWidth = 0.75
+            shape.path = UIBezierPath(roundedRect: bounds,
+                                      cornerRadius: layer.cornerRadius).cgPath
+            shape.strokeColor = UIColor.black.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            
+            gradient.mask = shape
+            
+            self.borderLayer = gradient
+            
+            layer.insertSublayer(gradient, at: 0)
+        }
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setup() {
-        backgroundColor = UIColor(red: 141/255, green: 112/255, blue: 1, alpha: 0.15)
+        backgroundColor = UIColor(red: 141/255, green: 112/255, blue: 1, alpha: 0.1)
         
-        layer.borderColor = UIColor(red: 211/255, green: 195/255, blue: 243/255, alpha: 1.0).cgColor
-        layer.borderWidth = 0.75
         layer.cornerRadius = 20
+        layer.masksToBounds = true
     }
 
     override func layout() {
         super.layout()
         
-        addSubview(instagramButton)
         addSubview(titleLabel)
         addSubview(predictionLabel)
         addSubview(moreButton)
+        addSubview(instagramButton)
                 
         NSLayoutConstraint.activate([
-            instagramButton.topAnchor.constraint(equalTo: topAnchor,
-                                                constant: 24),
-            instagramButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                      constant: -20),
-            instagramButton.heightAnchor.constraint(equalToConstant: 20),
-            instagramButton.widthAnchor.constraint(equalTo: instagramButton.heightAnchor),
-            
-            
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                 constant: 20),
             titleLabel.topAnchor.constraint(equalTo: topAnchor,
                                             constant: 28),
-            titleLabel.trailingAnchor.constraint(equalTo: instagramButton.leadingAnchor,
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                  constant: -24),
 
 
@@ -119,10 +146,17 @@ class HomeContentViewPrediction: HomeContentViewItem {
             moreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             moreButton.topAnchor.constraint(equalTo: predictionLabel.bottomAnchor,
                                             constant: 24),
-            moreButton.heightAnchor.constraint(equalToConstant: 40),
+            moreButton.heightAnchor.constraint(equalToConstant: 48),
             moreButton.widthAnchor.constraint(equalToConstant: 120),
             moreButton.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                               constant: -32)
+                                               constant: -32),
+            
+            
+            instagramButton.centerYAnchor.constraint(equalTo: moreButton.centerYAnchor),
+            instagramButton.trailingAnchor.constraint(equalTo: predictionLabel.trailingAnchor),
+            instagramButton.heightAnchor.constraint(equalTo: moreButton.heightAnchor,
+                                                    multiplier: 0.85),
+            instagramButton.widthAnchor.constraint(equalTo: instagramButton.heightAnchor)
         ])
     
     }

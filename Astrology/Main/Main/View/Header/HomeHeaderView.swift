@@ -11,6 +11,16 @@ class HomeHeaderView: UIView {
 
     var topConstraint: NSLayoutConstraint?
     
+    private let backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "main-header-bg")
+        
+        imageView.contentMode = .scaleToFill
+
+        return imageView
+    }()
+    
     private var signBottomConstraint: NSLayoutConstraint?
     
     private let signImageView: UIImageView = {
@@ -26,14 +36,9 @@ class HomeHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .boldGothamPro(ofSize: 14)
+        label.font = .semiboldNunitoFont(ofSize: 16)
         label.textAlignment = .center
         label.textColor = UIColor(red: 189/255, green: 158/255, blue: 1, alpha: 1.0)
-        
-        label.layer.shadowRadius = 2
-        label.layer.shadowColor = label.textColor.cgColor
-        label.layer.shadowOpacity = 0.9
-        label.layer.shadowOffset.height = 1
         
         label.text = "Cancer"
         
@@ -118,6 +123,7 @@ class HomeHeaderView: UIView {
     }
     
     private func layout() {
+        addSubview(backgroundImageView)
         addSubview(leftDetailsView)
         addSubview(rightDetailsView)
         addSubview(signImageView)
@@ -125,11 +131,17 @@ class HomeHeaderView: UIView {
         signImageView.addSubview(signLabel)
         
         let signBottomConstraint = signImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                                                         constant: -48)
+                                                                         constant: -40)
         self.signBottomConstraint = signBottomConstraint
-
+        
         
         NSLayoutConstraint.activate([
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            
             signImageView.widthAnchor.constraint(equalTo: widthAnchor,
                                                  multiplier: 0.25),
             signImageView.heightAnchor.constraint(equalTo: signImageView.widthAnchor),
@@ -143,16 +155,18 @@ class HomeHeaderView: UIView {
 
             leftDetailsView.trailingAnchor.constraint(equalTo: signImageView.leadingAnchor,
                                                       constant: -8),
-            leftDetailsView.widthAnchor.constraint(equalTo: widthAnchor,
-                                                   multiplier: 0.25),
-            leftDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor),
+            leftDetailsView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                     constant: 32),
+            leftDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor,
+                                                    constant: -8),
             
 
             rightDetailsView.leadingAnchor.constraint(equalTo: signImageView.trailingAnchor,
                                                       constant: 8),
-            rightDetailsView.widthAnchor.constraint(equalTo: widthAnchor,
-                                                   multiplier: 0.25),
-            rightDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor)
+            rightDetailsView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                       constant: -32),
+            rightDetailsView.centerYAnchor.constraint(equalTo: signImageView.centerYAnchor,
+                                                     constant: -8)
         ])
     }
     

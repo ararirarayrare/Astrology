@@ -117,7 +117,7 @@ class HomeContentViewBiorythmContainerView: UIView {
             percentsImageView.widthAnchor.constraint(equalTo: percentsImageView.heightAnchor,
                                                      multiplier: 0.16),
             percentsImageView.topAnchor.constraint(equalTo: topStackView.bottomAnchor,
-                                                  constant: 12),
+                                                  constant: 16),
             
             
             chartView.topAnchor.constraint(equalTo: percentsImageView.topAnchor),
@@ -137,21 +137,20 @@ class HomeContentViewBiorythmContainerView: UIView {
             bottomStackView.trailingAnchor.constraint(equalTo: chartView.trailingAnchor),
             bottomStackView.topAnchor.constraint(equalTo: chartView.bottomAnchor,
                                                  constant: 8),
-            bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
     private func createView(forBiorythm biorythm: Biorythm) -> UIView {
         let view = UIView()
         
-        let colorView = UIView()
+        let colorView = UIImageView()
         colorView.translatesAutoresizingMaskIntoConstraints = false
-        colorView.backgroundColor = biorythm.barColor
-        colorView.layer.cornerRadius = 1.5
+        colorView.image = UIImage(named: String(describing: biorythm) + "-bar")
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "GothamPro-Medium", size: 12)
+        label.font = .regularPoppinsFont(ofSize: 12)
         label.textAlignment = .left
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
@@ -164,7 +163,7 @@ class HomeContentViewBiorythmContainerView: UIView {
         NSLayoutConstraint.activate([
             colorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             colorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            colorView.heightAnchor.constraint(equalToConstant: 3),
+            colorView.heightAnchor.constraint(equalToConstant: 4),
             colorView.widthAnchor.constraint(equalToConstant: 24),
             
             
@@ -182,7 +181,7 @@ class HomeContentViewBiorythmContainerView: UIView {
         let label = UILabel()
          
         let isToday = text == "Today"
-        label.font = isToday ? .boldGothamPro(ofSize: 16) : .mediumGothamPro(ofSize: 14)
+        label.font = isToday ? .regularPoppinsFont(ofSize: 16) : .regularNunitoFont(ofSize: 14)
         label.textColor = isToday ? .white : UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1.0)
         label.textAlignment = aligment
         label.text = text

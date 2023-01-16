@@ -11,14 +11,23 @@ enum Biorythm: CaseIterable {
 
     case physical, emotional, intellectual
 
-    var barColor: UIColor {
+    var colors: [CGColor] {
         switch self {
         case .physical:
-            return UIColor(red: 87/255, green: 45/255, blue: 1, alpha: 1.0)
+            return [
+                UIColor(red: 122/255, green: 194/255, blue: 224/255, alpha: 1.0).cgColor,
+                UIColor(red: 83/255, green: 39/255, blue: 197/255, alpha: 1.0).cgColor
+            ]
         case .emotional:
-            return UIColor(red: 170/255, green: 85/255, blue: 1, alpha: 1.0)
+            return [
+                UIColor(red: 170/255, green: 85/255, blue: 1, alpha: 1.0).cgColor,
+                UIColor(red: 79/255, green: 0, blue: 157/255, alpha: 1.0).cgColor
+            ]
         case .intellectual:
-            return UIColor(red: 149/255, green: 147/255, blue: 1, alpha: 1.0)
+            return [
+                UIColor(red: 87/255, green: 45/255, blue: 1, alpha: 1.0).cgColor,
+                UIColor(red: 19/255, green: 40/255, blue: 95/255, alpha: 1.0).cgColor
+            ]
         }
     }
 

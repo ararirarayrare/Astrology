@@ -25,9 +25,9 @@ class HomeContentViewBiorythmChartView: UIView {
         return imageView
     }()
         
-    private var physicalShape: CAShapeLayer?
-    private var emotionalShape: CAShapeLayer?
-    private var intellectualShape: CAShapeLayer?
+    private var physicalChart: CALayer?
+    private var emotionalChart: CALayer?
+    private var intellectualChart: CALayer?
     
     init() {
         super.init(frame: .zero)
@@ -43,14 +43,14 @@ class HomeContentViewBiorythmChartView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if physicalShape == nil,
-           emotionalShape == nil,
-           intellectualShape == nil,
+        if physicalChart == nil,
+           emotionalChart == nil,
+           intellectualChart == nil,
            bounds.size != .zero {
             
-            physicalShape = addShapeLayer(forBiorythm: .physical)
-            emotionalShape = addShapeLayer(forBiorythm: .emotional)
-            intellectualShape = addShapeLayer(forBiorythm: .intellectual)
+            physicalChart = addShapeLayer(forBiorythm: .physical)
+            emotionalChart = addShapeLayer(forBiorythm: .emotional)
+            intellectualChart = addShapeLayer(forBiorythm: .intellectual)
 
             todayLineView.frame.size = CGSize(width: 4, height: bounds.height + 12)
             todayLineView.center.x = bounds.midX * 0.75
@@ -73,22 +73,30 @@ class HomeContentViewBiorythmChartView: UIView {
         ])
     }
     
-    private func addShapeLayer(forBiorythm biorythm: Biorythm) -> CAShapeLayer {
-        let layer = CAShapeLayer()
+    private func addShapeLayer(forBiorythm biorythm: Biorythm) -> CALayer {
+        let shape = CAShapeLayer()
         
-        layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = biorythm.barColor.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        shape.strokeColor = UIColor.black.cgColor
         
-        layer.lineWidth = 3
+        shape.lineWidth = 3
         
-        layer.lineCap = .round
-        layer.lineJoin = .round
+        shape.lineCap = .round
+        shape.lineJoin = .round
         
-        layer.path = path(forBiorythm: biorythm)
+        shape.path = path(forBiorythm: biorythm)
         
-        self.layer.addSublayer(layer)
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = biorythm.colors
+        gradient.startPoint = CGPoint(x: 0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1, y: 0.5)
         
-        return layer
+        gradient.mask = shape
+        
+        self.layer.addSublayer(gradient)
+        
+        return gradient
     }
     
     private func path(forBiorythm biorythm: Biorythm) -> CGPath {
@@ -118,9 +126,11 @@ class HomeContentViewBiorythmChartView: UIView {
                       controlPoint2: tomorrowPoint)
         path.addClip()
         
-        addPointView(withColor: biorythm.barColor,
-                     center: CGPoint(x: todayPoint.x, y: todayPoint.y - 1.5))
-        
+        if let color = biorythm.colors.first {
+            let center = CGPoint(x: todayPoint.x, y: todayPoint.y - 1.5)
+            addPointView(withColor: UIColor(cgColor: color), center: center)
+        }
+
         return path.cgPath
     }
 

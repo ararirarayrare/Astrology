@@ -12,7 +12,7 @@ class HomeContentViewNumerology: HomeContentViewItem {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 22)
+        label.font = .regularPoppinsFont(ofSize: 20)
         label.textColor = .white
         label.textAlignment = .left
         label.text = "Numerology"
@@ -52,10 +52,10 @@ class HomeContentViewNumerology: HomeContentViewItem {
 
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                               constant: 40),
+                                               constant: 32),
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                 constant: -40),
+                                                 constant: -32),
             
             
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),

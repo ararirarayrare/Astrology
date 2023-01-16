@@ -16,7 +16,6 @@ class HomeTopView: UIView {
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
-        label.adjustsFontSizeToFitWidth = true
                 
         let dateFormatter = DateFormatter()
 
@@ -27,7 +26,7 @@ class HomeTopView: UIView {
         let attributedString = NSMutableAttributedString(
             string: dateString + ",\n",
             attributes: [
-                .font : UIFont.blackGothamPro(ofSize: 24) ?? .boldSystemFont(ofSize: 22),
+                .font : UIFont.semiboldPoppinsFont(ofSize: 26) ?? .boldSystemFont(ofSize: 24),
                 .foregroundColor : UIColor.white
             ]
         )
@@ -36,8 +35,8 @@ class HomeTopView: UIView {
             NSAttributedString(
                 string: weekdayString,
                 attributes: [
-                    .font : UIFont.boldGothamPro(ofSize: 22) ?? .boldSystemFont(ofSize: 22),
-                    .foregroundColor : UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+                    .font : UIFont.regularNunitoFont(ofSize: 18) ?? .systemFont(ofSize: 18),
+                    .foregroundColor : UIColor(red: 163/255, green: 149/255, blue: 202/255, alpha: 1.0)
                 ]
             )
         )
@@ -46,64 +45,28 @@ class HomeTopView: UIView {
                 
         return label
     }()
-    
-//    private let messageButton: UIButton = {
-//        let button = UIButton(type: .system)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setBackgroundImage(UIImage(named: "chat-button"), for: .normal)
-//        button.tintColor = .white
-//
-//        return button
-//    }()
-    
-    let coordinator: HomeCoordinator
-            
-    init(coordinator: HomeCoordinator) {
-        self.coordinator = coordinator
+                
+    init() {
         super.init(frame: .zero)
         
         setup()
         layout()
     }
     
-    @objc
-    private func messageTapped() {
-        coordinator.eventOccured(.message)
-    }
-    
     private func setup() {
         backgroundColor = .clear
-
-//        messageButton.addTarget(self, action: #selector(messageTapped), for: .touchUpInside)
     }
 
     private func layout() {
-//        addSubview(messageButton)
         addSubview(titleLabel)
                 
         NSLayoutConstraint.activate([
-//            messageButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-//                                                    constant: -20),
-//            messageButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-//                                               constant: 16),
-//            messageButton.widthAnchor.constraint(equalToConstant: 40),
-//            messageButton.heightAnchor.constraint(equalToConstant: 40),
-            
-            
-//            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
-//                                                constant: 20),
-//            titleLabel.topAnchor.constraint(equalTo: messageButton.topAnchor),
-//            titleLabel.trailingAnchor.constraint(equalTo: messageButton.leadingAnchor,
-//                                                 constant: -16),
-//            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
-//                                               constant: -8)
-            
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                 constant: 20),
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                           constant: 16),
+                                           constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: centerXAnchor,
-                                                 constant: -20),
+                                                 constant: -24),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                constant: -8)
         ])

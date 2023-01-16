@@ -35,7 +35,7 @@ class HomeContentViewBiorythm: HomeContentViewItem {
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                               constant: 20),
+                                               constant: 12),
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             
 

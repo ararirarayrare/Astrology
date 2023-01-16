@@ -21,7 +21,7 @@ class EditProfileViewController: ViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .boldGothamPro(ofSize: 32)
+//        label.font = .boldGothamPro(ofSize: 32)
         label.textColor = .white
         label.textAlignment = .center
         label.text = "Edit profile"
@@ -44,7 +44,7 @@ class EditProfileViewController: ViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .italicGothamPro(ofSize: 16)
+//        label.font = .italicGothamPro(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .center
         label.text = "Tap to edit"
@@ -72,7 +72,7 @@ class EditProfileViewController: ViewController {
         
         textField.adjustsFontSizeToFitWidth = true
         
-        textField.font = .gothamPro(ofSize: 18)
+//        textField.font = .gothamPro(ofSize: 18)
         
         textField.attributedPlaceholder = NSAttributedString(
             string: "Set new name",
@@ -139,7 +139,7 @@ class EditProfileViewController: ViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
+//        button.titleLabel?.font = .boldGothamPro(ofSize: 20)
         button.setTitle("Save", for: .normal)
         button.backgroundColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)

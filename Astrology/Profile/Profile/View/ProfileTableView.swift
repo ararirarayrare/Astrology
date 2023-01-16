@@ -81,9 +81,10 @@ extension ProfileTableView: UITableViewDelegate, UITableViewDataSource {
         case .editProfile:
             coordinator?.eventOccured(.editProfile)
         case .notifications:
-            if let cell = cellForRow(at: indexPath) as? ProfileTableViewCell {
+//            if let cell = cellForRow(at: indexPath) as? ProfileTableViewCell {
 //               cell set new image according to viewModel
-            }
+//            }
+            ()
         case .helpCenter:
             coordinator?.eventOccured(.helpCenter)
         case .rateApp:

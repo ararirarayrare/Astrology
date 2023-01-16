@@ -57,7 +57,7 @@ class HomeContentViewEssential: HomeContentViewItem {
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = .boldGothamPro(ofSize: 18)
+        titleLabel.font = .regularPoppinsFont(ofSize: 18)
         titleLabel.textColor = .white
         titleLabel.text = title
         titleLabel.textAlignment = .left
@@ -66,17 +66,18 @@ class HomeContentViewEssential: HomeContentViewItem {
         
         let progressView = UIProgressView()
         progressView.translatesAutoresizingMaskIntoConstraints = false
-        progressView.progressTintColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
-        progressView.trackTintColor = .darkGray
+//        progressView.progressTintColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
+        progressView.progressImage = UIImage(named: "gradient-progress")
+        progressView.trackTintColor = UIColor(red: 57/255, green: 37/255, blue: 86/255, alpha: 1.0)
         progressView.progress = progress
-        progressView.layer.cornerRadius = 6
+        progressView.layer.cornerRadius = 3
         progressView.layer.masksToBounds = true
         
 
         let progressLabel = UILabel()
         progressLabel.translatesAutoresizingMaskIntoConstraints = false
-        progressLabel.font = .boldGothamPro(ofSize: 18)
-        progressLabel.textColor = .white
+        progressLabel.font = .regularNunitoFont(ofSize: 18)
+        progressLabel.textColor = UIColor(red: 162/255, green: 145/255, blue: 194/255, alpha: 1.0)
         progressLabel.textAlignment = .left
         progressLabel.text = "\(Int(progress * 100))%"
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -97,7 +98,7 @@ class HomeContentViewEssential: HomeContentViewItem {
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             progressView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                               constant: 6),
-            progressView.heightAnchor.constraint(equalToConstant: 12),
+            progressView.heightAnchor.constraint(equalToConstant: 6),
 
             
             progressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),

@@ -20,18 +20,19 @@ class HomeHeaderViewDetails: UIStackView {
                                   subtitle: String,
                                   textAligment: NSTextAlignment,
                                   index: Int) -> UIView {
+        
         let view = UIView()
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = .mediumGothamPro(ofSize: 14)
+        titleLabel.font = .regularPoppinsFont(ofSize: 14)
         titleLabel.textColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1.0)
         titleLabel.textAlignment = textAligment
         titleLabel.text = title
         
         let subtitleLabel = UILabel()
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.font = .boldGothamPro(ofSize: 16)
+        subtitleLabel.font = .semiboldNunitoFont(ofSize: 14)
         subtitleLabel.textColor = UIColor(red: 144/255, green: 105/255, blue: 1, alpha: 1.0)
         subtitleLabel.textAlignment = textAligment
         subtitleLabel.numberOfLines = 2
@@ -57,8 +58,7 @@ class HomeHeaderViewDetails: UIStackView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                 constant: constant),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor,
-                                            constant: 4),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                  constant: -constant),
             
@@ -66,11 +66,10 @@ class HomeHeaderViewDetails: UIStackView {
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor,
                                                    constant: subtitleConstant),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                              constant: 6),
+                                              constant: 0),
             subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor,
                                                     constant: subtitleConstant),
-            subtitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                  constant: -4)
+            subtitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         return view
@@ -78,7 +77,7 @@ class HomeHeaderViewDetails: UIStackView {
     
     private func setup(with details: [String : String], textAligment: NSTextAlignment) {
         axis = .vertical
-        spacing = 4
+        spacing = 8
         distribution = .fillEqually
             
         for (index, item) in details.enumerated() {

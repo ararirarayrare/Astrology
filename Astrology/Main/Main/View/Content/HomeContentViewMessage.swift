@@ -46,6 +46,7 @@ class HomeContentViewMessage: HomeContentViewItem {
         setup()
     }
     
+    
     override func layout() {
         super.layout()
         

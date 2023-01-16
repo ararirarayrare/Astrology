@@ -16,9 +16,6 @@
 		04309BFF2971E58F00A439D4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309BFE2971E58F00A439D4 /* ProfileTableViewCell.swift */; };
 		04309C032971E61F00A439D4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C022971E61F00A439D4 /* EditProfileViewController.swift */; };
 		04309C092971E80D00A439D4 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C082971E80D00A439D4 /* HelpViewController.swift */; };
-		04309C0B2971F54700A439D4 /* gothampro_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0A2971F54700A439D4 /* gothampro_italic.ttf */; };
-		04309C0D2971F56B00A439D4 /* gothampro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0C2971F56B00A439D4 /* gothampro.ttf */; };
-		04309C0F2971FC7900A439D4 /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */; };
 		04309C122972D9B600A439D4 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04309C112972D9B600A439D4 /* ZodiacSign.swift */; };
 		046569E12968BBB60087A959 /* HomeHeaderViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */; };
 		04681C18295A236300B819AF /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C17295A236300B819AF /* HomeContentView.swift */; };
@@ -38,9 +35,10 @@
 		04C9C3C6296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C5296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift */; };
 		04C9C3C8296E091A005C7003 /* HomeContentViewBiorythmChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3C7296E091A005C7003 /* HomeContentViewBiorythmChartView.swift */; };
 		04C9C3D0296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9C3CF296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift */; };
-		04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */; };
-		04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3CB296EB411005C7003 /* gothampro_black.ttf */; };
-		04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */; };
+		04D480BC2975A16700A961EE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04D480BB2975A16700A961EE /* Poppins-SemiBold.ttf */; };
+		04D480BE2975A29C00A961EE /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04D480BD2975A29C00A961EE /* Nunito-Regular.ttf */; };
+		04D480C02975A37C00A961EE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04D480BF2975A37C00A961EE /* Poppins-Regular.ttf */; };
+		04D480C22975A48D00A961EE /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04D480C12975A48D00A961EE /* Nunito-SemiBold.ttf */; };
 		04DEDA4A295735BF00DD5636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA49295735BF00DD5636 /* AppDelegate.swift */; };
 		04DEDA4C295735BF00DD5636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */; };
 		04DEDA4E295735BF00DD5636 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEDA4D295735BF00DD5636 /* HomeViewController.swift */; };
@@ -63,9 +61,6 @@
 		04309BFE2971E58F00A439D4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		04309C022971E61F00A439D4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		04309C082971E80D00A439D4 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		04309C0A2971F54700A439D4 /* gothampro_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_italic.ttf; sourceTree = "<group>"; };
-		04309C0C2971F56B00A439D4 /* gothampro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro.ttf; sourceTree = "<group>"; };
-		04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
 		04309C112972D9B600A439D4 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
 		046569E02968BBB60087A959 /* HomeHeaderViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewAnimator.swift; sourceTree = "<group>"; };
 		04681C17295A236300B819AF /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
@@ -84,10 +79,11 @@
 		04C9C3B8296D8438005C7003 /* HomeContentViewNumerologyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewNumerologyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04C9C3C5296E08EC005C7003 /* HomeContentViewBiorythmContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythmContainerView.swift; sourceTree = "<group>"; };
 		04C9C3C7296E091A005C7003 /* HomeContentViewBiorythmChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythmChartView.swift; sourceTree = "<group>"; };
-		04C9C3CB296EB411005C7003 /* gothampro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_black.ttf; sourceTree = "<group>"; };
-		04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bold.ttf; sourceTree = "<group>"; };
 		04C9C3CF296EB758005C7003 /* HomeContentViewNumerologyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewNumerologyCollectionView.swift; sourceTree = "<group>"; };
-		04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_medium.ttf; sourceTree = "<group>"; };
+		04D480BB2975A16700A961EE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		04D480BD2975A29C00A961EE /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		04D480BF2975A37C00A961EE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		04D480C12975A48D00A961EE /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		04DEDA46295735BF00DD5636 /* Astrology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEDA49295735BF00DD5636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DEDA4B295735BF00DD5636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				04681C17295A236300B819AF /* HomeContentView.swift */,
-				04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */,
 				04681C1E295A258700B819AF /* HomeContentViewPrediction.swift */,
+				04681C1A295A248A00B819AF /* HomeContentViewEssential.swift */,
 				04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */,
 				04681C25295B434300B819AF /* HomeContentViewMessage.swift */,
 				04C9C3B5296D8403005C7003 /* Numerology */,
@@ -306,12 +302,10 @@
 		04C9C3CA296EB3EA005C7003 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				04C9C3CB296EB411005C7003 /* gothampro_black.ttf */,
-				04C9C3CC296EB411005C7003 /* gothampro_bold.ttf */,
-				04C9C3D3296EC7D3005C7003 /* gothampro_medium.ttf */,
-				04309C0A2971F54700A439D4 /* gothampro_italic.ttf */,
-				04309C0C2971F56B00A439D4 /* gothampro.ttf */,
-				04309C0E2971FC7900A439D4 /* gothampro_bolditalic.ttf */,
+				04D480BB2975A16700A961EE /* Poppins-SemiBold.ttf */,
+				04D480BF2975A37C00A961EE /* Poppins-Regular.ttf */,
+				04D480BD2975A29C00A961EE /* Nunito-Regular.ttf */,
+				04D480C12975A48D00A961EE /* Nunito-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -447,14 +441,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C9C3D2296EC6A8005C7003 /* gothampro_black.ttf in Resources */,
-				04C9C3D4296EC7D3005C7003 /* gothampro_medium.ttf in Resources */,
+				04D480C22975A48D00A961EE /* Nunito-SemiBold.ttf in Resources */,
+				04D480BE2975A29C00A961EE /* Nunito-Regular.ttf in Resources */,
 				04DEDA56295735C100DD5636 /* LaunchScreen.storyboard in Resources */,
-				04309C0F2971FC7900A439D4 /* gothampro_bolditalic.ttf in Resources */,
 				04DEDA53295735C100DD5636 /* Assets.xcassets in Resources */,
-				04309C0B2971F54700A439D4 /* gothampro_italic.ttf in Resources */,
-				04309C0D2971F56B00A439D4 /* gothampro.ttf in Resources */,
-				04C9C3D1296EC6A5005C7003 /* gothampro_bold.ttf in Resources */,
+				04D480BC2975A16700A961EE /* Poppins-SemiBold.ttf in Resources */,
+				04D480C02975A37C00A961EE /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

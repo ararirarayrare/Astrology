@@ -66,6 +66,23 @@ extension DateFormatter {
 }
 
 extension UIFont {
+    
+    static func regularPoppinsFont(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "Poppins-Regular", size: size)
+    }
+    
+    static func semiboldPoppinsFont(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "Poppins-SemiBold", size: size)
+    }
+    
+    static func regularNunitoFont(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "Nunito-Regular", size: size)
+    }
+    
+    static func semiboldNunitoFont(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "Nunito-SemiBold", size: size)
+    }
+    
     static func boldGothamPro(ofSize size: CGFloat) -> UIFont? {
         return UIFont(name: "GothamPro-Bold", size: size)
     }

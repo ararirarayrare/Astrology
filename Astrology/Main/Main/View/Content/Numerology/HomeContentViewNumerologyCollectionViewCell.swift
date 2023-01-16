@@ -25,7 +25,7 @@ class HomeContentViewNumerologyCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .boldGothamPro(ofSize: 32)
+        label.font = .regularNunitoFont(ofSize: 26)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 2
@@ -38,11 +38,11 @@ class HomeContentViewNumerologyCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .boldGothamPro(ofSize: 72)
+        label.font = .regularPoppinsFont(ofSize: 80)
         label.textColor = .white
         label.textAlignment = .center
         
-        label.transform = CGAffineTransform(rotationAngle: .random(in: 0.2...0.5))
+        label.transform = CGAffineTransform(rotationAngle: .random(in: 0.1...0.25))
         
         return label
     }()
