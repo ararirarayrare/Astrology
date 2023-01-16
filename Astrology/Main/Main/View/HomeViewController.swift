@@ -61,6 +61,9 @@ class HomeViewController: ViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
         panGesture.delegate = self
         scrollView.addGestureRecognizer(panGesture)
+        
+        let displayLink = CADisplayLink(target: self, selector: #selector(fractionListener))
+        displayLink.add(to: .main, forMode: .common)
     }
 
     override func layout() {
@@ -113,12 +116,25 @@ class HomeViewController: ViewController {
     }
     
     @objc
+    private func fractionListener() {
+        let fraction = headerView.animator.fractionComplete
+        let shouldHide = headerView.animator.shouldHide
+        
+        if shouldHide {
+            scrollView.isScrollEnabled = false
+        } else {
+            scrollView.isScrollEnabled = (fraction == 0)
+        }
+    }
+    
+    @objc
     private func panned(_ gesture: UIPanGestureRecognizer) {
         guard scrollView.contentOffset.y <= 0 else {
             return
         }
         
         let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
         let offset = (headerView.bounds.height - topView.bounds.height)
         let fraction = abs(translation.y / offset)
 
@@ -127,12 +143,12 @@ class HomeViewController: ViewController {
         let shouldCompleteAnimation = (headerView.animator.shouldHide && translation.y > 0) || (!headerView.animator.shouldHide && translation.y < 0)
                 
         if !headerView.animator.hasAnimations, panningInCorrectDirection {
-            self.scrollView.isScrollEnabled = false
+//            self.scrollView.isScrollEnabled = false
             
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
             
             headerView.resetAnimations { isHidden in
-                self.scrollView.isScrollEnabled = isHidden
+//                self.scrollView.isScrollEnabled = isHidden
                 gesture.isEnabled = true
                 self.view.setNeedsDisplay()
             
@@ -143,7 +159,7 @@ class HomeViewController: ViewController {
             gesture.isEnabled = false
             headerView.animator.completeAnimation()
         }
-                        
+     
         switch gesture.state {
         case .changed:
 

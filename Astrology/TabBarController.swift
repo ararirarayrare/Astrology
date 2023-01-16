@@ -164,7 +164,7 @@ class TabBarController: UITabBarController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = .mediumGothamPro(ofSize: 12)
+        label.font = .semiboldNunitoFont(ofSize: 12)
         label.textColor = .white
         label.textAlignment = .center
         label.text = text
