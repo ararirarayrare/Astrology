@@ -66,11 +66,7 @@ class ProfileViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let tabBarController = tabBarController as? TabBarController,
-           tabBarController.tabBar.isHidden {
-            
-            tabBarController.showTabBar()
-        }
+    
     }
     
     override func setup() {

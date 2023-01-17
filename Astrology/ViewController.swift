@@ -23,38 +23,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if navigationController?.rootViewController != self,
-           let tabBarController = tabBarController as? TabBarController,
-//           tabBarController.tabBar.alpha == 1 {
-           !tabBarController.tabBar.isHidden {
-            
-//            tabBarController.tabBar.isHidden = true
-            tabBarController.hideTabBar()
-        }
-
-        if navigationController?.rootViewController == self,
-           let tabBarController = tabBarController as? TabBarController,
-//           tabBarController.tabBar.alpha == 0 {
-           tabBarController.tabBar.isHidden {
-
-//            tabBarController.tabBar.isHidden = false
-            tabBarController.showTabBar()
-        }
+        tabBarController?.tabBar.isHidden = !(navigationController?.rootViewController == self)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        if navigationController?.rootViewController == self,
-//           let tabBarController = tabBarController as? TabBarController,
-////           tabBarController.tabBar.alpha == 0 {
-//           tabBarController.tabBar.isHidden {
-//
-////            tabBarController.tabBar.isHidden = false
-//            tabBarController.showTabBar()
-//        }
-    }
-    
+
     func setBackground(image: UIImage?) {
         let imageView = UIImageView(frame: view.bounds)
         imageView.image = image

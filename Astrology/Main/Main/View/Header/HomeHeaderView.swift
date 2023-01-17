@@ -14,9 +14,11 @@ class HomeHeaderView: UIView {
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "main-header-bg")
         
-        imageView.contentMode = .scaleToFill
+        imageView.image = UIImage(named: "main-header-bg")
+        imageView.contentMode = .scaleAspectFill
+        
+        imageView.alpha = 0.75
 
         return imageView
     }()
@@ -91,7 +93,11 @@ class HomeHeaderView: UIView {
                 return
             }
             
-            self.layer.shadowOpacity = animator.shouldHide ? 0.8 : 0
+            
+//            self.backgroundImageView.transform = animator.shouldHide ? .identity : CGAffineTransform(scaleX: 1.2, y: 1.0)
+            self.backgroundImageView.alpha = animator.shouldHide ? 0.5 : 0.75
+            
+            self.layer.shadowOpacity = animator.shouldHide ? 0.95 : 0
 
             self.signImageView.transform = animator.signTransform
             

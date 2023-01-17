@@ -15,9 +15,17 @@ struct Icon {
     static let arrowRight = UIImage(named: "arrow-right")
     static let arrowLeft = UIImage(named: "arrow-left")
     
-    static let home = UIImage(named: "home-button")
+    static let home = UIImage(named: "home")
+    static let homeSelected = UIImage(named: "home-selected")
+    
+    
     static let match = UIImage(named: "match")
+    static let matchSelected = UIImage(named: "match-selected")
+    
+    
     static let profile = UIImage(named: "profile")
+    static let profileSelected = UIImage(named: "profile-selected")
+    
     
     static let male = UIImage(named: "male")
     static let female = UIImage(named: "female")

@@ -134,7 +134,7 @@ class HomeViewController: ViewController {
         }
         
         let translation = gesture.translation(in: view)
-        let velocity = gesture.velocity(in: view)
+//        let velocity = gesture.velocity(in: view) 
         let offset = (headerView.bounds.height - topView.bounds.height)
         let fraction = abs(translation.y / offset)
 
