@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeHeaderViewAnimator: UIViewPropertyAnimator {
+final class HomeHeaderViewAnimator: UIViewPropertyAnimator {
     
     private(set) var shouldHide: Bool = true
     

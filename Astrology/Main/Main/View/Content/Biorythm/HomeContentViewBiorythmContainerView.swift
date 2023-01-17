@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewBiorythmContainerView: UIView {
+final class HomeContentViewBiorythmContainerView: UIView {
     
     private let topStackView: UIStackView = {
         let stackView = UIStackView()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeHeaderView: UIView {
+final class HomeHeaderView: UIView {
 
     var topConstraint: NSLayoutConstraint?
     

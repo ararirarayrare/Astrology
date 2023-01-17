@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewNumerologyCollectionViewCell: UICollectionViewCell {
+final class HomeContentViewNumerologyCollectionViewCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()

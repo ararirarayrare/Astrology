@@ -21,7 +21,7 @@ protocol Coordinator {
         
 }
 
-class TabBarCoordinator: Coordinator {
+final class TabBarCoordinator: Coordinator {
     
     var window: UIWindow?
     
@@ -69,7 +69,7 @@ class TabBarCoordinator: Coordinator {
     
 }
 
-class HomeCoordinator: Coordinator {
+final class HomeCoordinator: Coordinator {
     
     enum Event {
         case message, numerology(Numerology)
@@ -118,7 +118,7 @@ class HomeCoordinator: Coordinator {
     
 }
 
-class ProfileCoordinator: Coordinator {
+final class ProfileCoordinator: Coordinator {
     
     enum Event {
         case editProfile, helpCenter
@@ -166,7 +166,7 @@ class ProfileCoordinator: Coordinator {
     
 }
 
-class CompatibilityCoordinator: Coordinator {
+final class CompatibilityCoordinator: Coordinator {
     
     enum Event {
         

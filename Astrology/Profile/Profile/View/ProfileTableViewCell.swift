@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+final class ProfileTableViewCell: UITableViewCell {
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()

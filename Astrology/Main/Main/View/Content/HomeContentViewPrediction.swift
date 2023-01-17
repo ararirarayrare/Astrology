@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewPrediction: HomeContentViewItem {
+final class HomeContentViewPrediction: HomeContentViewItem {
     
     private var borderLayer: CALayer?
     

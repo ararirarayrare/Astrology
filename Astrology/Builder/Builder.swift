@@ -7,13 +7,15 @@
 
 import UIKit
 
-class Builder {
+protocol Builder { }
+
+extension Builder {
     func createNavigationController(rootViewController: ViewController) -> NavigationController {
         return NavigationController(rootViewController: rootViewController)
     }
 }
 
-class TabBarBuilder: Builder {
+final class TabBarBuilder: Builder {
     
     let mainBuilder = HomeBuilder()
     
@@ -29,7 +31,7 @@ class TabBarBuilder: Builder {
     
 }
 
-class HomeBuilder: Builder {
+final class HomeBuilder: Builder {
     
     func createHome(coordinator: HomeCoordinator) -> HomeViewController {
         let vc = HomeViewController(coordinator: coordinator)
@@ -55,7 +57,7 @@ class HomeBuilder: Builder {
 
 }
 
-class ProfileBuiler: Builder {
+final class ProfileBuiler: Builder {
     
     func createProfile(coordinator: ProfileCoordinator) -> ProfileViewController {
         let vc = ProfileViewController(coordinator: coordinator)
@@ -81,7 +83,7 @@ class ProfileBuiler: Builder {
     
 }
 
-class CompatibilityBuilder: Builder {
+final class CompatibilityBuilder: Builder {
     
     func createCompatibility(coordinator: CompatibilityCoordinator) -> CompatibilityViewController {
         let vc = CompatibilityViewController(coordinator: coordinator)

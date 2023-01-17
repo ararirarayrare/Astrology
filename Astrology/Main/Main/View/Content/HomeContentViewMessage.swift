@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewMessage: HomeContentViewItem {
+final class HomeContentViewMessage: HomeContentViewItem {
     
     private let elipseImageView = UIImageView(image: UIImage(named: "message-button-elipse"))
         

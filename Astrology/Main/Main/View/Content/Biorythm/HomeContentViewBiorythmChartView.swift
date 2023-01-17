@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewBiorythmChartView: UIView {
+final class HomeContentViewBiorythmChartView: UIView {
     
     private let todayLineView: UIView = {
         let view = UIView()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewBiorythm: HomeContentViewItem {
+final class HomeContentViewBiorythm: HomeContentViewItem {
     
     private let titleLabel: UILabel = {
         let label = UILabel()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: ViewController {
+final class HomeViewController: ViewController {
     
     private let topView: HomeTopView = {
         let view = HomeTopView()

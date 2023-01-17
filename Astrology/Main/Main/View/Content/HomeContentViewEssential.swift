@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewEssential: HomeContentViewItem {
+final class HomeContentViewEssential: HomeContentViewItem {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()

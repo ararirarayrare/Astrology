@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewNumerology: HomeContentViewItem {
+final class HomeContentViewNumerology: HomeContentViewItem {
     
     private let titleLabel: UILabel = {
         let label = UILabel()

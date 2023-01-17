@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewNumerologyCollectionView: UICollectionView {
+final class HomeContentViewNumerologyCollectionView: UICollectionView {
     
     let numbers: [Numerology]
         

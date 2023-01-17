@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MessageViewController: ViewController {
+final class MessageViewController: ViewController {
     
     private let backButton: UIButton = {
         let button = UIButton(type: .system)

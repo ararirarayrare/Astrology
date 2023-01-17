@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentViewMoonCalendar: HomeContentViewItem {
+final class HomeContentViewMoonCalendar: HomeContentViewItem {
     
     private var borderLayer: CALayer?
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: ViewController {
+final class ProfileViewController: ViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -61,12 +61,6 @@ class ProfileViewController: ViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    
     }
     
     override func setup() {

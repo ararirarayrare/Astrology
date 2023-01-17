@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableView: UITableView {
+final class ProfileTableView: UITableView {
     
     let settings: [ProfileSetting]
     

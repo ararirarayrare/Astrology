@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileViewController: ViewController {
+final class EditProfileViewController: ViewController {
     
     private let backButton: UIButton = {
         let button = UIButton(type: .system)

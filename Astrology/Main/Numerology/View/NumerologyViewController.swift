@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NumerologyViewController: ViewController {
+final class NumerologyViewController: ViewController {
     
     private let backButton: UIButton = {
         let button = UIButton(type: .system)

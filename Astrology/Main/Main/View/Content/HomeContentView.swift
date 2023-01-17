@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeContentView: UIView {
+final class HomeContentView: UIView {
     
     private let essentialView: HomeContentViewEssential = {
         let view = HomeContentViewEssential(parameters: [

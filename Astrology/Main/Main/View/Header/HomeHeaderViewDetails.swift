@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeHeaderViewDetails: UIStackView {
+final class HomeHeaderViewDetails: UIStackView {
     
     init(details: [String : String], textAligment: NSTextAlignment) {
         super.init(frame: .zero)
