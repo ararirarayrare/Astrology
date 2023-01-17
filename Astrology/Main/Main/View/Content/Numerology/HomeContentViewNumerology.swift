@@ -62,7 +62,7 @@ final class HomeContentViewNumerology: HomeContentViewItem {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                                 constant: 20),
-            collectionView.heightAnchor.constraint(equalToConstant: 200.0),
+            collectionView.heightAnchor.constraint(equalToConstant: 180.0),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

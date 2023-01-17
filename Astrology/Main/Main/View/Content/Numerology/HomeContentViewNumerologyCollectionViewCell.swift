@@ -113,7 +113,7 @@ final class HomeContentViewNumerologyCollectionViewCell: UICollectionViewCell {
                                             constant: 20),
             button.bottomAnchor.constraint(equalTo: bottomAnchor,
                                            constant: -20),
-            button.widthAnchor.constraint(equalToConstant: 56),
+            button.widthAnchor.constraint(equalToConstant: 52),
             button.heightAnchor.constraint(equalTo: button.widthAnchor)
         ])
     }
