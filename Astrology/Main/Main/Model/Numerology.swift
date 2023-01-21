@@ -36,14 +36,7 @@ enum Numerology: CaseIterable {
             return 7
         }
     }
-    
-    var numberTitle: String {
-        switch number {
-        default:
-            return "Independence"
-        }
-    }
-    
+
     var description: String {
         switch number {
         default:

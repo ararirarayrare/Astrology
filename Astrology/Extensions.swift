@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension UIImage {
+    static let background0 = UIImage(named: "background0")
+    static let background1 = UIImage(named: "background1")
+    static let background2 = UIImage(named: "background2")
+}
+
 struct Icon {
     
     static let pencil = UIImage(named: "pencil")
@@ -75,6 +81,10 @@ extension DateFormatter {
 
 extension UIFont {
     
+    static func boldLato(ofSize size: CGFloat) -> UIFont? {
+        return UIFont(name: "Lato-Bold", size: size)
+    }
+    
     static func regularPoppinsFont(ofSize size: CGFloat) -> UIFont? {
         return UIFont(name: "Poppins-Regular", size: size)
     }
@@ -114,11 +124,6 @@ extension UIFont {
     static func italicBoldGothamPro(ofSize size: CGFloat) -> UIFont? {
         return UIFont(name: "GothamPro-BoldItalic", size: size)
     }
-}
-
-extension UIImage {
-    static let background0 = UIImage(named: "background0")
-    static let background1 = UIImage(named: "background1")
 }
 
 extension UINavigationController {

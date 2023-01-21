@@ -25,6 +25,8 @@
 		04681C21295A25DD00B819AF /* HomeContentViewMoonCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */; };
 		04681C24295A2D4800B819AF /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C23295A2D4800B819AF /* Moon.swift */; };
 		04681C26295B434300B819AF /* HomeContentViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04681C25295B434300B819AF /* HomeContentViewMessage.swift */; };
+		04980099297C50B600069BEA /* NumerologyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04980098297C50B600069BEA /* NumerologyContentView.swift */; };
+		0498009B297C53A800069BEA /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0498009A297C53A800069BEA /* Lato-Bold.ttf */; };
 		04C6F571295C56F40005B057 /* HomeContentViewBiorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F570295C56F40005B057 /* HomeContentViewBiorythm.swift */; };
 		04C6F573295C5C580005B057 /* Biorythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F572295C5C580005B057 /* Biorythm.swift */; };
 		04C8E67E295DA689001524EF /* HomeHeaderViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8E67D295DA689001524EF /* HomeHeaderViewDetails.swift */; };
@@ -70,6 +72,8 @@
 		04681C20295A25DD00B819AF /* HomeContentViewMoonCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewMoonCalendar.swift; sourceTree = "<group>"; };
 		04681C23295A2D4800B819AF /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		04681C25295B434300B819AF /* HomeContentViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewMessage.swift; sourceTree = "<group>"; };
+		04980098297C50B600069BEA /* NumerologyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyContentView.swift; sourceTree = "<group>"; };
+		0498009A297C53A800069BEA /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		04C6F570295C56F40005B057 /* HomeContentViewBiorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentViewBiorythm.swift; sourceTree = "<group>"; };
 		04C6F572295C5C580005B057 /* Biorythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biorythm.swift; sourceTree = "<group>"; };
 		04C8E67D295DA689001524EF /* HomeHeaderViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewDetails.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				04C8E6942960AEC4001524EF /* NumerologyViewController.swift */,
+				04980098297C50B600069BEA /* NumerologyContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				04D480BF2975A37C00A961EE /* Poppins-Regular.ttf */,
 				04D480BD2975A29C00A961EE /* Nunito-Regular.ttf */,
 				04D480C12975A48D00A961EE /* Nunito-SemiBold.ttf */,
+				0498009A297C53A800069BEA /* Lato-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0498009B297C53A800069BEA /* Lato-Bold.ttf in Resources */,
 				04D480C22975A48D00A961EE /* Nunito-SemiBold.ttf in Resources */,
 				04D480BE2975A29C00A961EE /* Nunito-Regular.ttf in Resources */,
 				04DEDA56295735C100DD5636 /* LaunchScreen.storyboard in Resources */,
@@ -459,6 +466,7 @@
 			files = (
 				04681C24295A2D4800B819AF /* Moon.swift in Sources */,
 				04C6F571295C56F40005B057 /* HomeContentViewBiorythm.swift in Sources */,
+				04980099297C50B600069BEA /* NumerologyContentView.swift in Sources */,
 				04681C1D295A252400B819AF /* HomeContentViewNumerology.swift in Sources */,
 				04309BFF2971E58F00A439D4 /* ProfileTableViewCell.swift in Sources */,
 				04309BF429707AED00A439D4 /* TabBarController.swift in Sources */,
